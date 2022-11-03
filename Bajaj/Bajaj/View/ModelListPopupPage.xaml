@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.ModelListPopupPage"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             NavigationPage.HasNavigationBar="False">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+      PositionIn="Center"
+      PositionOut="Center"
+      ScaleIn="1.2"
+      ScaleOut="0.8"
+      DurationIn="400"
+      DurationOut="300"
+      EasingIn="SinOut"
+      EasingOut="SinIn"
+      HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" >
+        <StackLayout.Padding>
+            <OnIdiom x:TypeArguments="Thickness" Tablet="80" Phone="30" Desktop="80"/>
+        </StackLayout.Padding>
+        <Grid BackgroundColor="White" RowSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition >
+                    <RowDefinition.Height>
+                        <OnIdiom x:DataType="GridLength" Tablet="64" Phone="57" Desktop="57"/>
+                    </RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition Height="300"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" BackgroundColor="{DynamicResource theme_color}">
+                <Frame  Margin="30,5,30,5" CornerRadius="22" Padding="15,0,5,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <Entry x:Name="txtSearch" Grid.Column="0" Placeholder="Search"
+                                           VerticalOptions="CenterAndExpand" TextChanged="txtSearch_TextChanged"/>
+                        <Image x:Name="imgClose" Grid.Column="1" Source="ic_close.png" Margin="9" IsVisible="False">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="CloseClick" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                </Frame>
+            </Grid>
+            <ListView Grid.Row="1"  x:Name="modelList" ItemsSource="{Binding ModelList}" HasUnevenRows="true" 
+                      SeparatorVisibility="None" VerticalScrollBarVisibility="Never" VerticalOptions="FillAndExpand"
+                      ItemTapped="modelList_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HasShadow="True" CornerRadius="1" Padding="17" Margin="0,1,0,1"  >
+                                <Label Style="{StaticResource labelStyleHS}" Text="{Binding ModelName}" FontAttributes="Bold"/>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </StackLayout>
+    </pages:PopupPage>

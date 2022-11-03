@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  mc:Ignorable="d"
+                  x:Class="Bajaj.View.MasterDetailView"
+                  NavigationPage.HasNavigationBar="False">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master Page">
+            <ContentPage.Content>
+                <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:DataType="GridLength" Tablet="250" Phone="200" Default="200"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <Grid BackgroundColor="{DynamicResource theme_color}" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition>
+                                <RowDefinition.Height>
+                                    <OnIdiom x:DataType="GridLength" Tablet="15" Phone="15" Desktop="15"/>
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                            <RowDefinition>
+                                <RowDefinition.Height>
+                                    <OnIdiom x:DataType="GridLength" Tablet="100" Phone="85" Desktop="85"/>
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                            <RowDefinition>
+                                <RowDefinition.Height>
+                                    <OnIdiom x:DataType="GridLength" Tablet="30" Phone="20" Desktop="20"/>
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                            <RowDefinition>
+                                <RowDefinition.Height>
+                                    <OnIdiom x:DataType="GridLength" Tablet="30" Phone="30" Desktop="30"/>
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                            <RowDefinition>
+                                <RowDefinition.Height>
+                                    <OnIdiom x:DataType="GridLength" Tablet="30" Phone="30" Desktop="30"/>
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                            <RowDefinition>
+                                <RowDefinition.Height>
+                                    <OnIdiom x:DataType="GridLength" Tablet="15" Phone="10" Desktop="10"/>
+                                </RowDefinition.Height>
+                            </RowDefinition>
+
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:DataType="GridLength" Tablet="120" Phone="85" Desktop="85"/>
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+                                <Frame HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" CornerRadius="60"
+                                       Padding="0" BorderColor="#ffffff" >
+                                    <Grid>
+                                        <Image x:Name="img_user" Source="ic_user.png" Aspect="Fill"/>
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </Grid>
+                        <Label x:Name="LoginUserBY" Grid.Row="3" Style="{StaticResource labelStyleHC}" TextColor="#fff" FontSize="16"/>
+                        <Label x:Name="LoginUserRoleBY" Grid.Row="4" Style="{StaticResource labelStyleHC}"
+                               TextColor="#fff" FontSize="16"/>
+                        <!--<Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="profile_Tapped"/>
+                        </Grid.GestureRecognizers>-->
+                    </Grid>
+
+                    <Grid Grid.Row="1" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="1"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="1"/>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition Height="0"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="1"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="1"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="My Jobcards" HorizontalTextAlignment="Start" 
+                               VerticalTextAlignment="Center"
+                               FontSize="20" FontAttributes="Bold" 
+                               TextColor="{DynamicResource theme_color}" Margin="30,7,0,7">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="JobCard_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <BoxView Grid.Row="1" BackgroundColor="Gray"/>
+                        <Label Grid.Row="2" Text="Change Password" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                               FontSize="20" FontAttributes="Bold" TextColor="{DynamicResource theme_color}" Margin="30,7,0,7">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BtnChangePasswordClicked"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <BoxView Grid.Row="3" BackgroundColor="Gray"/>
+                        <!--<Label Grid.Row="4" Text="Firmware Update" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                               FontSize="20" FontAttributes="Bold" TextColor="{DynamicResource theme_color}" Margin="30,0,0,0">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BtnFirmwareClicked"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <BoxView Grid.Row="5" BackgroundColor="Gray"/>
+                        <Label Grid.Row="6" Text="Select Language" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                               FontSize="20" FontAttributes="Bold" TextColor="{DynamicResource theme_color}" Margin="30,0,0,0">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BtnSelectLanguageClicked"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <BoxView Grid.Row="7" BackgroundColor="Gray"/>-->
+
+                        <Label Grid.Row="4" x:Name="txtUpdateFirmware" Text="Update Firmware" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                               FontSize="20" FontAttributes="Bold" TextColor="{DynamicResource theme_color}" Margin="30,7,0,7"
+                               IsVisible="False">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BtnUpdateFirmwareClicked"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <BoxView Grid.Row="5" BackgroundColor="Gray" IsVisible="False"/>
+                        
+                        <Label Grid.Row="6" x:Name="txtTeminal" Text="Terminal" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                               FontSize="20" FontAttributes="Bold" TextColor="{DynamicResource theme_color}" Margin="30,7,0,7">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BtnTerminalClicked"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <BoxView Grid.Row="7" x:Name="lineTeminal" BackgroundColor="Gray"/>
+
+                        <Label Grid.Row="8" Text="Logout" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                               FontSize="20" FontAttributes="Bold" TextColor="{DynamicResource theme_color}" Margin="30,7,0,7">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Logout_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <BoxView Grid.Row="9" BackgroundColor="Gray"/>
+                    </Grid>
+                    <!--<Label Grid.Row="2" x:Name="AppV" Text="App Version X1.0.1 (Trial Version)" HorizontalTextAlignment="Center" VerticalTextAlignment="End"
+                           FontSize="20" FontAttributes="Bold" TextColor="#000" Margin="0,0,0,10"/>-->
+                    <Label Grid.Row="2" x:Name="AppV" HorizontalTextAlignment="Center" VerticalTextAlignment="End"
+                           FontSize="20" FontAttributes="Bold" TextColor="#000" Margin="0,0,0,10"/>
+                </Grid>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

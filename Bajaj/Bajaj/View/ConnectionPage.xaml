@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.ConnectionPage"
+             xmlns:alert="clr-namespace:Bajaj.View;assembly=Bajaj"
+             ControlTemplate="{StaticResource alert_box}"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="Connection">
+
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand"
+              VerticalOptions="CenterAndExpand"
+              RowSpacing="40">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label 
+                Grid.Row="1"
+                Text="Choose the Communication medium"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource theme_color}"
+                       HorizontalTextAlignment="Center"/>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Column="0" BackgroundColor="White" CornerRadius="35" HorizontalOptions="Center"
+                               VerticalOptions="CenterAndExpand" Padding="15" BorderColor="{DynamicResource theme_color}">
+                    <Image Source="ic_bluetooth.png"
+                               HeightRequest="70"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BluetoothConnectCommand}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame Grid.Column="1" BackgroundColor="White" CornerRadius="35" HorizontalOptions="Center"
+                               VerticalOptions="CenterAndExpand" Padding="15" BorderColor="{DynamicResource theme_color}">
+                    <Image Source="ic_usb.png" 
+                               HeightRequest="70"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding UsbConnectCommand}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</alert:DisplayAlertPage>

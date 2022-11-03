@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bajaj.View.IorTest.PreConditionPage"
+             xmlns:template="clr-namespace:Bajaj.template;assembly=Bajaj"
+             Title="Precondition">
+
+    <ContentPage.Resources>
+        <DataTemplate x:Key="StaticTemplate">
+            <Grid>
+                <Frame HasShadow="True" Margin="1,5,1,5" Padding="15">
+                    <Grid>
+                        <Label Text="{Binding description}" Style="{StaticResource labelStyleHS}"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="ManualTemplate">
+            <Grid>
+                <Frame HasShadow="True" Margin="1,5,1,5" Padding="15">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <Label Text="{Binding description}" Style="{StaticResource labelStyleHS}"/>
+                        <CheckBox Grid.Column="1" IsChecked="{Binding is_check}" 
+                                  VerticalOptions="Center" HorizontalOptions="End"/>
+                        <ImageButton Grid.Column="1" BackgroundColor="Transparent" Clicked="CheckBox_CheckedChanged"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </DataTemplate>
+
+        <DataTemplate x:Key="PidTemplate">
+            <Grid>
+                <Frame HasShadow="True" Margin="1,5,1,5" Padding="15">
+                    <Grid RowDefinitions="Auto,Auto">
+                        <Label Grid.Row="0" Text="{Binding description}" Style="{StaticResource labelStyleHS}"/>
+                        <Grid Grid.Row="1" ColumnDefinitions="Auto,Auto,Auto" ColumnSpacing="30">
+                            <Grid Grid.Column="0" ColumnDefinitions="Auto,Auto">
+                                <Label Grid.Column="0" Text="Min  :"/>
+                                <Label Grid.Column="1" Text="{Binding lower_limit}"/>
+                            </Grid>
+                            <Grid Grid.Column="1" ColumnDefinitions="Auto,Auto">
+                                <Label Grid.Column="0" Text="Value  :"/>
+                                <Label Grid.Column="1" Text="{Binding current_value}"/>
+                            </Grid>
+                            <Grid Grid.Column="2" ColumnDefinitions="Auto,Auto">
+                                <Label Grid.Column="0" Text="Max  :"/>
+                                <Label Grid.Column="1" Text="{Binding upper_limit}"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </DataTemplate>
+
+        <template:PreconditionTemplate x:Key="PreconditionSelector"
+                                       StaticData="{StaticResource StaticTemplate}"
+                                       ManualData="{StaticResource ManualTemplate}"
+                                       DynamicData="{StaticResource PidTemplate}"/>
+    </ContentPage.Resources>
+
+    <ContentPage.Content >
+        <Grid RowDefinitions="*,Auto" Padding="10">
+            <CollectionView ItemsSource="{Binding PreConditionList}"
+                            ItemTemplate="{StaticResource PreconditionSelector}"/>
+            <!--<Button Grid.Row="1" 
+                    Text="Continue" 
+                    IsEnabled="{Binding BtnContinueEnable}"
+                    Style="{StaticResource BlueBtnStyle}"/>-->
+
+            <Button Grid.Row="1" 
+                    Text="Continue" 
+                    IsEnabled="{Binding BtnContinueEnable}"
+                    Style="{StaticResource BlueBtnStyle}"
+                    Clicked="ContinueClicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bajaj.View.TerminalPart.LinkDonglePage"
+             Title="Link Dongle">
+    <ContentPage.Content>
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Picker Grid.Row="0" x:Name="picker"
+                    Title="Select Protocol"
+                    HeightRequest="50"
+                    ItemsSource="{Binding ProtocolList}"
+                    SelectedItem="{Binding SelectedProtocol}"
+                    ItemDisplayBinding="{Binding Protocol}"/>
+
+            <Grid Grid.Row="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Entry Grid.Column="0" Text="{Binding TxHeader}" Placeholder="Enter Tx Header" Style="{StaticResource entryStyle}"/>
+                <Entry Grid.Column="1" Text="{Binding RxHeader}" Placeholder="Enter Rx Header" Style="{StaticResource entryStyle}"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding IsPadding}" Color="{DynamicResource theme_color}"/>
+                    <Label Text="Enable Padding" Style="{StaticResource labelStyleHS}"/>
+                </StackLayout>
+                <StackLayout Grid.Column="1" Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding IsTesterPresent}" Color="{DynamicResource theme_color}" IsEnabled="False"/>
+                    <Label Text="Enable Tester Present" Style="{StaticResource labelStyleHS}"/>
+                </StackLayout>
+            </Grid>
+
+            <Grid Grid.Row="3" ColumnSpacing="40" HeightRequest="70" VerticalOptions="Center" HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <ImageButton Grid.Column="0" 
+                             Source="ic_bluetooth.png" 
+                             BorderColor="{DynamicResource theme_color}" 
+                             BorderWidth="2"
+                             CornerRadius="35"
+                             Padding="10"
+                             BackgroundColor="#fff"
+                             Clicked="BluetoothConnectionClicked"/>
+                <ImageButton Grid.Column="1" 
+                             Source="ic_usb.png" 
+                             BorderColor="{DynamicResource theme_color}" 
+                             BorderWidth="2"
+                             CornerRadius="35"
+                             Padding="10"
+                             BackgroundColor="#fff"
+                             Clicked="UsbConnectionClicked"/>
+                <ImageButton Grid.Column="2" 
+                             Source="ic_wifi.png" 
+                             BorderColor="{DynamicResource theme_color}" 
+                             BorderWidth="2"
+                             CornerRadius="35"
+                             Padding="10"
+                             BackgroundColor="#fff"
+                             Clicked="WifiConnectionClicked"/>
+                </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

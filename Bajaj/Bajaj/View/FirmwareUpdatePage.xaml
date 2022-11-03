@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.FirmwareUpdatePage"
+             xmlns:alert="clr-namespace:Bajaj.View;assembly=SML"
+             ControlTemplate="{StaticResource alert_box}"
+             Title="Firmware Update">
+    <ContentPage.Content>
+        <Grid RowDefinitions="30*,30*,40*">
+            <Grid VerticalOptions="CenterAndExpand" RowDefinitions="*,*">
+                <Label Grid.Row="0" 
+                       Text="{Binding CurrFV,StringFormat='Current Firmware Version : {0}'}" 
+                       VerticalTextAlignment="End" 
+                       FontSize="17"
+                       HorizontalTextAlignment="Center"
+                       TextColor="#000"/>
+                <Label Grid.Row="1" 
+                       Text="{Binding NewFV,StringFormat='New Firmware Version : {0}'}" 
+                       VerticalTextAlignment="Start" 
+                       FontSize="17"
+                       HorizontalTextAlignment="Center"
+                       TextColor="#000"/>
+            </Grid>
+
+            <Label Grid.Row="1" 
+                       Text="{Binding Message}" 
+                       VerticalTextAlignment="Center" 
+                       FontSize="17"
+                       HorizontalTextAlignment="Center"
+                       TextColor="#000"/>
+            <Button Grid.Row="2" Text="Update Version" 
+                    Style="{StaticResource BlueBtnStyle}"
+                    
+                    Clicked="UpdateVersionClicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+        </Grid>
+        <!--<Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnIdiom x:DataType="GridLength" Tablet="55" Phone="45" Desktop="45"/>
+                    </RowDefinition.Height>
+                </RowDefinition>
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0">
+                <Grid RowSpacing="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:DataType="GridLength" Tablet="55" Phone="45" Desktop="45"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:DataType="GridLength" Tablet="55" Phone="56" Desktop="45"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" x:Name="txtCurrentFirmwareVersion" Text="Current Firmware Version: x.y.z"
+                           Style="{StaticResource labelStyleHS}"/>
+                    <Label Grid.Row="1" x:Name="txtNewfirmwareversion" Text="New firmware version: x.y.z"
+                           Style="{StaticResource labelStyleHS}"/>
+
+                    <Label Grid.Row="2" x:Name="txtUpdate" Text="Your Dongle is upto date" TextColor="Green"
+                           Style="{StaticResource labelStyleHC}" FontSize="15" IsVisible="True"/>
+                    <Grid Grid.Row="2" x:Name="gridUpdate" RowSpacing="10" IsVisible="False">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="20"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="Important Note !!" TextColor="Red"
+                           Style="{StaticResource labelStyleHC}" FontSize="15"/>
+                        <Label Grid.Row="1" Text="You need to update your dongle firmware. Pls connect your dongle USB cable to this device. As some dongle need vehicle power to stay alive, pls connect the dongle to the vehicle too and press OK." TextColor="Red"
+                           Style="{StaticResource labelStyleHC}" FontSize="15"/>
+                        <Label Grid.Row="2" Text="Downloading Firmware" Style="{StaticResource labelStyleHS}" FontSize="15"
+                               FontAttributes="Bold" VerticalTextAlignment="End"/>
+                        <ProgressBar Grid.Row="3" ProgressColor="{DynamicResource theme_color}" Progress=".5"
+                                     HeightRequest="20" VerticalOptions="FillAndExpand"/>
+                        <Label Grid.Row="4" Text="Flashing Dongle" Style="{StaticResource labelStyleHS}" FontSize="15"
+                               FontAttributes="Bold" VerticalTextAlignment="End"/>
+                        <ProgressBar Grid.Row="5" ProgressColor="{DynamicResource theme_color}" Progress=".5"
+                                     HeightRequest="20" VerticalOptions="FillAndExpand"/>
+                    </Grid>
+                </Grid>
+            </ScrollView>
+            <Button Grid.Row="1" Text="Ok" CornerRadius="0" 
+                    Style="{StaticResource BlueBtnStyle}" />
+        </Grid>-->
+    </ContentPage.Content>
+</alert:DisplayAlertPage>

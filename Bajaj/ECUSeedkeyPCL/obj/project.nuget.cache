@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "6PRkcQaoKt4i5Z2ZwXDepq4ZoksWs/r0L8VT++Npkk+QvGoW+wPW5KLjyUCersO+EEj3BzHYLWajIXROjCsJhA==",
+  "success": true,
+  "projectFilePath": "D:\\Mayur\\Bajaj\\Bajaj\\ECUSeedkeyPCL\\ECUSeedkeyPCL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mayur\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\mayur\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

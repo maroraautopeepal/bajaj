@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.RemoteDiagnosticPage"
+             xmlns:alert="clr-namespace:Bajaj.View;assembly=SML"
+             ControlTemplate="{StaticResource alert_box}"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="Remote Diagnostic">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="txt_tab" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="troub_btn" TargetType="Button">
+                <Setter Property="Text" Value="Troubleshoot" />
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource theme_color}" />
+                <Setter Property="FontSize" Value="11" />
+                <Setter Property="Margin" Value="0,3,0,3" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid Grid.Row="1">
+            <Grid  Margin="10">
+                <ListView Grid.Row="0" x:Name="remoteUserList" ItemsSource="{Binding OnlineExpertList}" HasUnevenRows="true" 
+                      SeparatorVisibility="None" VerticalScrollBarVisibility="Never" VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame HasShadow="True" CornerRadius="3" Padding="5,2,5,2" Margin="5">
+                                    <Grid >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="1"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Margin="5">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition >
+                                                    <ColumnDefinition.Width>
+                                                        <OnIdiom x:DataType="GridLength" Tablet="130" Phone="90" Desktop="100"/>
+                                                    </ColumnDefinition.Width>
+                                                </ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.Column="0" RowSpacing="3">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Label Grid.Row="0" Text="{Binding first_name}"
+                                                   Style="{StaticResource labelStyleHS}" />
+                                                <Label Grid.Row="1" Text="{Binding workshop}" 
+                                                   Style="{StaticResource labelStyleHS}" />
+                                            </Grid>
+                                            <Label Grid.Column="1" Text="{Binding status}" TextColor="{Binding status_color}"
+                                               Style="{StaticResource labelStyleHC}" FontAttributes="Bold" />
+                                        </Grid>
+                                        <BoxView Grid.Row="1" BackgroundColor="#B2B2B2"></BoxView>
+                                        <Grid Grid.Row="2" Margin="5" >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition >
+                                                    <ColumnDefinition.Width>
+                                                        <OnIdiom x:DataType="GridLength" Tablet="150" Phone="90" Desktop="100"/>
+                                                    </ColumnDefinition.Width>
+                                                </ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.Column="0" RowSpacing="3">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Label Grid.Row="0" Text="{Binding mobile}" Style="{StaticResource labelStyleHS}"/>
+                                                <Label Grid.Row="1" Text="Request Remote Support?" 
+                                                   Style="{StaticResource labelStyleHS}"/>
+                                            </Grid>
+                                            <Button Grid.Column="1" Text="Yes" IsEnabled="{Binding btnIsActive}" 
+                                                    Style="{StaticResource troub_btn}" Clicked="ButtonYes_Clicked"/>
+                                        </Grid>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <Grid x:Name="alert" IsVisible="False">
+                <BoxView BackgroundColor="Black" Opacity=".2"/>
+                <Grid VerticalOptions="CenterAndExpand" BackgroundColor="White"
+                      RowSpacing="0" IsVisible="True">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="12"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="12"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="5"/>
+                    </Grid.RowDefinitions>
+                    <Grid BackgroundColor="#EE3A43">
+                        <Label Text="Alert" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                       TextColor="#FFF" FontSize="17" FontAttributes="Bold"/>
+                    </Grid>
+                    <Label Grid.Row="2" x:Name="txt" Margin="6" FontSize="Small" VerticalOptions="CenterAndExpand"
+                           HorizontalOptions="StartAndExpand" TextColor="Black" LineBreakMode="WordWrap"/>
+                    <Button Grid.Row="4" x:Name="BtnOk" Text="Ok" TextColor="#FFF" BackgroundColor="#083a81"
+                                      Clicked="BtnOk_Clicked">
+                        <Button.Margin>
+                            <OnIdiom x:DataType="Thickness" Tablet="160,0,160,0" Phone="50,0,50,0" />
+                        </Button.Margin>
+                    </Button>
+                    <Grid.Margin>
+                        <OnIdiom x:DataType="Thickness" Tablet="80,0,80,0" Phone="30,0,30,0" />
+                    </Grid.Margin>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</alert:DisplayAlertPage>

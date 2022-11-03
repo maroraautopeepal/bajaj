@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.GdSection.InfoPage"
+             xmlns:alert="clr-namespace:Bajaj.View;assembly=SML"
+             ControlTemplate="{StaticResource alert_box}"
+              BackgroundColor="{StaticResource page_bg_color}">
+    <ContentPage.Content>
+        <Grid Padding="10,10,10,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <!--<RowDefinition >
+                        <RowDefinition.Height>
+                            <OnIdiom x:DataType="GridLength" Tablet="55" Phone="45" />
+                        </RowDefinition.Height>
+                    </RowDefinition>-->
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnIdiom x:DataType="GridLength" Tablet="65" Phone="55" Desktop="55"/>
+                    </RowDefinition.Height>
+                </RowDefinition>
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0" VerticalScrollBarVisibility="Never">
+                <Grid RowSpacing="10" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" x:Name="txtDescription" Style="{StaticResource labelStyleHC}" FontAttributes="Bold"/>
+                    <Frame Grid.Row="1" Padding="10" Margin="1" HasShadow="True">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="1"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="Effect on vehicle" Style="{StaticResource labelStyleHS}" FontAttributes="Bold"/>
+                            <BoxView Grid.Row="1" BackgroundColor="Gray"/>
+                            <Label x:Name="txtEffOnVehicle" Grid.Row="2" Style="{StaticResource labelStyleHS}"/>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="2" Padding="10" Margin="1" HasShadow="True">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="1"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="Causes" Style="{StaticResource labelStyleHS}" FontAttributes="Bold"/>
+                            <BoxView Grid.Row="1" BackgroundColor="Gray"/>
+                            <Label x:Name="txtCauses" Grid.Row="2" Style="{StaticResource labelStyleHS}"/>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="3" Padding="10" Margin="1" HasShadow="True">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="1"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="Remedial action" Style="{StaticResource labelStyleHS}" FontAttributes="Bold"/>
+                            <BoxView Grid.Row="1" BackgroundColor="Gray"/>
+                            <Label x:Name="txtRemAction" Grid.Row="2" Style="{StaticResource labelStyleHS}"/>
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </ScrollView>
+            <Button Grid.Row="1" x:Name="BtnStart" Text="Start" Style="{StaticResource BlueBtnStyle}" 
+                              Clicked="BtnStart_Clicked" />
+        </Grid>
+    </ContentPage.Content>
+
+    <!--<ContentPage.Content>
+          <Grid Padding="10,10,10,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition >
+                        <RowDefinition.Height>
+                            <OnIdiom x:DataType="GridLength" Tablet="55" Phone="45" />
+                        </RowDefinition.Height>
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+                <ScrollView Grid.Row="0" VerticalScrollBarVisibility="Never">
+                    <Grid RowSpacing="10" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" x:Name="txtDescription" Style="{StaticResource labelStyleHC}" FontAttributes="Bold"/>
+                        <Frame Grid.Row="1" Padding="10" Margin="1" HasShadow="True">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition Height="1"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Text="Effect on vehicle" Style="{StaticResource labelStyleHS}" FontAttributes="Bold"/>
+                                <BoxView Grid.Row="1" BackgroundColor="Gray"/>
+                                <Label x:Name="txtEffOnVehicle" Grid.Row="2" Style="{StaticResource labelStyleHS}"/>
+                            </Grid>
+                        </Frame>
+                        <Frame Grid.Row="2" Padding="10" Margin="1" HasShadow="True">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition Height="1"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Text="Causes" Style="{StaticResource labelStyleHS}" FontAttributes="Bold"/>
+                                <BoxView Grid.Row="1" BackgroundColor="Gray"/>
+                                <Label x:Name="txtCauses" Grid.Row="2" Style="{StaticResource labelStyleHS}"/>
+                            </Grid>
+                        </Frame>
+                        <Frame Grid.Row="3" Padding="10" Margin="1" HasShadow="True">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="25"/>
+                                    <RowDefinition Height="1"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Text="Remedial action" Style="{StaticResource labelStyleHS}" FontAttributes="Bold"/>
+                                <BoxView Grid.Row="1" BackgroundColor="Gray"/>
+                                <Label x:Name="txtRemAction" Grid.Row="2" Style="{StaticResource labelStyleHS}"/>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </ScrollView>
+                <Button Grid.Row="1" x:Name="BtnStart" Text="Start" Style="{StaticResource BlueBtnStyle}" 
+                              Clicked="BtnStart_Clicked" />
+            </Grid>
+   
+    </ContentPage.Content>-->
+</alert:DisplayAlertPage>

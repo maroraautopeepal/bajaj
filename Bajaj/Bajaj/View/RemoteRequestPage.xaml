@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bajaj.View.RemoteRequestPage"
+             Title="Remote Request">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="txt_tab" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="troub_btn" TargetType="Button">
+                <Setter Property="Text" Value="Troubleshoot" />
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="BackgroundColor" Value="{DynamicResource theme_color}" />
+                <Setter Property="FontSize" Value="11" />
+                <Setter Property="Margin" Value="0,3,0,3" />
+            </Style>
+            <Style x:Key="DeclineTroub_btn" TargetType="Button">
+                <Setter Property="Text" Value="Troubleshoot" />
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="BackgroundColor" Value="Gray" />
+                <Setter Property="FontSize" Value="11" />
+                <Setter Property="Margin" Value="0,3,0,3" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid Padding="10,10,10,10">
+            <ListView Grid.Row="0" x:Name="RemoteRequest" HasUnevenRows="true" ItemsSource="{Binding RJCM}"
+                      SeparatorVisibility="None" VerticalScrollBarVisibility="Always"  VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HasShadow="True" CornerRadius="3" Padding="5,2,5,2" Margin="5">
+                                <Grid x:Name="ListItem">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="1"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Margin="5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition >
+                                                <ColumnDefinition.Width>
+                                                    <OnIdiom x:DataType="GridLength" Tablet="130" Phone="90" Desktop="100"/>
+                                                </ColumnDefinition.Width>
+                                            </ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0" RowSpacing="3">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Label Grid.Row="0" Text="{Binding remote_session_id}"
+                                                   Style="{StaticResource labelStyleHS}" />
+                                            <Label Grid.Row="1" Text="{Binding status, StringFormat='Status :- [ {0:F0} ]'}" 
+                                                   Style="{StaticResource labelStyleHS}" />
+                                        </Grid>
+                                        <Button Grid.Column="1" Text="Accept" IsEnabled="{Binding btnIsActive}" 
+                                                BindingContext="{Binding Source={x:Reference RemoteRequest}, Path=BindingContext}" 
+                                                Command="{Binding Accept}"
+                                                CommandParameter="{Binding Source={x:Reference ListItem}, Path=BindingContext}"
+                                                Style="{StaticResource troub_btn}"/>
+                                    </Grid>
+                                    <BoxView Grid.Row="1" BackgroundColor="#B2B2B2"></BoxView>
+                                    <Grid Grid.Row="2" Margin="5" >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition >
+                                                <ColumnDefinition.Width>
+                                                    <OnIdiom x:DataType="GridLength" Tablet="150" Phone="90" Desktop="100"/>
+                                                </ColumnDefinition.Width>
+                                            </ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0" RowSpacing="3">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Label Grid.Row="0" Text="{Binding request_status, StringFormat='Request Status :- [ {0:F0} ]'}" Style="{StaticResource labelStyleHS}"/>                                           
+                                        </Grid>
+                                        <Button Grid.Column="1" Text="Decline" IsEnabled="{Binding btnIsActive}" 
+                                                BindingContext="{Binding Source={x:Reference RemoteRequest}, Path=BindingContext}" Command="{Binding Decline}"
+                                                                    CommandParameter="{Binding Source={x:Reference ListItem}, Path=BindingContext}"
+                                                    Style="{StaticResource DeclineTroub_btn}" />
+                                    </Grid>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" HeightRequest="55" WidthRequest="55"
+                  BackgroundColor="Transparent" >
+                <Frame CornerRadius="28" Padding="0" Margin="0" HasShadow="True">
+                    <Image Source="ic_refresh.png" Margin="-8"/>
+                </Frame>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

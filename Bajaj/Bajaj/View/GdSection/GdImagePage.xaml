@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.GdSection.GdImagePage"
+             xmlns:alert="clr-namespace:Bajaj.View;assembly=SML"
+             ControlTemplate="{StaticResource alert_box}">
+    <ContentPage.Content>
+        <Grid Grid.Row="0" Margin="15,0,0,0">
+            <CollectionView x:Name="images" ItemsSource="{Binding ImageList}" BackgroundColor="Transparent"
+                            SelectionChanged="images_SelectionChanged">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                        Span="2" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                            <Frame Padding="1" Margin="0,15,15,0" CornerRadius="0" BorderColor="Gray">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition>
+                                            <RowDefinition.Height>
+                                                <OnIdiom x:DataType="GridLength" Tablet="25" Phone="18" />
+                                            </RowDefinition.Height>
+                                        </RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Image Source="{Binding gd_image}" Aspect="AspectFill">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Label Grid.Row="1" Text="{Binding image_name}" Style="{StaticResource labelStyleHC}"/>
+                                </Grid>
+                            </Frame>
+                            <Grid.HeightRequest>
+                                <OnIdiom x:TypeArguments ="x:Double" Phone = "185" Tablet = "260" />
+                            </Grid.HeightRequest>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</alert:DisplayAlertPage>

@@ -1,0 +1,855 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.0/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.0": {},
+    ".NETStandard,Version=v2.0/": {
+      "Bajaj/1.0.0": {
+        "dependencies": {
+          "Acr.UserDialogs": "7.1.0.514",
+          "DotNetFramworkLibrary": "1.0.0",
+          "Microsoft.CSharp": "4.7.0",
+          "MultiEventControllerElement": "1.0.0",
+          "NETStandard.Library": "2.0.3",
+          "Newtonsoft.Json": "13.0.1",
+          "Plugin.BLE": "2.1.2",
+          "Plugin.Permissions": "6.0.1",
+          "Rg.Plugins.Popup": "2.0.0.11",
+          "SshNet.Security.Cryptography": "1.3.0",
+          "System.Runtime": "4.3.1",
+          "Xam.Plugin.Connectivity": "3.2.0",
+          "Xamarin.Essentials": "1.6.1",
+          "Xamarin.Forms": "5.0.0.2012",
+          "Xamarin.Plugin.FilePicker": "2.1.41",
+          "ZXing.Net.Mobile": "3.1.0-beta2",
+          "ZXing.Net.Mobile.Forms": "3.1.0-beta2",
+          "Android.UsbSerial": "1.0.4.25625",
+          "Mono.Android": "0.0.0.0"
+        },
+        "runtime": {
+          "Bajaj.dll": {}
+        }
+      },
+      "Acr.UserDialogs/7.1.0.514": {
+        "runtime": {
+          "lib/netstandard2.0/Acr.UserDialogs.dll": {
+            "assemblyVersion": "7.1.0.514",
+            "fileVersion": "7.1.0.514"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Connections.Abstractions/5.0.5": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Features": "5.0.5",
+          "Microsoft.Bcl.AsyncInterfaces": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Connections.Abstractions.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.521.16708"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Connections.Client/5.0.5": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Connections.Common": "5.0.5",
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Options": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Connections.Client.dll": {
+            "assemblyVersion": "5.0.5.0",
+            "fileVersion": "5.0.521.16708"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Connections.Common/5.0.5": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Connections.Abstractions": "5.0.5",
+          "System.Text.Json": "5.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Connections.Common.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.521.16708"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Http.Features/5.0.5": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "5.0.1",
+          "System.IO.Pipelines": "5.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.521.16708"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.SignalR.Client/5.0.5": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Connections.Client": "5.0.5",
+          "Microsoft.AspNetCore.SignalR.Client.Core": "5.0.5"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Client.dll": {
+            "assemblyVersion": "5.0.5.0",
+            "fileVersion": "5.0.521.16708"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.SignalR.Client.Core/5.0.5": {
+        "dependencies": {
+          "Microsoft.AspNetCore.SignalR.Common": "5.0.5",
+          "Microsoft.AspNetCore.SignalR.Protocols.Json": "5.0.5",
+          "Microsoft.Extensions.DependencyInjection": "5.0.1",
+          "Microsoft.Extensions.Logging": "5.0.0",
+          "System.Threading.Channels": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Client.Core.dll": {
+            "assemblyVersion": "5.0.5.0",
+            "fileVersion": "5.0.521.16708"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.SignalR.Common/5.0.5": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Connections.Abstractions": "5.0.5",
+          "Microsoft.Extensions.Options": "5.0.0",
+          "System.Text.Json": "5.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Common.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.521.16708"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.SignalR.Protocols.Json/5.0.5": {
+        "dependencies": {
+          "Microsoft.AspNetCore.SignalR.Common": "5.0.5"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.SignalR.Protocols.Json.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.521.16708"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "Microsoft.CSharp/4.7.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.CSharp.dll": {
+            "assemblyVersion": "4.0.5.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/5.0.1": {
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll": {
+            "assemblyVersion": "5.0.0.1",
+            "fileVersion": "5.0.120.57516"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging/5.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "5.0.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Options": "5.0.0",
+          "System.Diagnostics.DiagnosticSource": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "Microsoft.Extensions.Options/5.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Primitives": "5.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "Microsoft.Extensions.Primitives/5.0.1": {
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Memory": "4.5.4",
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.521.16609"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.1": {},
+      "Microsoft.NETCore.Targets/1.1.3": {},
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.1"
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
+      "Plugin.BLE/2.1.2": {
+        "runtime": {
+          "lib/netstandard2.0/Plugin.BLE.Abstractions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/netstandard2.0/Plugin.BLE.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Plugin.Permissions/6.0.1": {
+        "dependencies": {
+          "Xamarin.Essentials": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Plugin.Permissions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Rg.Plugins.Popup/2.0.0.11": {
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Rg.Plugins.Popup.dll": {
+            "assemblyVersion": "2.0.0.11",
+            "fileVersion": "2.0.0.11"
+          }
+        }
+      },
+      "SshNet.Security.Cryptography/1.3.0": {
+        "runtime": {
+          "lib/netstandard2.0/SshNet.Security.Cryptography.dll": {
+            "assemblyVersion": "1.3.0.0",
+            "fileVersion": "1.3.0.0"
+          }
+        }
+      },
+      "System.Buffers/4.5.1": {
+        "runtime": {
+          "lib/netstandard2.0/System.Buffers.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.28619.1"
+          }
+        }
+      },
+      "System.Diagnostics.DiagnosticSource/5.0.0": {
+        "dependencies": {
+          "System.Memory": "4.5.4",
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.IO.Pipelines/5.0.1": {
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Memory": "4.5.4",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.IO.Pipelines.dll": {
+            "assemblyVersion": "5.0.0.1",
+            "fileVersion": "5.0.120.57516"
+          }
+        }
+      },
+      "System.Memory/4.5.4": {
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Numerics.Vectors": "4.5.0",
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.dll": {
+            "assemblyVersion": "4.0.1.1",
+            "fileVersion": "4.6.28619.1"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Numerics.Vectors.dll": {
+            "assemblyVersion": "4.1.4.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "System.Runtime/4.3.1": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.1",
+          "Microsoft.NETCore.Targets": "1.1.3"
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.Text.Encodings.Web/5.0.1": {
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Memory": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {
+            "assemblyVersion": "5.0.0.1",
+            "fileVersion": "5.0.421.11614"
+          }
+        }
+      },
+      "System.Text.Json/5.0.2": {
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "5.0.0",
+          "System.Buffers": "4.5.1",
+          "System.Memory": "4.5.4",
+          "System.Numerics.Vectors": "4.5.0",
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0",
+          "System.Text.Encodings.Web": "5.0.1",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Json.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.521.16609"
+          }
+        }
+      },
+      "System.Threading.Channels/5.0.0": {
+        "dependencies": {
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Threading.Channels.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.20.51904"
+          }
+        }
+      },
+      "System.Threading.Tasks.Extensions/4.5.4": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
+            "assemblyVersion": "4.2.0.1",
+            "fileVersion": "4.6.28619.1"
+          }
+        }
+      },
+      "Xam.Plugin.Connectivity/3.2.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Plugin.Connectivity.Abstractions.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
+          },
+          "lib/netstandard1.0/Plugin.Connectivity.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.6.1": {
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Xamarin.Forms/5.0.0.2012": {
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "5.0.0.671"
+          },
+          "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "5.0.0.671"
+          },
+          "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "5.0.0.671"
+          }
+        }
+      },
+      "Xamarin.Plugin.FilePicker/2.1.41": {
+        "runtime": {
+          "lib/netstandard2.0/Plugin.FilePicker.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
+      "ZXing.Net/0.16.6": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/zxing.dll": {
+            "assemblyVersion": "0.16.6.0",
+            "fileVersion": "0.16.6.0"
+          }
+        }
+      },
+      "ZXing.Net.Mobile/3.1.0-beta2": {
+        "dependencies": {
+          "Xamarin.Essentials": "1.6.1",
+          "ZXing.Net": "0.16.6"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ZXingNetMobile.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "ZXing.Net.Mobile.Forms/3.1.0-beta2": {
+        "dependencies": {
+          "Xamarin.Essentials": "1.6.1",
+          "Xamarin.Forms": "5.0.0.2012",
+          "ZXing.Net": "0.16.6",
+          "ZXing.Net.Mobile": "3.1.0-beta2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ZXing.Net.Mobile.Forms.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "DotNetFramworkLibrary/1.0.0": {
+        "runtime": {
+          "DotNetFramworkLibrary.dll": {}
+        }
+      },
+      "MultiEventControllerElement/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.SignalR.Client": "5.0.5",
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "runtime": {
+          "MultiEventControllerElement.dll": {}
+        }
+      },
+      "Android.UsbSerial/1.0.4.25625": {
+        "runtime": {
+          "Android.UsbSerial.dll": {
+            "assemblyVersion": "1.0.4.25625",
+            "fileVersion": "1.0.4.0"
+          }
+        }
+      },
+      "Mono.Android/0.0.0.0": {
+        "runtime": {
+          "Mono.Android.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Bajaj/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Acr.UserDialogs/7.1.0.514": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jSjxoOtwS4qHXRpRJxt5anCwRxga+RK22N0w/hR4wLwmxfVBv7eVHX+BsMYFF/Qe6SJGO5dJDcIyh/7+gbEkCA==",
+      "path": "acr.userdialogs/7.1.0.514",
+      "hashPath": "acr.userdialogs.7.1.0.514.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Connections.Abstractions/5.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CmCyukAMcUW6H/TG+pHVFPnkGIIx1ZldUp16Q3E053ys3Y5MexWWW1U/Y1iHQe9kQ6Xsjk3LHDbMnDBKvEhh9g==",
+      "path": "microsoft.aspnetcore.connections.abstractions/5.0.5",
+      "hashPath": "microsoft.aspnetcore.connections.abstractions.5.0.5.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Http.Connections.Client/5.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZpiQWWxFvh3ikUBlgundGD1ksY3pfG4p3A1v/7o9shW86NZWhWzMGM6KzbEXDjlYFh0CMVnmGg0AliPYMKpiPA==",
+      "path": "microsoft.aspnetcore.http.connections.client/5.0.5",
+      "hashPath": "microsoft.aspnetcore.http.connections.client.5.0.5.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Http.Connections.Common/5.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-b4B4UcCakbia/7arzVaO2q/17N7HQjVdU3+CCm1b12mILdwywK3b5tYGxcWg+aGWLRWrPixc+PLA031CYj0aAg==",
+      "path": "microsoft.aspnetcore.http.connections.common/5.0.5",
+      "hashPath": "microsoft.aspnetcore.http.connections.common.5.0.5.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Http.Features/5.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UZxVOurL/kSpWRQf4XAVMNeOxLyHpOc32NdYxkli807S5cTposKnAH3H6sQ0+bMrkN3MP3fdezW9i8PwKbmb5w==",
+      "path": "microsoft.aspnetcore.http.features/5.0.5",
+      "hashPath": "microsoft.aspnetcore.http.features.5.0.5.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.SignalR.Client/5.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7uJpiMi+1ldJchqMuPxvuaS4qIAu/cGCkJdldqnJnVWnj6eBBJ9XpbuuK+fxfRNuB0V/83TrTYaW51jIQwkFAg==",
+      "path": "microsoft.aspnetcore.signalr.client/5.0.5",
+      "hashPath": "microsoft.aspnetcore.signalr.client.5.0.5.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.SignalR.Client.Core/5.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-apaEvn7r3CImMc7ngqPxebhleRVpgXktCVNOJWX+bzr1Y/4txMTYGceGRHe07tiUaZ6oNpT0t7zMU+L936eZ4Q==",
+      "path": "microsoft.aspnetcore.signalr.client.core/5.0.5",
+      "hashPath": "microsoft.aspnetcore.signalr.client.core.5.0.5.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.SignalR.Common/5.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3jGRW2+6CkN2+65ayiWJkH7lOM6fgDE72MBdpuPqV/FJF6J4xOjjPOLHt18LAHB0FbbxcQVKdoUvCLyuDakKZQ==",
+      "path": "microsoft.aspnetcore.signalr.common/5.0.5",
+      "hashPath": "microsoft.aspnetcore.signalr.common.5.0.5.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.SignalR.Protocols.Json/5.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TPwrhKBHuL5Zzu0dJSYXUmhKELtTvWTyfNGC78D+SImOz5yKfMK6hF8itG05CNEyZyavxMoYVOz1gliF++gGJg==",
+      "path": "microsoft.aspnetcore.signalr.protocols.json/5.0.5",
+      "hashPath": "microsoft.aspnetcore.signalr.protocols.json.5.0.5.nupkg.sha512"
+    },
+    "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W8DPQjkMScOMTtJbPwmPyj9c3zYSFGawDW3jwlBOOsnY+EzZFLgNQ/UMkK35JmkNOVPdCyPr2Tw7Vv9N+KA3ZQ==",
+      "path": "microsoft.bcl.asyncinterfaces/5.0.0",
+      "hashPath": "microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-//mDNrYeiJ0eh/awFhDFJQzkRVra/njU5Y4fyK7X29g5HScrzbUkKOKlyTtygthcGFt4zNC8G5CFCjb/oizomA==",
+      "path": "microsoft.extensions.dependencyinjection/5.0.1",
+      "hashPath": "microsoft.extensions.dependencyinjection.5.0.1.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ORj7Zh81gC69TyvmcUm9tSzytcy8AVousi+IVRAI8nLieQjOFryRusSFh7+aLk16FN9pQNqJAiMd7BTKINK0kA==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/5.0.0",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MgOwK6tPzB6YNH21wssJcw/2MKwee8b2gI7SllYfn6rvTpIrVvVS5HAjSU2vqSku1fwqRvWP0MdIi14qjd93Aw==",
+      "path": "microsoft.extensions.logging/5.0.0",
+      "hashPath": "microsoft.extensions.logging.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Abstractions/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NxP6ahFcBnnSfwNBi2KH2Oz8Xl5Sm2krjId/jRR3I7teFphwiUoUeZPwTNA21EX+5PtjqmyAvKaOeBXcJjcH/w==",
+      "path": "microsoft.extensions.logging.abstractions/5.0.0",
+      "hashPath": "microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CBvR92TCJ5uBIdd9/HzDSrxYak+0W/3+yxrNg8Qm6Bmrkh5L+nu6m3WeazQehcZ5q1/6dDA7J5YdQjim0165zg==",
+      "path": "microsoft.extensions.options/5.0.0",
+      "hashPath": "microsoft.extensions.options.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Primitives/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5WPSmL4YeP7eW+Vc8XZ4DwjYWBAiSwDV9Hm63JJWcz1Ie3Xjv4KuJXzgCstj48LkLfVCYa7mLcx7y+q6yqVvtw==",
+      "path": "microsoft.extensions.primitives/5.0.1",
+      "hashPath": "microsoft.extensions.primitives.5.0.1.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TMBuzAHpTenGbGgk0SMTwyEkyijY/Eae4ZGsFNYJvAr/LDn1ku3Etp3FPxChmDp5HHF3kzJuoaa08N0xjqAJfQ==",
+      "path": "microsoft.netcore.platforms/1.1.1",
+      "hashPath": "microsoft.netcore.platforms.1.1.1.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Targets/1.1.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3Wrmi0kJDzClwAC+iBdUBpEKmEle8FQNsCs77fkiOIw/9oYA07bL1EZNX0kQ2OMN3xpwvl0vAtOCYY3ndDNlhQ==",
+      "path": "microsoft.netcore.targets/1.1.3",
+      "hashPath": "microsoft.netcore.targets.1.1.3.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+    },
+    "Plugin.BLE/2.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TAFn7r6drfhmPAs+Zj+aaiWE1LdI9VOIJ1ryQaOpvHm9gNzN0C0yU8k0Dirsi0k6sNv3K642q0Scyc2V1nMlSg==",
+      "path": "plugin.ble/2.1.2",
+      "hashPath": "plugin.ble.2.1.2.nupkg.sha512"
+    },
+    "Plugin.Permissions/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-na/0FNhyKmSicANWZMLSM0y/FW2AvLoawX3lsvBpELwP15sdJRyuBhRKk1OQjRoNrmTIewcON1tJFyydjMGWcA==",
+      "path": "plugin.permissions/6.0.1",
+      "hashPath": "plugin.permissions.6.0.1.nupkg.sha512"
+    },
+    "Rg.Plugins.Popup/2.0.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Fa225jLSyum7oFwmC2tZeJqf0b/m2ZpvVSEVIhqmxcme4nEW6rl1Ncnj6zGIOjKlZ05m8L3mxdFdiI/TxI5InQ==",
+      "path": "rg.plugins.popup/2.0.0.11",
+      "hashPath": "rg.plugins.popup.2.0.0.11.nupkg.sha512"
+    },
+    "SshNet.Security.Cryptography/1.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5pBIXRjcSO/amY8WztpmNOhaaCNHY/B6CcYDI7FSTgqSyo/ZUojlLiKcsl+YGbxQuLX439qIkMfP0PHqxqJi/Q==",
+      "path": "sshnet.security.cryptography/1.3.0",
+      "hashPath": "sshnet.security.cryptography.1.3.0.nupkg.sha512"
+    },
+    "System.Buffers/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
+      "path": "system.buffers/4.5.1",
+      "hashPath": "system.buffers.4.5.1.nupkg.sha512"
+    },
+    "System.Diagnostics.DiagnosticSource/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tCQTzPsGZh/A9LhhA6zrqCRV4hOHsK90/G7q3Khxmn6tnB1PuNU0cRaKANP2AWcF9bn0zsuOoZOSrHuJk6oNBA==",
+      "path": "system.diagnostics.diagnosticsource/5.0.0",
+      "hashPath": "system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512"
+    },
+    "System.IO.Pipelines/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qEePWsaq9LoEEIqhbGe6D5J8c9IqQOUuTzzV6wn1POlfdLkJliZY3OlB0j0f17uMWlqZYjH7txj+2YbyrIA8Yg==",
+      "path": "system.io.pipelines/5.0.1",
+      "hashPath": "system.io.pipelines.5.0.1.nupkg.sha512"
+    },
+    "System.Memory/4.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+      "path": "system.memory/4.5.4",
+      "hashPath": "system.memory.4.5.4.nupkg.sha512"
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "path": "system.numerics.vectors/4.5.0",
+      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
+    },
+    "System.Runtime/4.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-abhfv1dTK6NXOmu4bgHIONxHyEqFjW8HwXPmpY9gmll+ix9UNo4XDcmzJn6oLooftxNssVHdJC1pGT9jkSynQg==",
+      "path": "system.runtime/4.3.1",
+      "hashPath": "system.runtime.4.3.1.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
+      "path": "system.runtime.compilerservices.unsafe/5.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+    },
+    "System.Text.Encodings.Web/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KmJ+CJXizDofbq6mpqDoRRLcxgOd2z9X3XoFNULSbvbqVRZkFX3istvr+MUjL6Zw1RT+RNdoI4GYidIINtgvqQ==",
+      "path": "system.text.encodings.web/5.0.1",
+      "hashPath": "system.text.encodings.web.5.0.1.nupkg.sha512"
+    },
+    "System.Text.Json/5.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-I47dVIGiV6SfAyppphxqupertT/5oZkYLDCX6vC3HpOI4ZLjyoKAreUoem2ie6G0RbRuFrlqz/PcTQjfb2DOfQ==",
+      "path": "system.text.json/5.0.2",
+      "hashPath": "system.text.json.5.0.2.nupkg.sha512"
+    },
+    "System.Threading.Channels/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RLBIxntLaG9pRmmuVDwY1kc8Bvp/FQzSxPU+19VekkScKkWtVP9r8bLhm28ama3usc816UBrmkg3vv3jUea/hw==",
+      "path": "system.threading.channels/5.0.0",
+      "hashPath": "system.threading.channels.5.0.0.nupkg.sha512"
+    },
+    "System.Threading.Tasks.Extensions/4.5.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
+      "path": "system.threading.tasks.extensions/4.5.4",
+      "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    },
+    "Xam.Plugin.Connectivity/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZV45TaBTCJg7XQNEl3fPyyJcuMMhdDEQ6BCLc/5pMuTv38M226ER0WTu5sbmba8jlliDuzeRqkRFHwrGdWAgyg==",
+      "path": "xam.plugin.connectivity/3.2.0",
+      "hashPath": "xam.plugin.connectivity.3.2.0.nupkg.sha512"
+    },
+    "Xamarin.Essentials/1.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gG1Bp4j4bpJQ0dp9MeBJQJ9c8xULauIlhc7Cx5Qw4J2K1c+4Glq5n+gkb9Pm0UA/CevXVqLK5ZXmZkuYI52FgA==",
+      "path": "xamarin.essentials/1.6.1",
+      "hashPath": "xamarin.essentials.1.6.1.nupkg.sha512"
+    },
+    "Xamarin.Forms/5.0.0.2012": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Rqc6xvWR/sf+Db5+qRCFmuYTWVp04QWRfwPto2/JHbShSy4Ed53Q2jpoFzsoloXkJA6saD236PlaWAhT6vI4gw==",
+      "path": "xamarin.forms/5.0.0.2012",
+      "hashPath": "xamarin.forms.5.0.0.2012.nupkg.sha512"
+    },
+    "Xamarin.Plugin.FilePicker/2.1.41": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SFJp7AEq6YFZ72mw+CxGMQcMzBYhA0b5NkhSyE5b+prCiNli7bKI5pWOT+mbyFng0En8LfeY0dEbedpkecQFQw==",
+      "path": "xamarin.plugin.filepicker/2.1.41",
+      "hashPath": "xamarin.plugin.filepicker.2.1.41.nupkg.sha512"
+    },
+    "ZXing.Net/0.16.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0+6EcJ7Ve1BocwqvqpAmgMa7xF3wxqROcM3KvAE6WGNIqXLA5YEziLjRX+kKYVrcttlFRz1IaoRSzt/o6Ttviw==",
+      "path": "zxing.net/0.16.6",
+      "hashPath": "zxing.net.0.16.6.nupkg.sha512"
+    },
+    "ZXing.Net.Mobile/3.1.0-beta2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-d9iLRTaNG7u5Zc/JjYJ7zSNi3Sdtpn9r34D5qdWeWNckbuW8wHLrXGCQ0XE/PTeFU9lbMOrvxIKjipG/AgW4+A==",
+      "path": "zxing.net.mobile/3.1.0-beta2",
+      "hashPath": "zxing.net.mobile.3.1.0-beta2.nupkg.sha512"
+    },
+    "ZXing.Net.Mobile.Forms/3.1.0-beta2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Q+V7bLM1L8CXXkN+RtN4dY6/nNl8+5SPpbdO/6NUzt9bOzrBijDXSkSobNGOtxRUT5aD4ylLDmDrCQiMUKFD2A==",
+      "path": "zxing.net.mobile.forms/3.1.0-beta2",
+      "hashPath": "zxing.net.mobile.forms.3.1.0-beta2.nupkg.sha512"
+    },
+    "DotNetFramworkLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MultiEventControllerElement/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Android.UsbSerial/1.0.4.25625": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Mono.Android/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

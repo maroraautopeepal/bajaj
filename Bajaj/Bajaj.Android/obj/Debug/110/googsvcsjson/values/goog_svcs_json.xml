@@ -1,0 +1,1 @@
+<resources><string name="gcm_defaultSenderId" translatable="false">1030784529088</string><string name="google_storage_bucket" translatable="false">sml-fcm.appspot.com</string><string name="project_id" translatable="false">sml-fcm</string></resources>

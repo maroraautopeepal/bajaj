@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Bajaj.Controls;assembly=Bajaj"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource theme_color}"
+             x:Class="Bajaj.View.OtpPage">
+    <ContentPage.Content>
+        <StackLayout 
+            Spacing="30"
+            VerticalOptions="CenterAndExpand" 
+            HorizontalOptions="CenterAndExpand">
+            <Label 
+                Text="Enter the 4 digit OTP received from Bajaj Auto via SMS"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                Margin="30,0,30,0"
+                TextColor="White"
+                FontSize="20"
+                HorizontalTextAlignment="Center"/>
+            <Frame
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                BackgroundColor="White"
+                CornerRadius="10">
+                <local:CustomEntry
+                    Placeholder="Enter OTP"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding otp}"/>
+            </Frame>
+            <Button
+                Text="Submit"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                BackgroundColor="White"
+                CornerRadius="10"
+                TextColor="{StaticResource theme_color}"
+                Margin="0,30,0,0"
+                Command="{Binding SubmitCommand}"/>
+
+            <!--<Label Text="Resend OTP"
+                   TextColor="White"
+                   FontSize="16"
+                   HorizontalOptions="Center"
+                   TextDecorations="Underline">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ResendCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

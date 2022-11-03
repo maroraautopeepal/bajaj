@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.AdvanceDiagnosticPage"
+             xmlns:alert="clr-namespace:Bajaj.View;assembly=SML"
+             ControlTemplate="{StaticResource alert_box}"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="Advance Diagnostics">
+    <ContentPage.Content>
+        <Grid Grid.Row="1" RowSpacing="20" Padding="10">
+            <Grid.RowDefinitions>
+
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnIdiom x:DataType="GridLength" Tablet="55" Phone="45" />
+                    </RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition >
+                    <RowDefinition.Height>
+                        <OnIdiom x:DataType="GridLength" Tablet="55" Phone="45" />
+                    </RowDefinition.Height>
+                </RowDefinition>
+
+                <RowDefinition >
+                    <RowDefinition.Height>
+                        <OnIdiom x:DataType="GridLength" Tablet="55" Phone="45" />
+                    </RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition >
+                    <RowDefinition.Height>
+                        <OnIdiom x:DataType="GridLength" Tablet="55" Phone="45" />
+                    </RowDefinition.Height>
+                </RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" x:Name="BtnParameterWriting" Text="Parameter Writing" Clicked="BtnParameterWriting_Clicked" 
+                        Style="{StaticResource BlueBtnStyle}"/>
+            <Button Grid.Row="1" x:Name="BtnProgramming" Text="Programming" Clicked="BtnProgrammingClicked" 
+                        Style="{StaticResource BlueBtnStyle}"/>
+            <Button Grid.Row="2" x:Name="BtnTestRoutines" Text="Test / Operations" Clicked="BtnTestRoutines_Clicked" 
+                        Style="{StaticResource BlueBtnStyle}"/>
+            <Button Grid.Row="3" x:Name="BtnCaliberation" Text="Caliberation" Clicked="BtnCaliberation_Clicked" 
+                        Style="{StaticResource BlueBtnStyle}"/>
+        </Grid>
+    </ContentPage.Content>
+</alert:DisplayAlertPage>

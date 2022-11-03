@@ -1,0 +1,248 @@
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.dll
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.pdb
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid.apk
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid.aab
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid-Signed.aab
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid-Signed.apk
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid-Signed.apk.idsig
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDongleCommAndroid.dll
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\AutoELM327.dll
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\ECUSeedkeyPCL.dll
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\Android.UsbSerial.dll
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\DotNetFramworkLibrary.dll
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\AutoELM327.pdb
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDongleCommAndroid.pdb
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\ECUSeedkeyPCL.pdb
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\DotNetFramworkLibrary.pdb
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\DotNetFramworkLibrary.dll.mdb
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\MonoAndroid,Version=v10.0.AssemblyAttributes.cs
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\build.props
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\adb.props
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.csproj.AssemblyReference.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\_VerifyXamarinAndroidSupportVersions.stamp
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\stamp\_BuildLibraryImportsCache.stamp
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\res.flag
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\0\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\14\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\15\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\29\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\76\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\80\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\83\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\86\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\87\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\94\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\95\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\99\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\100\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\102\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\103\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\104\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\105\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\107\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\108\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\111\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\119\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\R.txt
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\R.cs.flag
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\__AndroidLibraryProjects__.zip
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.csproj.CoreCompileInputs.cache
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.csproj.CopyComplete
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.dll
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.pdb
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\android\bin\APDiagnosticAndroid.APDiagnosticAndroid.apk
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\android\bin\base.zip
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\android\bin\APDiagnosticAndroid.APDiagnosticAndroid.aab
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\android\bin\APDiagnosticAndroid.APDiagnosticAndroid.apks
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\res\values\strings.xml
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\uploadflags.txt
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\stamp\_CleanIntermediateIfNeeded.stamp
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\stamp\_ConvertResourcesCases.stamp
+C:\dev1\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\stamp\_ResolveLibraryProjectImports.stamp
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.dll
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.pdb
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid.apk
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid.aab
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid-Signed.aab
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid-Signed.apk
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid-Signed.apk.idsig
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDongleCommAndroid.dll
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\AutoELM327.dll
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\ECUSeedkeyPCL.dll
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\Android.UsbSerial.dll
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\DotNetFramworkLibrary.dll
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\AutoELM327.pdb
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDongleCommAndroid.pdb
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\ECUSeedkeyPCL.pdb
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\DotNetFramworkLibrary.pdb
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\DotNetFramworkLibrary.dll.mdb
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\MonoAndroid,Version=v10.0.AssemblyAttributes.cs
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\build.props
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\adb.props
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.csproj.AssemblyReference.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\_VerifyXamarinAndroidSupportVersions.stamp
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\stamp\_BuildLibraryImportsCache.stamp
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\res.flag
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\0\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\14\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\15\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\29\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\76\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\83\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\86\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\87\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\94\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\95\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\99\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\100\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\102\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\103\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\104\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\105\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\107\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\108\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\111\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\119\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\R.txt
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\R.cs.flag
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\__AndroidLibraryProjects__.zip
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.csproj.CoreCompileInputs.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.csproj.CopyComplete
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.dll
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.pdb
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\android\bin\APDiagnosticAndroid.APDiagnosticAndroid.apk
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\android\bin\base.zip
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\android\bin\APDiagnosticAndroid.APDiagnosticAndroid.aab
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\android\bin\APDiagnosticAndroid.APDiagnosticAndroid.apks
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\res\values\strings.xml
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\uploadflags.txt
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\stamp\_CleanIntermediateIfNeeded.stamp
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\stamp\_ConvertResourcesCases.stamp
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\stamp\_ResolveLibraryProjectImports.stamp
+D:\Mayur\Demo\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\80\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.dll
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.pdb
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid.apk
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid.aab
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid-Signed.aab
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid-Signed.apk
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid-Signed.apk.idsig
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDongleCommAndroid.dll
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\AutoELM327.dll
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\ECUSeedkeyPCL.dll
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\Android.UsbSerial.dll
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\vocom1210.dll
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\DotNetFramworkLibrary.dll
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\AutoELM327.pdb
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\APDongleCommAndroid.pdb
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\ECUSeedkeyPCL.pdb
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\vocom1210.pdb
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\DotNetFramworkLibrary.pdb
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\bin\Release\DotNetFramworkLibrary.dll.mdb
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\MonoAndroid,Version=v10.0.AssemblyAttributes.cs
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\build.props
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\adb.props
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.csproj.AssemblyReference.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\_VerifyXamarinAndroidSupportVersions.stamp
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\stamp\_BuildLibraryImportsCache.stamp
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\res.flag
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\0\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\14\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\15\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\29\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\76\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\80\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\83\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\86\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\87\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\94\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\95\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\99\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\100\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\102\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\103\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\104\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\105\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\107\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\108\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\111\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\lp\119\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\R.txt
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\R.cs.flag
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\__AndroidLibraryProjects__.zip
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.csproj.CoreCompileInputs.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.csproj.CopyComplete
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.dll
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.pdb
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\android\bin\APDiagnosticAndroid.APDiagnosticAndroid.apk
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\android\bin\base.zip
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\android\bin\APDiagnosticAndroid.APDiagnosticAndroid.aab
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\android\bin\APDiagnosticAndroid.APDiagnosticAndroid.apks
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\res\values\strings.xml
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\uploadflags.txt
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\stamp\_CleanIntermediateIfNeeded.stamp
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\stamp\_ConvertResourcesCases.stamp
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDiagnosticAndroid\obj\Release\100\stamp\_ResolveLibraryProjectImports.stamp
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.dll
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.pdb
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid.apk
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid.aab
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid-Signed.aab
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid-Signed.apk
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\APDiagnosticAndroid.APDiagnosticAndroid-Signed.apk.idsig
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\APDongleCommAndroid.dll
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\AutoELM327.dll
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\ECUSeedkeyPCL.dll
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\Android.UsbSerial.dll
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\vocom1210.dll
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\DotNetFramworkLibrary.dll
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\AutoELM327.pdb
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\APDongleCommAndroid.pdb
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\ECUSeedkeyPCL.pdb
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\vocom1210.pdb
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\DotNetFramworkLibrary.pdb
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\bin\Release\DotNetFramworkLibrary.dll.mdb
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\MonoAndroid,Version=v10.0.AssemblyAttributes.cs
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\build.props
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\adb.props
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.csproj.AssemblyReference.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\_VerifyXamarinAndroidSupportVersions.stamp
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\stamp\_BuildLibraryImportsCache.stamp
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\res.flag
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\0\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\14\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\15\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\29\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\76\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\80\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\83\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\86\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\87\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\94\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\95\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\99\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\100\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\102\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\103\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\104\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\105\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\107\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\108\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\111\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\lp\119\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\R.txt
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\R.cs.flag
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\__AndroidLibraryProjects__.zip
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.csproj.CoreCompileInputs.cache
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.csproj.CopyComplete
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.dll
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\APDiagnosticAndroid.pdb
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\android\bin\APDiagnosticAndroid.APDiagnosticAndroid.apk
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\android\bin\base.zip
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\android\bin\APDiagnosticAndroid.APDiagnosticAndroid.aab
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\android\bin\APDiagnosticAndroid.APDiagnosticAndroid.apks
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\res\values\strings.xml
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\uploadflags.txt
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\stamp\_CleanIntermediateIfNeeded.stamp
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\stamp\_ConvertResourcesCases.stamp
+D:\Mayur\Bajaj\Bajaj\APDiagnosticAndroid\obj\Release\100\stamp\_ResolveLibraryProjectImports.stamp

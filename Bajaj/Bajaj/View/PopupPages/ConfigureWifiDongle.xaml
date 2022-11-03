@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  mc:Ignorable="d"
+                  x:Class="Bajaj.View.PopupPages.ConfigureWifiDongle"
+                  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                  xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:local="clr-namespace:Bajaj.Controls"
+                 CloseWhenBackgroundIsClicked="False">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="frame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#fff" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="BorderColor" Value="{DynamicResource theme_color}" />
+                <Setter Property="Padding" Value="10,0,10,0" />
+            </Style>
+            <Style x:Key="lbl" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource text_color}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="{StaticResource font_size}" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="ent" TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="{StaticResource placeholder_color}" />
+                <Setter Property="TextColor" Value="{StaticResource text_color}" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="FontSize" Value="{StaticResource font_size}" />
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="100, 150, 100, 150">
+        <StackLayout.Padding>
+            <OnIdiom x:DataType="Thickness" Tablet="100, 150, 100, 150" Phone="40, 100, 40, 100" Desktop="250, 150, 250, 150"/>
+        </StackLayout.Padding>
+        <Grid BackgroundColor="#fff" Padding="10" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnIdiom x:DataType="GridLength" Tablet="55" Phone="50" Desktop="45"/>
+                    </RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnIdiom x:DataType="GridLength" Tablet="55" Phone="50" Desktop="45"/>
+                    </RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition Height="50"/>
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnIdiom x:DataType="GridLength" Tablet="55" Phone="50" Desktop="45"/>
+                    </RowDefinition.Height>
+                </RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" >
+                <Frame Style="{StaticResource frame}">
+                    <local:CustomEntry x:Name="DeviceSSIDtxt" Placeholder="Enter the device SSID" Style="{StaticResource ent}" />
+                </Frame>
+            </Grid>
+            <Grid Grid.Row="1" Padding="2">
+                <Frame Style="{StaticResource frame}">
+                    <local:CustomEntry x:Name="DevicePasswordtxt" Placeholder="Enter the device password" Style="{StaticResource ent}"/>
+                </Frame>
+            </Grid>
+            <Grid Grid.Row="3" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" x:Name="BtnSubmit" Text="Submit" Style="{StaticResource BlueBtnStyle}"
+                    Clicked="BtnSubmit_Clicked" IsEnabled="True"/>
+                <Button Grid.Column="1" x:Name="BtnCancel" Text="Cancel" Style="{StaticResource BlueBtnStyle}"
+                    Clicked="BtnCancel_Clicked" IsEnabled="True"/>
+            </Grid>
+        </Grid>
+        <!--<StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="close_popup"/>
+        </StackLayout.GestureRecognizers>-->
+    </StackLayout>
+</pages:PopupPage>

@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                        mc:Ignorable="d"
+                        x:Class="Bajaj.View.FlashECUPage"
+                        xmlns:alert="clr-namespace:Bajaj.View;assembly=Bajaj"
+                        ControlTemplate="{StaticResource alert_box}"
+                        xmlns:local="clr-namespace:Bajaj.Controls;assembly=Bajaj"
+                        Title="Flash ECU"
+                        x:Name="page">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="txt_tab" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="frame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="BorderColor" Value="{StaticResource theme_color}" />
+                <Setter Property="Padding" Value="10,2,10,2" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition >
+                        <RowDefinition.Height>
+                            <OnIdiom x:TypeArguments="GridLength" Tablet="64" Phone="40" Desktop="60"/>
+                        </RowDefinition.Height>
+                    </RowDefinition>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" BindableLayout.ItemsSource="{Binding ecus_list}"  
+                                     HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="2">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalOptions="FillAndExpand">
+                                <Button BackgroundColor="{StaticResource theme_color}" Text="{Binding ecu_name}"
+                                    Opacity="{Binding opacity}" HorizontalOptions="FillAndExpand" CornerRadius="0"
+                                    TextColor="#FFF"
+                                    Clicked="Tab_Clicked"/>
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+                <Grid Grid.Row="1" Padding="10,25,10,25">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Frame Grid.Row="0" Style="{StaticResource frame}">
+                        <Grid x:Name="select_Flash_DataSet">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:TypeArguments="GridLength" Tablet="40" Phone="35" Desktop="35"/>
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding select_dataset}" Style="{StaticResource labelStyleHS}" TextColor="{StaticResource placeholder_color}" />
+                            <BoxView Grid.Column="1" BackgroundColor="{StaticResource theme_color}"/>
+                            <Image Grid.Column="2" Source="ic_drop_down.png" Margin="7"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OpenPopupClicked"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    <Label Grid.Row="1" 
+                           Text="{Binding flash_timer}"
+                           IsVisible="{Binding timer_visible}"
+                           Style="{StaticResource labelStyleHS}" 
+                           FontSize="35"
+                           FontAttributes="Bold" 
+                           VerticalTextAlignment="Center"  
+                           HorizontalTextAlignment="Center"/>
+                    <StackLayout Grid.Row="2" Margin="10,0">
+                        <ProgressBar
+                                 x:Name="progressBar"
+                                 IsVisible="{Binding flashProgress_visible}"
+                                 ProgressColor="Green"
+                                 HeightRequest="10"/>
+                        <Label
+                           Text="{Binding flash_percent}"
+                           IsVisible="{Binding flashProgress_visible}"
+                           Style="{StaticResource labelStyleHS}" 
+                           FontSize="25"
+                           FontAttributes="Bold" 
+                           VerticalTextAlignment="Center"  
+                           HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+            <Grid VerticalOptions="FillAndExpand" 
+                  HorizontalOptions="FillAndExpand"
+                  IsVisible="{Binding flash_file_view_visible}">
+
+                <BoxView BackgroundColor="#000" Opacity=".5"/>
+
+                <Frame BackgroundColor="#fff" 
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="CenterAndExpand"
+                       WidthRequest="250"
+                       Padding="0"
+                       HasShadow="True"
+                       BorderColor="#f1f1f1"
+                       IsClippedToBounds="True"
+                       CornerRadius="5">
+                    <Grid BackgroundColor="#fff" 
+                          RowSpacing="0"
+                          VerticalOptions="CenterAndExpand" 
+                          HorizontalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" BackgroundColor="{StaticResource theme_color}">
+                            <Frame  Margin="15,5,15,5" CornerRadius="22" Padding="15,0,5,0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <local:CustomEntry Grid.Column="0" 
+                                                       Text="{Binding search_key}" 
+                                                       Placeholder="Search..."
+                                                       VerticalOptions="CenterAndExpand" />
+                                    <Image x:Name="imgClose" 
+                                           Grid.Column="1" 
+                                           Source="ic_close.png" 
+                                           Margin="9" 
+                                           IsVisible="False">
+                                        <!--<Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="CloseClick" />
+                                        </Image.GestureRecognizers>-->
+                                    </Image>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+
+                        <CollectionView Grid.Row="1"
+                                        x:Name="collectionView"
+                                        ItemsSource="{Binding flash_file_list}" 
+                                        HeightRequest="250"
+                                        Scrolled="FlashFileListScrolled">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Vertical" ItemSpacing="5" />
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Frame HasShadow="True" Margin="0,2,0,2" Padding="15">
+                                            <Label Style="{StaticResource labelStyleHS}"
+                                                   Text="{Binding data_file_name}"
+                                                   LineHeight="1.3"
+                                                   HorizontalTextAlignment="Center" />
+                                        </Frame>
+                                        <Grid>
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="SelectFlashFileClicked"/>
+                                            </Grid.GestureRecognizers>
+                                        </Grid>
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                    </Grid>
+                </Frame>
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ClosePopupClicked"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+            <Grid IsVisible="{Binding extra_view_visible}"></Grid>
+        </Grid>
+    </ContentPage.Content>
+</alert:DisplayAlertPage>

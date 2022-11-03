@@ -1,0 +1,24 @@
+C:\dev1\SML-02-03-22\DotNetFramworkLibrary\bin\Debug\DotNetFramworkLibrary.dll
+C:\dev1\SML-02-03-22\DotNetFramworkLibrary\bin\Debug\DotNetFramworkLibrary.pdb
+C:\dev1\SML-02-03-22\DotNetFramworkLibrary\obj\Debug\DotNetFramworkLibrary.csproj.AssemblyReference.cache
+C:\dev1\SML-02-03-22\DotNetFramworkLibrary\obj\Debug\DotNetFramworkLibrary.csproj.CoreCompileInputs.cache
+C:\dev1\SML-02-03-22\DotNetFramworkLibrary\obj\Debug\DotNetFramworkLibrary.dll
+C:\dev1\SML-02-03-22\DotNetFramworkLibrary\obj\Debug\DotNetFramworkLibrary.pdb
+D:\Mayur\Demo\SML-02-03-22\DotNetFramworkLibrary\bin\Debug\DotNetFramworkLibrary.dll
+D:\Mayur\Demo\SML-02-03-22\DotNetFramworkLibrary\bin\Debug\DotNetFramworkLibrary.pdb
+D:\Mayur\Demo\SML-02-03-22\DotNetFramworkLibrary\obj\Debug\DotNetFramworkLibrary.csproj.AssemblyReference.cache
+D:\Mayur\Demo\SML-02-03-22\DotNetFramworkLibrary\obj\Debug\DotNetFramworkLibrary.csproj.CoreCompileInputs.cache
+D:\Mayur\Demo\SML-02-03-22\DotNetFramworkLibrary\obj\Debug\DotNetFramworkLibrary.dll
+D:\Mayur\Demo\SML-02-03-22\DotNetFramworkLibrary\obj\Debug\DotNetFramworkLibrary.pdb
+D:\Mayur\Demo Application\SML-02-03-22\DotNetFramworkLibrary\bin\Debug\DotNetFramworkLibrary.dll
+D:\Mayur\Demo Application\SML-02-03-22\DotNetFramworkLibrary\bin\Debug\DotNetFramworkLibrary.pdb
+D:\Mayur\Demo Application\SML-02-03-22\DotNetFramworkLibrary\obj\Debug\DotNetFramworkLibrary.csproj.AssemblyReference.cache
+D:\Mayur\Demo Application\SML-02-03-22\DotNetFramworkLibrary\obj\Debug\DotNetFramworkLibrary.csproj.CoreCompileInputs.cache
+D:\Mayur\Demo Application\SML-02-03-22\DotNetFramworkLibrary\obj\Debug\DotNetFramworkLibrary.dll
+D:\Mayur\Demo Application\SML-02-03-22\DotNetFramworkLibrary\obj\Debug\DotNetFramworkLibrary.pdb
+D:\Mayur\Bajaj\DotNetFramworkLibrary\bin\Debug\DotNetFramworkLibrary.dll
+D:\Mayur\Bajaj\DotNetFramworkLibrary\bin\Debug\DotNetFramworkLibrary.pdb
+D:\Mayur\Bajaj\DotNetFramworkLibrary\obj\Debug\DotNetFramworkLibrary.csproj.AssemblyReference.cache
+D:\Mayur\Bajaj\DotNetFramworkLibrary\obj\Debug\DotNetFramworkLibrary.csproj.CoreCompileInputs.cache
+D:\Mayur\Bajaj\DotNetFramworkLibrary\obj\Debug\DotNetFramworkLibrary.dll
+D:\Mayur\Bajaj\DotNetFramworkLibrary\obj\Debug\DotNetFramworkLibrary.pdb

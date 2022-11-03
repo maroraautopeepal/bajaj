@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Bajaj.Controls"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             x:Class="Bajaj.View.ReadVinPage"
+             Title="Read Vin">
+    <ContentPage.Content>
+        <Grid Padding="10" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0" 
+                   CornerRadius="10"
+                   BorderColor="{StaticResource theme_color}"
+                   BackgroundColor="White"
+                   Padding="15,5,2,5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <local:CustomEntry x:Name="txt_ad_pack" 
+                                       Text="{Binding EnteredPackage}" 
+                                       Placeholder="Enter serial number"
+                                       TextColor="Black"/>
+                    <ImageButton Grid.Column="1" 
+                                 Source="ic_next"
+                                 HeightRequest="40"
+                                 BackgroundColor="White" 
+                                 Margin="3"
+                                 CornerRadius="23" 
+                                 Command="{Binding ManualSubscriptionCommand}"
+                                 CommandParameter="{Binding Text, Source={x:Reference txt_ad_pack}}"/>
+                </Grid>
+            </Frame>
+            <Label Grid.Row="1" 
+                   Text="--- OR ---"
+                   FontSize="30"
+                   TextColor="#000"
+                   FontAttributes="Bold"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"/>
+
+            <Grid Grid.Row="2" RowSpacing="0" ColumnSpacing="0"
+               HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <zxing:ZXingScannerView x:Name="zxing" VerticalOptions="FillAndExpand"
+                                        HorizontalOptions="FillAndExpand"
+                                        IsAnalyzing="{Binding IsAnalyzing}" 
+                                        IsScanning="{Binding IsScanning}" 
+                                        OnScanResult="zxing_OnScanResult"
+                                        Grid.RowSpan="3"
+                                        Grid.ColumnSpan="3"/>
+                <Grid Grid.Column="1" Grid.Row="1">
+                    <Image x:Name="cornerImage" Source="corners.png"  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                </Grid>
+                <BoxView BackgroundColor="#88000000" Grid.Row="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <BoxView BackgroundColor="#88000000" Grid.Row="2" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <BoxView BackgroundColor="#88000000" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <BoxView BackgroundColor="#88000000" Grid.Row="1" Grid.Column="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="2" Grid.ColumnSpan="3" Grid.Row="1" VerticalOptions="Center" BackgroundColor="#55FF0000"/>
+            </Grid>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

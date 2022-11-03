@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="Bajaj.View.IorTest.IorTestPage"
+			 xmlns:local="clr-namespace:Bajaj.Controls;assembly=Bajaj"
+			 Title="IOR Test">
+	<ContentPage.Content>
+		<Grid>
+			<Grid RowSpacing="0">
+				<Grid.RowDefinitions>
+					<RowDefinition >
+						<RowDefinition.Height>
+							<OnIdiom x:TypeArguments="GridLength" Tablet="0 " Phone="0" Desktop="0"/>
+						</RowDefinition.Height>
+					</RowDefinition>
+					<RowDefinition >
+						<RowDefinition.Height>
+							<OnIdiom x:TypeArguments="GridLength" Tablet="64" Phone="40" Desktop="60"/>
+						</RowDefinition.Height>
+					</RowDefinition>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+				<Frame Grid.Row="0" CornerRadius="2" Padding="10,-4,10,-4" Margin="7,2,7,2"
+				   BorderColor="{StaticResource page_bg_color}">
+					<local:CustomEntry x:Name="txtSearch" Grid.Column="0" Placeholder="Search"
+									   Text="{Binding SearchPid}" Style="{StaticResource entryStyle}" />
+				</Frame>
+				<StackLayout Grid.Row="1" BindableLayout.ItemsSource="{Binding EcuList}"  
+									 HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="2">
+					<BindableLayout.ItemTemplate>
+						<DataTemplate>
+							<Grid HorizontalOptions="FillAndExpand">
+								<Button BackgroundColor="{DynamicResource theme_color}" Text="{Binding ecu_name}"
+									Opacity="{Binding opacity}" HorizontalOptions="FillAndExpand" CornerRadius="0"
+									TextColor="#FFF"
+									Clicked="SelectEcuClicked"/>
+							</Grid>
+						</DataTemplate>
+					</BindableLayout.ItemTemplate>
+				</StackLayout>
+				<CollectionView Grid.Row="2" ItemsSource="{Binding IorTestList}" Margin="10,5,10,5">
+					<CollectionView.ItemsLayout>
+						<LinearItemsLayout Orientation="Vertical" ItemSpacing="3" />
+					</CollectionView.ItemsLayout>
+					<CollectionView.ItemTemplate>
+						<DataTemplate>
+							<Button Grid.Column="0" 
+									Text="{Binding routine_name}" 
+									Style="{StaticResource BlueBtnStyle}"
+									Clicked="SelectIorTestClicked"/>
+						</DataTemplate>
+					</CollectionView.ItemTemplate>
+					<CollectionView.EmptyView>
+						<ContentView>
+							<StackLayout HorizontalOptions="CenterAndExpand"
+							 VerticalOptions="CenterAndExpand">
+								<Label Text="{Binding RoutineListStatus}"
+									   FontAttributes="Bold"
+									   FontSize="18"/>
+							</StackLayout>
+						</ContentView>
+					</CollectionView.EmptyView>
+				</CollectionView>
+				<!--<Button Grid.Row="3" Text="Continue" Style="{StaticResource BlueBtnStyle}" 
+					Margin="10,0,10,5"/>-->
+			</Grid>
+			<Grid x:Name="NoticeView" VerticalOptions="FillAndExpand" TranslationY="1000">
+				<BoxView Opacity=".5" BackgroundColor="Black"/>
+				<Grid RowDefinitions="40,*,45" VerticalOptions="End" HeightRequest="200" BackgroundColor="#FFF">
+					<Grid BackgroundColor="{DynamicResource theme_color}">
+						<Label Text="Notice" 
+							   FontSize="20"
+							   FontAttributes="Bold"
+							   TextColor="#FFF" 
+							   HorizontalTextAlignment="Center" 
+							   VerticalTextAlignment="Center"/>
+					</Grid>
+					<Label Grid.Row="1" 
+						   Text="{Binding RoutineNotice}"
+						   FontSize="15"
+						   Style="{StaticResource labelStyleHC}"/>
+
+					<Grid Grid.Row="2" ColumnDefinitions="*,*" Margin="70,2,70,2" ColumnSpacing="30">
+						<Button Grid.Column="0" 
+								Text="Cancel"
+								FontSize="12"
+								FontAttributes="Bold"
+								Style="{StaticResource BlueBtnStyle}" 
+								Clicked="CancelRoutineClicked"/>
+						<Button Grid.Column="1" 
+								Text="Ok"
+								FontSize="12"
+								FontAttributes="Bold"
+								Style="{StaticResource BlueBtnStyle}" 
+								 Clicked="OkRoutineClicked"/>
+					</Grid>
+					
+				</Grid>
+			</Grid>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

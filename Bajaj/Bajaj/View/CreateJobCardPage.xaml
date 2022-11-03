@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.CreateJobCardPage"
+             xmlns:local="clr-namespace:Bajaj.Controls;assembly=Bajaj"
+              xmlns:alert="clr-namespace:Bajaj.View;assembly=Bajaj"
+             ControlTemplate="{StaticResource alert_box}"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="New Jobcard">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="txt_tab" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontSize" Value="10" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="frame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="BorderColor" Value="{DynamicResource theme_color}" />
+                <Setter Property="Padding" Value="0,0,0,0" />
+                <Setter Property="Margin"  Value="2" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="50" Desktop="45"/>
+                    </RowDefinition.Height>
+                </RowDefinition>
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0">
+                <Grid Grid.Row="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="150" Phone="90" Desktop="120"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid ColumnSpacing="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition>
+                                <ColumnDefinition.Width>
+                                    <OnIdiom x:TypeArguments="GridLength" Tablet="60" Phone="55" Default="55"/>
+                                </ColumnDefinition.Width>
+                            </ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Row="0" Style="{StaticResource frame}">
+                            <Grid ColumnSpacing="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition>
+                                        <ColumnDefinition.Width>
+                                            <OnIdiom x:TypeArguments="GridLength" Tablet="50" Phone="45" Default="45"/>
+                                        </ColumnDefinition.Width>
+                                    </ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <local:CustomEntry x:Name="txt_ecu" 
+                                                   Placeholder="Enter Job card"
+                                                   HeightRequest="35" 
+                                                   Style="{StaticResource entryStyle}" 
+                                                   IsReadOnly="True"/>
+                                <Image Grid.Column="1" Source="ic_search.png" Margin="0">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Search_JobCard_clicked"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                        </Frame>
+                        <Image Grid.Column="1" Source="ic_add.png" Margin="0">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Create_JobCard_clicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                    <Frame Grid.Row="1" x:Name="frm_model" IsVisible="False" Style="{StaticResource frame}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:TypeArguments="GridLength" Tablet="50" Phone="45" Default="45"/>
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="txt_Model" Margin="5,0,0,0" Text="Select Model" Style="{StaticResource labelStyleHS}" TextColor="{StaticResource placeholder_color}" />
+                            <BoxView Grid.Column="1" BackgroundColor="{DynamicResource theme_color}"/>
+                            <Image Grid.Column="2" Source="ic_drop_down.png" Margin="7"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="select_model_clicked"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="2" x:Name="frm_sub_model" IsVisible="False" Style="{StaticResource frame}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:TypeArguments="GridLength" Tablet="50" Phone="45" Default="45"/>
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="txt_sub_model" Margin="5,0,0,0" Text="Select Sub Model" Style="{StaticResource labelStyleHS}" TextColor="{StaticResource placeholder_color}" />
+                            <BoxView Grid.Column="1" BackgroundColor="{DynamicResource theme_color}"/>
+                            <Image Grid.Column="2" Source="ic_drop_down.png" Margin="7"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="select_sub_model_clicked"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="3" x:Name="frm_model_year" IsVisible="False" Style="{StaticResource frame}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:TypeArguments="GridLength" Tablet="50" Phone="45" Default="45"/>
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="txt_model_year" Margin="5,0,0,0" Text="Select Model Year" Style="{StaticResource labelStyleHS}" TextColor="{StaticResource placeholder_color}" />
+                            <BoxView Grid.Column="1" BackgroundColor="{DynamicResource theme_color}"/>
+                            <Image Grid.Column="2" Source="ic_drop_down.png" Margin="7"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="select_model_year_clicked"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="4" x:Name="frm_reg_number" IsVisible="False" Style="{StaticResource frame}">
+                        <local:CustomEntry x:Name="txtRegNo" Placeholder="Enter Registration Number (Ex: MP09****)" Style="{StaticResource entryStyle}"
+                                           TextChanged="txtRegNo_TextChanged"/>
+                    </Frame>
+                    <Frame Grid.Row="5" x:Name="frm_chassis_no" IsVisible="False" Style="{StaticResource frame}">
+                        <local:CustomEntry x:Name="txtChassisNo" Placeholder="Enter Chassis number(only last 6 digits)" 
+                                           Style="{StaticResource entryStyle}" Keyboard="Numeric"
+                                           MaxLength="6"
+                                           TextChanged="txtChassisNo_TextChanged"/>
+                    </Frame>
+                    <Frame Grid.Row="6" x:Name="frm_engine_no" IsVisible="False" Style="{StaticResource frame}">
+                        <local:CustomEntry x:Name="txtEngineNo" Placeholder="Enter Engine Number" Style="{StaticResource entryStyle}"
+                                           TextChanged="txtEngineNo_TextChanged" IsVisible="False"/>
+                    </Frame>
+                    <Frame Grid.Row="6" x:Name="frm_kms" IsVisible="False" Style="{StaticResource frame}">
+                        <local:CustomEntry x:Name="txtKMSCoveredNo" Placeholder="Enter Kms Travelled" Style="{StaticResource entryStyle}"
+                                           TextChanged="txtKMSCoveredNo_TextChanged" Keyboard="Numeric"/>
+                    </Frame>
+                    <Frame Grid.Row="7" x:Name="frm_complain" Style="{StaticResource frame}" IsVisible="False">
+                        <local:CustomEntry x:Name="txtComplaints" Placeholder="Enter Complaints" Style="{StaticResource entryStyle}"
+                                           TextChanged="txtComplaints_TextChanged"/>
+                    </Frame>
+                </Grid>
+            </ScrollView>
+            <Button Grid.Row="1" x:Name="BtnSubmit" Text="Submit" Style="{StaticResource BlueBtnStyle}"
+                    Clicked="BtnSubmit_Clicked" IsEnabled="False"/>
+        </Grid>
+    </ContentPage.Content>
+
+
+
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="frame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="BorderColor" Value="{DynamicResource theme_color}" />
+                <Setter Property="Padding" Value="10,0,10,0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="50" Desktop="45"/>
+                    </RowDefinition.Height>
+                </RowDefinition>
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0">
+                <Grid Grid.Row="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="150" Phone="90" Desktop="120"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid ColumnSpacing="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition>
+                                <ColumnDefinition.Width>
+                                    <OnIdiom x:TypeArguments="GridLength" Tablet="60" Phone="55" Default="55"/>
+                                </ColumnDefinition.Width>
+                            </ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Row="0" Style="{StaticResource frame}">
+                            <Grid ColumnSpacing="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition>
+                                        <ColumnDefinition.Width>
+                                            <OnIdiom x:TypeArguments="GridLength" Tablet="50" Phone="45" Default="45"/>
+                                        </ColumnDefinition.Width>
+                                    </ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <local:CustomEntry x:Name="txt_ecu" IsEnabled="False" Placeholder="Enter Job card"/>
+                                <Image Grid.Column="1" Source="ic_search.png" Margin="0">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="Search_JobCard_clicked"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                        </Frame>
+                        <Image Grid.Column="1" Source="ic_add.png" Margin="0">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Create_JobCard_clicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                    <Frame Grid.Row="1" x:Name="frm_model" IsVisible="False" Style="{StaticResource frame}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:TypeArguments="GridLength" Tablet="50" Phone="45" Default="45"/>
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="txt_Model" Text="Select Model" Style="{StaticResource labelStyleHS}" TextColor="{StaticResource placeholder_color}" />
+                            <BoxView Grid.Column="1" BackgroundColor="{DynamicResource theme_color}"/>
+                            <Image Grid.Column="2" Source="ic_drop_down.png" Margin="7"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="select_model_clicked"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="2" x:Name="frm_sub_model" IsVisible="False" Style="{StaticResource frame}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:TypeArguments="GridLength" Tablet="50" Phone="45" Default="45"/>
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="txt_sub_model" Text="Select Sub Model" Style="{StaticResource labelStyleHS}" TextColor="{StaticResource placeholder_color}" />
+                            <BoxView Grid.Column="1" BackgroundColor="{DynamicResource theme_color}"/>
+                            <Image Grid.Column="2" Source="ic_drop_down.png" Margin="7"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="select_sub_model_clicked"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="3" x:Name="frm_model_year" IsVisible="False" Style="{StaticResource frame}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:TypeArguments="GridLength" Tablet="50" Phone="45" Default="45"/>
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="txt_model_year" Text="Select Model Year" Style="{StaticResource labelStyleHS}" TextColor="{StaticResource placeholder_color}" />
+                            <BoxView Grid.Column="1" BackgroundColor="{DynamicResource theme_color}"/>
+                            <Image Grid.Column="2" Source="ic_drop_down.png" Margin="7"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="select_model_year_clicked"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="4" x:Name="frm_reg_number" IsVisible="False" Style="{StaticResource frame}">
+                        <local:CustomEntry x:Name="txtRegNo" Placeholder="Enter Registration Number (Ex: MP09****)" Style="{StaticResource entryStyle}"
+                                           TextChanged="txtRegNo_TextChanged"/>
+                    </Frame>
+                    <Frame Grid.Row="5" x:Name="frm_chassis_no" IsVisible="False" Style="{StaticResource frame}">
+                        <local:CustomEntry x:Name="txtChassisNo" Placeholder="Enter Chassis Number" Style="{StaticResource entryStyle}"
+                                           TextChanged="txtChassisNo_TextChanged"/>
+                    </Frame>
+                    <Frame Grid.Row="6" x:Name="frm_engine_no" IsVisible="False" Style="{StaticResource frame}">
+                        <local:CustomEntry x:Name="txtEngineNo" Placeholder="Enter Engine Number" Style="{StaticResource entryStyle}"
+                                           TextChanged="txtEngineNo_TextChanged"/>
+                    </Frame>
+                    <Frame Grid.Row="7" x:Name="frm_kms" IsVisible="False" Style="{StaticResource frame}">
+                        <local:CustomEntry x:Name="txtKMSCoveredNo" Placeholder="Enter Kms Travelled" Style="{StaticResource entryStyle}"
+                                           TextChanged="txtKMSCoveredNo_TextChanged" Keyboard="Numeric"/>
+                    </Frame>
+                    <Frame Grid.Row="8" x:Name="frm_complain" Style="{StaticResource frame}" IsVisible="False">
+                        <local:CustomEditor x:Name="txtComplaints" Placeholder="Enter Complaints" Style="{StaticResource entryStyle}"
+                                           TextChanged="txtComplaints_TextChanged"/>
+                    </Frame>
+                </Grid>
+            </ScrollView>
+            <Button Grid.Row="1" x:Name="BtnSubmit" Text="Submit" Style="{StaticResource BlueBtnStyle}"
+                    Clicked="BtnSubmit_Clicked" IsEnabled="False"/>
+
+        </Grid>
+    </ContentPage.Content>-->
+</alert:DisplayAlertPage>

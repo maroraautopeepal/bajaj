@@ -1,0 +1,320 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Mayur\\Bajaj\\Bajaj\\APDiagnosticAndroid\\APDiagnosticAndroid.csproj": {}
+  },
+  "projects": {
+    "D:\\Mayur\\Bajaj\\AutoELM327\\AutoELM327.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Mayur\\Bajaj\\AutoELM327\\AutoELM327.csproj",
+        "projectName": "AutoELM327",
+        "projectPath": "D:\\Mayur\\Bajaj\\AutoELM327\\AutoELM327.csproj",
+        "packagesPath": "C:\\Users\\mayur\\.nuget\\packages\\",
+        "outputPath": "D:\\Mayur\\Bajaj\\AutoELM327\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mayur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Mayur\\Bajaj\\Bajaj\\APDiagnosticAndroid\\APDiagnosticAndroid.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Mayur\\Bajaj\\Bajaj\\APDiagnosticAndroid\\APDiagnosticAndroid.csproj",
+        "projectName": "APDiagnosticAndroid",
+        "projectPath": "D:\\Mayur\\Bajaj\\Bajaj\\APDiagnosticAndroid\\APDiagnosticAndroid.csproj",
+        "packagesPath": "C:\\Users\\mayur\\.nuget\\packages\\",
+        "outputPath": "D:\\Mayur\\Bajaj\\Bajaj\\APDiagnosticAndroid\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mayur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "monoandroid10.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "monoandroid10.0": {
+            "projectReferences": {
+              "D:\\Mayur\\Bajaj\\AutoELM327\\AutoELM327.csproj": {
+                "projectPath": "D:\\Mayur\\Bajaj\\AutoELM327\\AutoELM327.csproj"
+              },
+              "D:\\Mayur\\Bajaj\\Bajaj\\APDongleCommAndroid\\APDongleCommAndroid.csproj": {
+                "projectPath": "D:\\Mayur\\Bajaj\\Bajaj\\APDongleCommAndroid\\APDongleCommAndroid.csproj"
+              },
+              "D:\\Mayur\\Bajaj\\Bajaj\\ECUSeedkeyPCL\\ECUSeedkeyPCL.csproj": {
+                "projectPath": "D:\\Mayur\\Bajaj\\Bajaj\\ECUSeedkeyPCL\\ECUSeedkeyPCL.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "monoandroid10.0": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Xamarin.Android.Support.v7.AppCompat": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[5.0.0.2012, )"
+            }
+          }
+        }
+      }
+    },
+    "D:\\Mayur\\Bajaj\\Bajaj\\APDongleCommAndroid\\APDongleCommAndroid.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Mayur\\Bajaj\\Bajaj\\APDongleCommAndroid\\APDongleCommAndroid.csproj",
+        "projectName": "APDongleCommAndroid",
+        "projectPath": "D:\\Mayur\\Bajaj\\Bajaj\\APDongleCommAndroid\\APDongleCommAndroid.csproj",
+        "packagesPath": "C:\\Users\\mayur\\.nuget\\packages\\",
+        "outputPath": "D:\\Mayur\\Bajaj\\Bajaj\\APDongleCommAndroid\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mayur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "monoandroid10.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "monoandroid10.0": {
+            "projectReferences": {
+              "D:\\Mayur\\Bajaj\\vocom1210\\vocom1210.csproj": {
+                "projectPath": "D:\\Mayur\\Bajaj\\vocom1210\\vocom1210.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "monoandroid10.0": {
+          "dependencies": {
+            "Xamarin.Android.Support.v7.AppCompat": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            }
+          }
+        }
+      }
+    },
+    "D:\\Mayur\\Bajaj\\Bajaj\\ECUSeedkeyPCL\\ECUSeedkeyPCL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Mayur\\Bajaj\\Bajaj\\ECUSeedkeyPCL\\ECUSeedkeyPCL.csproj",
+        "projectName": "ECUSeedkeyPCL",
+        "projectPath": "D:\\Mayur\\Bajaj\\Bajaj\\ECUSeedkeyPCL\\ECUSeedkeyPCL.csproj",
+        "packagesPath": "C:\\Users\\mayur\\.nuget\\packages\\",
+        "outputPath": "D:\\Mayur\\Bajaj\\Bajaj\\ECUSeedkeyPCL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mayur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "D:\\Mayur\\Bajaj\\DotNetFramworkLibrary\\DotNetFramworkLibrary.csproj": {
+                "projectPath": "D:\\Mayur\\Bajaj\\DotNetFramworkLibrary\\DotNetFramworkLibrary.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Mayur\\Bajaj\\DotNetFramworkLibrary\\DotNetFramworkLibrary.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\Mayur\\Bajaj\\DotNetFramworkLibrary\\DotNetFramworkLibrary.csproj",
+        "projectName": "DotNetFramworkLibrary",
+        "projectPath": "D:\\Mayur\\Bajaj\\DotNetFramworkLibrary\\DotNetFramworkLibrary.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "D:\\Mayur\\Bajaj\\vocom1210\\vocom1210.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Mayur\\Bajaj\\vocom1210\\vocom1210.csproj",
+        "projectName": "vocom1210",
+        "projectPath": "D:\\Mayur\\Bajaj\\vocom1210\\vocom1210.csproj",
+        "packagesPath": "C:\\Users\\mayur\\.nuget\\packages\\",
+        "outputPath": "D:\\Mayur\\Bajaj\\vocom1210\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mayur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Zeroconf": {
+              "target": "Package",
+              "version": "[3.6.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

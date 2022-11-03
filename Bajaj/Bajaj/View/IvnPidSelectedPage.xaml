@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                        mc:Ignorable="d"
+             x:Class="Bajaj.View.IvnPidSelectedPage"
+                        xmlns:alert="clr-namespace:Bajaj.View;assembly=SML"
+                        ControlTemplate="{StaticResource alert_box}"
+                        Title="Live Parameters"
+                        x:Name="LiveParameterSelected">
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid Padding="10,10,10,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+
+                <CollectionView Grid.Row="0" x:Name="collectionView"
+                            ItemsSource="{Binding EMSParameterList}" Scrolled="PidListScrolled">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="15" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame HasShadow="True" Margin="1,5,1,5" Padding="5">
+                                <Grid ColumnSpacing="5"  VerticalOptions="FillAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding pidName,Mode=TwoWay}" 
+                                           Style="{StaticResource labelStyleHS}" VerticalTextAlignment="Center"/>
+                                    <Label Grid.Column="1" 
+                                           Text="{Binding show_resolution,Mode=TwoWay}" 
+                                           Style="{StaticResource labelStyleHE}" 
+                                           VerticalTextAlignment="Center" />
+                                    <Label Grid.Column="2" 
+                                           Text="{Binding unit,Mode=TwoWay}" 
+                                           Style="{StaticResource labelStyleHE}" 
+                                           VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="20"/>
+                        </Grid.RowDefinitions>
+                        <ImageButton Grid.Row="0"
+                                         x:Name="PlayPauseItem"
+                                         Source="ic_play" 
+                                         HeightRequest="60" 
+                                         WidthRequest="60"
+                                         CornerRadius="30" 
+                                         Padding="10"
+                                         HorizontalOptions="CenterAndExpand"
+                                         VerticalOptions="EndAndExpand" 
+                                         BackgroundColor="{DynamicResource theme_color}" 
+                                         Clicked="PidPlayPauseClicked"/>
+                        <Label Grid.Row="1"
+                           x:Name="txtPlayStop"
+                           Text="Play" 
+                           Style="{StaticResource labelStyleHC}"/>
+                    </Grid>
+                    <Grid Grid.Column="1" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="20"/>
+                        </Grid.RowDefinitions>
+                        <Label x:Name="LabRecordingTimer" Grid.Row="0" Text="00:00" Style="{StaticResource labelStyleHC}"/>
+                        <!--<Frame x:Name="RecordingItem" Grid.Row="1" BackgroundColor="{DynamicResource theme_color}" CornerRadius="35" HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="EndAndExpand" Padding="0" HeightRequest="60" WidthRequest="60">
+                                <Image x:Name="RecordingIMG" Margin="17">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="PidRecordingClicked"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Frame>-->
+                        <ImageButton Grid.Row="1"
+                                         x:Name="RecordingItem"
+                                         Source="ic_recording" 
+                                         HeightRequest="60" 
+                                         WidthRequest="60"
+                                         CornerRadius="30" 
+                                         Padding="10"
+                                         HorizontalOptions="CenterAndExpand"
+                                         VerticalOptions="EndAndExpand" 
+                                         BackgroundColor="{DynamicResource theme_color}" 
+                                         Clicked="PidRecordingClicked"/>
+                        <Label Grid.Row="2" Text="Record" Style="{StaticResource labelStyleHC}"/>
+                    </Grid>
+
+                    <Grid Grid.Column="2" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="20"/>
+                        </Grid.RowDefinitions>
+                        <!--<Frame x:Name="SnapshotItem" Grid.Row="0" BackgroundColor="{DynamicResource theme_color}" CornerRadius="35" HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="EndAndExpand" Padding="0" HeightRequest="60" WidthRequest="60">
+                                <Image Source="ic_snapshot.png" x:Name="SnapshotIMG" Margin="17">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="PidSnapshotClicked"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Frame>-->
+                        <ImageButton Grid.Row="0"
+                                         x:Name="SnapshotItem"
+                                         Source="ic_snapshot.png" 
+                                         HeightRequest="60" 
+                                         WidthRequest="60"
+                                         CornerRadius="30" 
+                                         Padding="13"
+                                         HorizontalOptions="CenterAndExpand"
+                                         VerticalOptions="EndAndExpand" 
+                                         BackgroundColor="{DynamicResource theme_color}" 
+                                         Clicked="PidSnapshotClicked"/>
+                        <Label Grid.Row="1" Text="Snapshot" Style="{StaticResource labelStyleHC}"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <Grid  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                <ActivityIndicator x:Name="activityIndicator" HorizontalOptions="Center" VerticalOptions="Center" Color="{DynamicResource theme_color}" WidthRequest="130" HeightRequest="130" ></ActivityIndicator>
+                <!--<Label x:Name="lblLoadingText" TextColor="Red" FontSize="Medium"  VerticalOptions="Center"  HorizontalOptions="Center" VerticalTextAlignment="Center"  Text="Cargando..."></Label>-->
+
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+
+</alert:DisplayAlertPage>

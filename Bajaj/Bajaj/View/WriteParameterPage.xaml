@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.WriteParameterPage"
+             xmlns:alert="clr-namespace:Bajaj.View;assembly=Bajaj"
+             ControlTemplate="{StaticResource alert_box}"
+             xmlns:local="clr-namespace:Bajaj.Controls;assembly=Bajaj"
+             Title="Write Parameters"
+                        x:Name="page">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="txt_tab" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="frame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="BorderColor" Value="{DynamicResource theme_color}" />
+                <Setter Property="Padding" Value="10,2,10,2" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition>
+                        <RowDefinition.Height>
+                            <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="55"/>
+                        </RowDefinition.Height>
+                    </RowDefinition>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" BindableLayout.ItemsSource="{Binding ecus_list}"  
+                                     HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="2">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalOptions="FillAndExpand">
+                                <Button BackgroundColor="{DynamicResource theme_color}" Text="{Binding ecu_name}"
+                                    Opacity="{Binding opacity}" HorizontalOptions="FillAndExpand" CornerRadius="0"
+                                    TextColor="#FFF"
+                                        Command="{Binding Source={x:Reference page}, Path=BindingContext.EcuTabCommand}"
+                                    CommandParameter="{Binding .}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+
+                <Grid Grid.Row="1" RowSpacing="20" Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Frame Grid.Row="0" Style="{StaticResource frame}">
+                        <Grid x:Name="select_parameter">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:TypeArguments="GridLength" Tablet="40" Phone="35" Desktop="40"/>
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="txt_parameter"    
+                                   Text="{Binding title}" 
+                                   Style="{StaticResource labelStyleHS}" 
+                                   TextColor="{StaticResource placeholder_color}" />
+                            <BoxView Grid.Column="1" 
+                                         BackgroundColor="{DynamicResource theme_color}"/>
+                            <Image Grid.Column="2" 
+                                       Source="ic_drop_down.png" 
+                                       Margin="7"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ShowPidPopup"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    <Grid Grid.Row="1" RowSpacing="30" IsVisible="{Binding default_view_visible}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="55"/>
+                            <!--<RowDefinition Height="*"/>-->
+                        </Grid.RowDefinitions>
+
+                        <Label Grid.Row="0" 
+                               x:Name="txtCurrValue"
+                               Text="{Binding selected_pid.show_resolution}"
+                               Style="{StaticResource labelStyleHC}" 
+                               VerticalTextAlignment="End"/>
+                        <!--<Label Grid.Row="1" x:Name="txtUnit" Style="{StaticResource labelStyleHC}" 
+                               IsVisible="True" VerticalTextAlignment="Start"/>-->
+                        <Image Grid.Row="1" 
+                               x:Name="Refresh" 
+                               Source="ic_refresh.png" 
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               HeightRequest="50">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="RefreshPidClicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <Frame Grid.Row="2" 
+                                   x:Name="frmNewValue" 
+                                   Style="{StaticResource frame}" 
+                                   Margin="80,0,80,0">
+                            <local:CustomEntry Grid.Column="0" 
+                                                   x:Name="txtCurrentValue"
+                                                   Text="{Binding new_value}"
+                                                   Placeholder="Enter New Value to write"
+                                                   Style="{StaticResource entryStyle}" 
+                                                   TextChanged="PidNewValve_TextChanged"/>
+                        </Frame>
+
+                        <!--<Button Grid.Row="3" 
+                                Text="Write" 
+                                Style="{StaticResource BlueBtnStyle}"
+                                VerticalOptions="EndAndExpand"
+                                Clicked="btnWrite_Clicked"/>-->
+
+                    </Grid>
+
+                    <ScrollView Grid.Row="1" IsVisible="{Binding iqa_view_visible}">
+                        <Grid RowSpacing="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Image Grid.Row="0" 
+                               Source="ic_refresh.png" 
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               HeightRequest="50">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="RefreshPidClicked"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Frame Grid.Row="1" 
+                                   Style="{StaticResource frame}" 
+                                   Margin="80,0,80,0"
+                                   Padding="12,5,12,5">
+                                <Grid ColumnSpacing="5" HorizontalOptions="CenterAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" 
+                                           Text="inj1 :"
+                                           Style="{StaticResource labelStyleHC}" 
+                                           VerticalTextAlignment="Center"/>
+                                    <local:CustomEntry Grid.Column="1" 
+                                                   Text="{Binding cylinder_one}"
+                                                   Placeholder="Enter New Value to write"
+                                                   Style="{StaticResource entryStyle}" 
+                                                   TextChanged="PidNewValve_TextChanged"
+                                                       MaxLength="7"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="2" 
+                                   Style="{StaticResource frame}" 
+                                   Margin="80,0,80,0"
+                                    Padding="12,5,12,5">
+                                <Grid ColumnSpacing="5" HorizontalOptions="CenterAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" 
+                                           Text="inj2 :"
+                                           Style="{StaticResource labelStyleHC}" 
+                                           VerticalTextAlignment="Center"/>
+                                    <local:CustomEntry Grid.Column="1" 
+                                                   Text="{Binding cylinder_two}"
+                                                   Placeholder="Enter New Value to write"
+                                                   Style="{StaticResource entryStyle}" 
+                                                   TextChanged="PidNewValve_TextChanged"
+                                                       MaxLength="7"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="3" 
+                                   Style="{StaticResource frame}" 
+                                   Margin="80,0,80,0"
+                                   Padding="12,5,12,5">
+                                <Grid ColumnSpacing="5" HorizontalOptions="CenterAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" 
+                                           Text="inj3 :"
+                                           Style="{StaticResource labelStyleHC}" 
+                                           VerticalTextAlignment="Center"/>
+                                    <local:CustomEntry Grid.Column="1" 
+                                                   Text="{Binding cylinder_three}"
+                                                   Placeholder="Enter New Value to write"
+                                                   Style="{StaticResource entryStyle}" 
+                                                   TextChanged="PidNewValve_TextChanged"
+                                                       MaxLength="7"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="4" 
+                                   Style="{StaticResource frame}" 
+                                   Margin="80,0,80,0"
+                                   Padding="12,5,12,5">
+                                <Grid ColumnSpacing="5" HorizontalOptions="CenterAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" 
+                                           Text="inj4 :"
+                                           Style="{StaticResource labelStyleHC}" 
+                                           VerticalTextAlignment="Center"/>
+                                    <local:CustomEntry Grid.Column="1" 
+                                                   Text="{Binding cylinder_four}"
+                                                   Placeholder="Enter New Value to write"
+                                                   Style="{StaticResource entryStyle}" 
+                                                   TextChanged="PidNewValve_TextChanged"
+                                                       MaxLength="7"/>
+                                </Grid>
+                            </Frame>
+                            <!--<Label Grid.Row="1" x:Name="txtUnit" Style="{StaticResource labelStyleHC}" 
+                               IsVisible="True" VerticalTextAlignment="Start"/>-->
+                         
+
+                            <!--<Frame Grid.Row="5"
+                                   Style="{StaticResource frame}" 
+                                   Margin="80,0,80,0">
+                                <local:CustomEntry Grid.Column="0" 
+                                               Text="{Binding new_cylinder_one}"
+                                               Placeholder="Enter inj1 new value"
+                                               Style="{StaticResource entryStyle}" 
+                                                   MaxLength="7"
+                                               TextChanged="PidNewValve_TextChanged"/>
+                            </Frame>
+                            <Frame Grid.Row="6" 
+                               Style="{StaticResource frame}" 
+                               Margin="80,0,80,0">
+                                <local:CustomEntry Grid.Column="0" 
+                                               Text="{Binding new_cylinder_two}"
+                                               Placeholder="Enter inj2 new value"
+                                               Style="{StaticResource entryStyle}" 
+                                                   MaxLength="7"
+                                               TextChanged="PidNewValve_TextChanged"/>
+                            </Frame>
+                            <Frame Grid.Row="7"
+                               Style="{StaticResource frame}" 
+                               Margin="80,0,80,0">
+                                <local:CustomEntry Grid.Column="0" 
+                                               Text="{Binding new_cylinder_three}"
+                                               Placeholder="Enter inj3 new value"
+                                               Style="{StaticResource entryStyle}" 
+                                                   MaxLength="7"
+                                               TextChanged="PidNewValve_TextChanged"/>
+                            </Frame>
+                            <Frame Grid.Row="8"
+                               Style="{StaticResource frame}" 
+                               Margin="80,0,80,0">
+                                <local:CustomEntry Grid.Column="0" 
+                                               Text="{Binding new_cylinder_four}"
+                                               Placeholder="Enter inj4 new value"
+                                               Style="{StaticResource entryStyle}" 
+                                                   MaxLength="7"
+                                               TextChanged="PidNewValve_TextChanged"/>
+                            </Frame>-->
+                        </Grid>
+                    </ScrollView>
+                </Grid>
+
+                <Button Grid.Row="2" 
+                                Text="Write" 
+                                Style="{StaticResource BlueBtnStyle}"
+                                VerticalOptions="EndAndExpand"
+                                Clicked="btnWrite_Clicked"/>
+            </Grid>
+            <Grid VerticalOptions="FillAndExpand" 
+                  HorizontalOptions="FillAndExpand"
+                  IsVisible="{Binding pid_view_visible}">
+
+                <BoxView BackgroundColor="#000" Opacity=".5"/>
+
+                <Frame BackgroundColor="#fff" 
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="CenterAndExpand"
+                       WidthRequest="300"
+                       Padding="0"
+                       HasShadow="True"
+                       BorderColor="#f1f1f1"
+                       IsClippedToBounds="True"
+                       CornerRadius="5">
+                    <Grid BackgroundColor="#fff" 
+                      RowSpacing="0"
+                      VerticalOptions="CenterAndExpand" 
+                      HorizontalOptions="CenterAndExpand"
+                      WidthRequest="450">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" BackgroundColor="{DynamicResource theme_color}">
+                            <Frame  Margin="15,5,15,5" CornerRadius="22" Padding="15,0,5,0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <local:CustomEntry Grid.Column="0" 
+                                                       Text="{Binding search_key}" 
+                                                       Placeholder="Search..."
+                                                       VerticalOptions="CenterAndExpand" 
+                                                       TextChanged="SearchPid_TextChanged"/>
+                                    <Image x:Name="imgClose" 
+                                           Grid.Column="1" 
+                                           Source="ic_close.png" 
+                                           Margin="9" 
+                                           IsVisible="False">
+                                        <!--<Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="CloseClick" />
+                                        </Image.GestureRecognizers>-->
+                                    </Image>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+
+                        <CollectionView Grid.Row="1"
+                                        x:Name="collectionView"
+                                        ItemsSource="{Binding pid_list}" 
+                                        HeightRequest="400"
+                                        Scrolled="PidListScrolled">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Vertical" ItemSpacing="5" />
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Frame HasShadow="True" Margin="0,2,0,2" Padding="10">
+                                            <Label Style="{StaticResource labelStyleHS}"
+                                                   Text="{Binding short_name}"
+                                                   LineHeight="1.3"
+                                                   HorizontalTextAlignment="Start" />
+                                        </Frame>
+                                        <Grid>
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="SelectPidClicked"/>
+                                            </Grid.GestureRecognizers>
+                                        </Grid>
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                    </Grid>
+                </Frame>
+
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ClosePopupClicked"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</alert:DisplayAlertPage>

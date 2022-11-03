@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.SignInPage"
+             xmlns:alert="clr-namespace:Bajaj.View;assembly=Bajaj"
+             ControlTemplate="{StaticResource alert_box}"
+             xmlns:local="clr-namespace:Bajaj.Controls;assembly=Bajaj"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="Register">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="txt_tab" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="frame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="BorderColor" Value="{DynamicResource theme_color}" />
+                <Setter Property="Padding" Value="10,2,10,2" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnIdiom x:DataType="GridLength" Tablet="55" Phone="50" Desktop="45"/>
+                    </RowDefinition.Height>
+                </RowDefinition>
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0">
+                <Grid Padding="10,10,10,0" RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:DataType="GridLength" Tablet="55" Phone="50" Desktop="45"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:DataType="GridLength" Tablet="55" Phone="50" Desktop="45"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:DataType="GridLength" Tablet="55" Phone="50" Desktop="45"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:DataType="GridLength" Tablet="55" Phone="50" Desktop="45"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:DataType="GridLength" Tablet="55" Phone="50" Desktop="45"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:DataType="GridLength" Tablet="55" Phone="50" Desktop="45"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:DataType="GridLength" Tablet="55" Phone="50" Desktop="45"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:DataType="GridLength" Tablet="55" Phone="50" Desktop="45"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:DataType="GridLength" Tablet="55" Phone="50" Desktop="45"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:DataType="GridLength" Tablet="55" Phone="50" Desktop="45"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Frame Grid.Row="0" Style="{StaticResource frame}">
+                        <local:CustomEntry x:Name="txtFirstName" Placeholder="First Name (Ex: Amit)" Margin="1"
+                               Style="{StaticResource entryStyle}"/>
+                    </Frame>
+                    <Frame Grid.Row="1" Style="{StaticResource frame}">
+                        <local:CustomEntry x:Name="txtLastName" Placeholder="Last Name (Ex: Sagar)" Margin="1"
+                               Style="{StaticResource entryStyle}"/>
+                    </Frame>
+                    <Frame Grid.Row="2" Style="{StaticResource frame}">
+                        <local:CustomEntry x:Name="txtEmail" Placeholder="E-Mail (Ex: sagar@gmail.com)" Margin="1"
+                               Style="{StaticResource entryStyle}" Keyboard="Email"/>
+                    </Frame>
+                    <Frame Grid.Row="3" Style="{StaticResource frame}">
+                        <local:CustomEntry x:Name="txtMobileNumber" Placeholder="Mobile Number (Ex: 0000000000)"
+                                           Margin="1" MaxLength="10" Style="{StaticResource entryStyle}"
+                                           Keyboard="Numeric"/>
+                    </Frame>
+                    <Frame Grid.Row="4" Style="{StaticResource frame}">
+                        <local:CustomEntry x:Name="txtPassword" Placeholder="Password" Margin="1"
+                               Style="{StaticResource entryStyle}"/>
+                    </Frame>
+                    <Frame Grid.Row="5" Style="{StaticResource frame}">
+                        <local:CustomEntry x:Name="txtConfirmPassword" Placeholder="Confirm Password" Margin="1"
+                               Style="{StaticResource entryStyle}" />
+                    </Frame>
+                    <Frame Grid.Row="6" Style="{StaticResource frame}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:DataType="GridLength" Tablet="40" Phone="35" />
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="txtOem" Text="Select Oem" Style="{StaticResource labelStyleHS}" TextColor="{StaticResource placeholder_color}" />
+                            <BoxView Grid.Column="1" BackgroundColor="{DynamicResource theme_color}"/>
+                            <Image Grid.Column="2" Source="ic_drop_down.png" Margin="7"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="select_oem_clicked"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    <Frame Grid.Row="7" Style="{StaticResource frame}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:DataType="GridLength" Tablet="40" Phone="35" />
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="txtWorkShopGroup" Text="Select Workshop Group" Style="{StaticResource labelStyleHS}" TextColor="{StaticResource placeholder_color}" />
+                            <BoxView Grid.Column="1" BackgroundColor="{DynamicResource theme_color}"/>
+                            <Image Grid.Column="2" Source="ic_drop_down.png" Margin="7"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SelectWorkshopGroup_Tapped"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    <!--<Grid Grid.Row="6" BackgroundColor="Black">
+                        <Grid Margin="1" BackgroundColor="White">
+                            <Label x:Name="txtWorkShopGroup" Text="Select Workshop Group" 
+                                       Style="{StaticResource labelStyleHC}"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SelectWorkshopGroup_Tapped"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Grid>-->
+                    <Frame Grid.Row="8" Style="{StaticResource frame}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:DataType="GridLength" Tablet="40" Phone="35" />
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="txtCity" Text="Select City" Style="{StaticResource labelStyleHS}" TextColor="{StaticResource placeholder_color}" />
+                            <BoxView Grid.Column="1" BackgroundColor="{DynamicResource theme_color}"/>
+                            <Image Grid.Column="2" Source="ic_drop_down.png" Margin="7"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SelectCity_Tapped"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    <!--<Grid Grid.Row="7" BackgroundColor="Black">
+                        <Grid Margin="1" BackgroundColor="White">
+                            <Label x:Name="txtCity" Text="Select City" 
+                                       Style="{StaticResource labelStyleHC}"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SelectCity_Tapped"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Grid>-->
+                    <!--<Grid Grid.Row="7" BackgroundColor="White" Opacity=".7"/>-->
+                    <Frame Grid.Row="9" Style="{StaticResource frame}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5"/>
+                                <ColumnDefinition>
+                                    <ColumnDefinition.Width>
+                                        <OnIdiom x:DataType="GridLength" Tablet="40" Phone="35" />
+                                    </ColumnDefinition.Width>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label x:Name="txtWorkShop" Text="Select Workshop" Style="{StaticResource labelStyleHS}" TextColor="{StaticResource placeholder_color}" />
+                            <BoxView Grid.Column="1" BackgroundColor="{DynamicResource theme_color}"/>
+                            <Image Grid.Column="2" Source="ic_drop_down.png" Margin="7"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SelectWorkshop_Tapped"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Frame>
+                    <!--Grid Grid.Row="8" BackgroundColor="Black">
+                        <Grid Margin="1" BackgroundColor="White">
+                            <Label x:Name="txtWorkShop" Text="Select Workshop" 
+                                       Style="{StaticResource labelStyleHC}"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="SelectWorkshop_Tapped"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </Grid>-->
+                    <!--<Grid Grid.Row="8" BackgroundColor="White" Opacity=".7"/>-->
+                </Grid>
+            </ScrollView>
+            <Grid Grid.Row="1" Padding="0,0,0,5">
+                <Button Text="Submit" WidthRequest="155" HorizontalOptions="Center" 
+                            CornerRadius="4" Style="{StaticResource BlueBtnStyle}" Clicked="SubmitClicked"/>
+            </Grid>
+        </Grid>
+
+    </ContentPage.Content>
+</alert:DisplayAlertPage>

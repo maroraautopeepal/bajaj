@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1030784529088",
+    "project_id": "sml-fcm",
+    "storage_bucket": "sml-fcm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030784529088:android:7e36602b9c4da46a7a7325",
+        "android_client_info": {
+          "package_name": "com.sml.autopeepal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030784529088-b28mudvq7vfohsi0e86kgj5edq23n8a4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASYkWPipDToiAKZbKMJSykJgE9IaflwMs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030784529088-b28mudvq7vfohsi0e86kgj5edq23n8a4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

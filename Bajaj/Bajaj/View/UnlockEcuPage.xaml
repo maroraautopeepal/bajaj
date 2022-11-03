@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.UnlockEcuPage"
+                        xmlns:alert="clr-namespace:Bajaj.View;assembly=SML"
+             ControlTemplate="{StaticResource alert_box}"
+             xmlns:local="clr-namespace:Bajaj.Controls;assembly=SML"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="Unlock Ecu"
+                        x:Name="page">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="txt_tab" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="frame" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="CornerRadius" Value="0" />
+                <Setter Property="BorderColor" Value="{StaticResource theme_color}" />
+                <Setter Property="Padding" Value="10,2,10,2" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition >
+                        <RowDefinition.Height>
+                            <OnIdiom x:TypeArguments="GridLength" Tablet="64" Phone="40" Desktop="60"/>
+                        </RowDefinition.Height>
+                    </RowDefinition>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" BindableLayout.ItemsSource="{Binding ecus_list}"  
+                                     HorizontalOptions="FillAndExpand" Orientation="Horizontal" Spacing="2">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalOptions="FillAndExpand">
+                                <Button BackgroundColor="{StaticResource theme_color}" Text="{Binding ecu_name}"
+                                    Opacity="{Binding opacity}" HorizontalOptions="FillAndExpand" CornerRadius="0"
+                                    TextColor="#FFF"
+                                    Command="{Binding Source={x:Reference page}, Path=BindingContext.EcuTabCommand}"
+                                    CommandParameter="{Binding .}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+                <StackLayout Grid.Row="1">
+                    <ImageButton  Source="ic_unlock.png"
+                                  Margin="0,150,0,0"
+                                  BorderColor="{DynamicResource theme_color}"
+                                  HorizontalOptions="Center"
+                                  VerticalOptions="Center"
+                                  Background="#FFFFFF"
+                                  WidthRequest="250"
+                                  HeightRequest="250"
+                                  Padding="10"
+                                  Clicked="BtnUnlock_Clicked"/>
+                </StackLayout>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+
+</alert:DisplayAlertPage>

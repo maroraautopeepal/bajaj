@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.GdSection.TreeListPage"
+             xmlns:alert="clr-namespace:Bajaj.View;assembly=SML"
+             ControlTemplate="{StaticResource alert_box}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="ic_gdimage.png" Text="Item 1" Priority="0" 
+                     Clicked="MenuItem1_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid Grid.Row="1" Padding="0,10,0,10">
+            <ListView Grid.Row="0"  x:Name="list" ItemsSource="{Binding gd_list}" HasUnevenRows="true" 
+                      SeparatorVisibility="None" VerticalScrollBarVisibility="Never" VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Button x:Name="GDClick" Text="{Binding model}" 
+                                    TextColor="#FFF"
+                                    BackgroundColor="{DynamicResource theme_color}"
+                                    CornerRadius="2"
+                                    FontSize="13"
+                                    Clicked="Gd_Clicked">
+                                <!--<Button.Margin>
+                                    <OnIdiom x:TypeArguments="Thickness" Tablet="160,0,160,5" Phone="100,0,100,5" />
+                                </Button.Margin>-->
+                            </Button>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+    </ContentPage.Content>
+</alert:DisplayAlertPage>

@@ -1,0 +1,181 @@
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.dll
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.pdb
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid.apk
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid.aab
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid-Signed.aab
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid-Signed.apk
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid-Signed.apk.idsig
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\Android.UsbSerial.dll
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\MonoAndroid,Version=v10.0.AssemblyAttributes.cs
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\build.props
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\adb.props
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.csproj.AssemblyReference.cache
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\_VerifyXamarinAndroidSupportVersions.stamp
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\stamp\_BuildLibraryImportsCache.stamp
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\res.flag
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\lp\0\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\lp\12\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\lp\13\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\lp\27\jl\files.cache
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\R.txt
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\R.cs.flag
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\__AndroidLibraryProjects__.zip
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.csproj.CoreCompileInputs.cache
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.csproj.CopyComplete
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.dll
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.pdb
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\android\bin\APDongleCommAndroid.APDongleCommAndroid.apk
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\android\bin\base.zip
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\android\bin\APDongleCommAndroid.APDongleCommAndroid.aab
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\android\bin\APDongleCommAndroid.APDongleCommAndroid.apks
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\res\values\strings.xml
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\uploadflags.txt
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\stamp\_CleanIntermediateIfNeeded.stamp
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\stamp\_ConvertResourcesCases.stamp
+C:\dev1\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\stamp\_ResolveLibraryProjectImports.stamp
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.dll
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.pdb
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid.apk
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid.aab
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid-Signed.aab
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid-Signed.apk
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid-Signed.apk.idsig
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\Android.UsbSerial.dll
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\MonoAndroid,Version=v10.0.AssemblyAttributes.cs
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\build.props
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\adb.props
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.csproj.AssemblyReference.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\_VerifyXamarinAndroidSupportVersions.stamp
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\stamp\_BuildLibraryImportsCache.stamp
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\res.flag
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\lp\0\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\lp\12\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\lp\13\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\lp\27\jl\files.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\R.txt
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\R.cs.flag
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\__AndroidLibraryProjects__.zip
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.csproj.CoreCompileInputs.cache
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.csproj.CopyComplete
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.dll
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.pdb
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\android\bin\APDongleCommAndroid.APDongleCommAndroid.apk
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\android\bin\base.zip
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\android\bin\APDongleCommAndroid.APDongleCommAndroid.aab
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\android\bin\APDongleCommAndroid.APDongleCommAndroid.apks
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\res\values\strings.xml
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\uploadflags.txt
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\stamp\_CleanIntermediateIfNeeded.stamp
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\stamp\_ConvertResourcesCases.stamp
+D:\Mayur\Demo\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\stamp\_ResolveLibraryProjectImports.stamp
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.dll
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.pdb
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid.apk
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid.aab
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid-Signed.aab
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid-Signed.apk
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid-Signed.apk.idsig
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\Android.UsbSerial.dll
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\vocom1210.dll
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\bin\Debug\vocom1210.pdb
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\MonoAndroid,Version=v10.0.AssemblyAttributes.cs
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\build.props
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\adb.props
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.csproj.AssemblyReference.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\_VerifyXamarinAndroidSupportVersions.stamp
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\stamp\_BuildLibraryImportsCache.stamp
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\res.flag
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\lp\0\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\lp\12\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\lp\13\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\lp\27\jl\files.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\R.txt
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\R.cs.flag
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\__AndroidLibraryProjects__.zip
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.csproj.CoreCompileInputs.cache
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.csproj.CopyComplete
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.dll
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.pdb
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\android\bin\APDongleCommAndroid.APDongleCommAndroid.apk
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\android\bin\base.zip
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\android\bin\APDongleCommAndroid.APDongleCommAndroid.aab
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\android\bin\APDongleCommAndroid.APDongleCommAndroid.apks
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\res\values\strings.xml
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\uploadflags.txt
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\stamp\_CleanIntermediateIfNeeded.stamp
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\stamp\_ConvertResourcesCases.stamp
+D:\Mayur\Demo Application\SML-02-03-22\SML\APDongleCommAndroid\obj\Debug\100\stamp\_ResolveLibraryProjectImports.stamp
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.dll
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.pdb
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid.apk
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid.aab
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid-Signed.aab
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid-Signed.apk
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid-Signed.apk.idsig
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\bin\Debug\Android.UsbSerial.dll
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\bin\Debug\vocom1210.dll
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\bin\Debug\vocom1210.pdb
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\MonoAndroid,Version=v10.0.AssemblyAttributes.cs
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\build.props
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\adb.props
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.csproj.AssemblyReference.cache
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\_VerifyXamarinAndroidSupportVersions.stamp
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\stamp\_BuildLibraryImportsCache.stamp
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\res.flag
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\lp\0\jl\files.cache
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\lp\12\jl\files.cache
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\lp\13\jl\files.cache
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\lp\27\jl\files.cache
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\R.txt
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\R.cs.flag
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\__AndroidLibraryProjects__.zip
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.csproj.CoreCompileInputs.cache
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.csproj.CopyComplete
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.dll
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.pdb
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\android\bin\APDongleCommAndroid.APDongleCommAndroid.apk
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\android\bin\base.zip
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\android\bin\APDongleCommAndroid.APDongleCommAndroid.aab
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\android\bin\APDongleCommAndroid.APDongleCommAndroid.apks
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\res\values\strings.xml
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\uploadflags.txt
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\stamp\_CleanIntermediateIfNeeded.stamp
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\stamp\_ConvertResourcesCases.stamp
+D:\Mayur\Bajaj\SML\APDongleCommAndroid\obj\Debug\100\stamp\_ResolveLibraryProjectImports.stamp
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.dll
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.pdb
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid.apk
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid.aab
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid-Signed.aab
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid-Signed.apk
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\bin\Debug\APDongleCommAndroid.APDongleCommAndroid-Signed.apk.idsig
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\bin\Debug\Android.UsbSerial.dll
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\bin\Debug\vocom1210.dll
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\bin\Debug\vocom1210.pdb
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\MonoAndroid,Version=v10.0.AssemblyAttributes.cs
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\build.props
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\adb.props
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.csproj.AssemblyReference.cache
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\_VerifyXamarinAndroidSupportVersions.stamp
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\stamp\_BuildLibraryImportsCache.stamp
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\res.flag
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\lp\0\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\lp\12\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\lp\13\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\lp\27\jl\files.cache
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\R.txt
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\R.cs.flag
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\__AndroidLibraryProjects__.zip
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.csproj.CoreCompileInputs.cache
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.csproj.CopyComplete
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.dll
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\APDongleCommAndroid.pdb
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\android\bin\APDongleCommAndroid.APDongleCommAndroid.apk
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\android\bin\base.zip
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\android\bin\APDongleCommAndroid.APDongleCommAndroid.aab
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\android\bin\APDongleCommAndroid.APDongleCommAndroid.apks
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\res\values\strings.xml
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\uploadflags.txt
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\stamp\_CleanIntermediateIfNeeded.stamp
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\stamp\_ConvertResourcesCases.stamp
+D:\Mayur\Bajaj\Bajaj\APDongleCommAndroid\obj\Debug\100\stamp\_ResolveLibraryProjectImports.stamp

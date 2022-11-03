@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.LoginPage"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:alert="clr-namespace:Bajaj.View;assembly=SML"
+             ControlTemplate="{StaticResource alert_box}"
+             BackgroundColor="{StaticResource page_bg_color}"
+                        BackgroundImageSource="ic_bg_image.png">
+    <ContentPage.Content>
+        <Grid>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <ScrollView VerticalOptions="FillAndExpand">
+                    <StackLayout VerticalOptions="FillAndExpand">
+                        <Grid Padding="0,10,0,0" VerticalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5*"/>
+                                <ColumnDefinition Width="90*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1" VerticalOptions="FillAndExpand">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="130"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" RowSpacing="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30*"/>
+                                        <RowDefinition Height="70*"/>
+                                    </Grid.RowDefinitions>
+                                    <Image Grid.Row="0" 
+                                        
+                                       HorizontalOptions="End" 
+                                       HeightRequest="50"/>
+                                    <Image Grid.Row="1"
+                                           x:Name="logoImage"
+                                       Source="ic_bajaj.png"
+                                           BackgroundColor="Transparent"
+                                       HeightRequest="160"/>
+                                </Grid>
+
+                                <Grid Grid.Row="1" Padding="20,0,20,0" RowSpacing="0" VerticalOptions="FillAndExpand">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50"/>
+                                        <RowDefinition Height="50"/>
+                                        <RowDefinition Height="25"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="15"/>
+                                        <RowDefinition Height="65"/>
+
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Entry Grid.Row="0" x:Name="txtUserId" Placeholder="Registered User ID" Keyboard="Email"
+                           Style="{StaticResource entryStyle}"/>
+
+                                    <Grid Grid.Row="1" ColumnSpacing="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="45"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Entry Grid.Column="0" x:Name="txtPassword"  Placeholder="Password" 
+                       Style="{StaticResource entryStyle}" IsPassword="True">
+                                        </Entry>
+                                        <Image Grid.Column="1" x:Name="img_pass" Source="ic_password.png">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="ShowPassword_Tapped"/>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </Grid>
+
+                                    <Grid Grid.Row="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40*"/>
+                                            <ColumnDefinition Width="60*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Text="New Account" Style="{StaticResource labelStyleHS}">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="CreateNewAccountTapped"/>
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                        <Label Grid.Column="1" Text="Forgot Password" Style="{StaticResource labelStyleHE}">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="Forgot_Password_Tapped"/>
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </Grid>
+
+                                    <!--<Grid Grid.Row="3" ColumnSpacing="15">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Text="Remember Me" Style="{StaticResource labelStyleHS}"/>
+                                        <CheckBox Grid.Column="1" x:Name="checkRemember" IsChecked="False"
+                                  Style="{StaticResource CheckBoxStyle}"/>
+                                    </Grid>-->
+
+                                    <Grid Grid.Row="5" RowSpacing="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="20"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Button Text="Sign In" WidthRequest="155" HorizontalOptions="Center" 
+                            CornerRadius="4" Style="{StaticResource BlueBtnStyle}" Clicked="SignInClicked"/>
+                                        </Grid>
+                                        <Label Grid.Row="1" Text="Need Help"
+                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="NeedHelpClicked" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </Grid>
+
+                                    <Image Grid.Row="6" Source="ic_powered_by.png" HeightRequest="40" VerticalOptions="EndAndExpand"/>
+                                </Grid>
+
+                                <!--<Image Grid.Row="2" 
+                                   Source="ic_b_logo.png" 
+                                   VerticalOptions="EndAndExpand" 
+                                   HorizontalOptions="FillAndExpand"
+                                   HeightRequest="100"/>-->
+                            </Grid>
+                        </Grid>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+            <Grid x:Name="help_popup" IsVisible="False">
+                <BoxView Opacity=".5" BackgroundColor="Black"/>
+                <Grid HorizontalOptions="CenterAndExpand"
+                      VerticalOptions="CenterAndExpand"
+                      BackgroundColor="#fff"
+                      HeightRequest="240"
+                      WidthRequest="250"
+                      RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="55"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" BackgroundColor="{DynamicResource theme_color}">
+                        <Label Text="Help" 
+                               FontAttributes="Bold" 
+                               FontSize="18" 
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               TextColor="#FFF"/>
+                    </Grid>
+                    <Grid Grid.Row="1" Margin="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="Please refer to contacts below for immediate assistance." 
+                               Style="{StaticResource labelStyleHC}"/>
+                        <Label Grid.Row="1" Text="7087180763" 
+                               Style="{StaticResource labelStyleHC}"/>
+                        <Label Grid.Row="2" Text="9876295761" 
+                               Style="{StaticResource labelStyleHC}"/>
+                    </Grid>
+                    <Button Grid.Row="2" 
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Text="Ok"
+                            BackgroundColor="{DynamicResource theme_color}" Margin="5"
+                            TextColor="{StaticResource btn_text_color}"
+                            Clicked="OkClicked"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+    <!--<ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition>
+                        <ColumnDefinition.Width>
+                            <OnIdiom x:TypeArguments="GridLength" Tablet="450" Phone="320" Desktop="500"/>
+                        </ColumnDefinition.Width>
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1" Padding="20,10,20,5" RowSpacing="13" HorizontalOptions="FillAndExpand" WidthRequest="400">
+                    <Grid.RowDefinitions>
+                        <RowDefinition >
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="270" Phone="190" Desktop="190"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition >
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition >
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="54" Phone="45" Desktop="50"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+
+                        <RowDefinition >
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="30" Phone="20" Desktop="40"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition >
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="30" Phone="20" Desktop="40"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition >
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="75" Phone="65" Desktop="65"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+                        <RowDefinition Height="*" />
+                        <RowDefinition>
+                            <RowDefinition.Height>
+                                <OnIdiom x:TypeArguments="GridLength" Tablet="50" Phone="45" Desktop="45"/>
+                            </RowDefinition.Height>
+                        </RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" >
+                        <Image Source="SMLlogo.png"/>
+                    </Grid>
+
+                    <Entry Grid.Row="1" x:Name="txtUserId" Placeholder="Registered User ID" Keyboard="Email"
+                       Style="{StaticResource entryStyle}">
+                    </Entry>
+                    <Grid Grid.Row="2" ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="45"/>
+                        </Grid.ColumnDefinitions>
+                        <Entry Grid.Column="0" x:Name="txtPassword"  Placeholder="Password" 
+                       Style="{StaticResource entryStyle}" IsPassword="True">
+                        </Entry>
+                        <Image Grid.Column="1" x:Name="img_pass" Source="ic_password.png">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ShowPassword_Tapped"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40*"/>
+                            <ColumnDefinition Width="60*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="New Account" Style="{StaticResource labelStyleHS}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="CreateNewAccountTapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Grid.Column="1" Text="Forgot Password" Style="{StaticResource labelStyleHE}">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Forgot_Password_Tapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+
+                    <Grid Grid.Row="4" ColumnSpacing="15">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="Remember Me" Style="{StaticResource labelStyleHS}"/>
+                        <CheckBox Grid.Column="1" x:Name="checkRemember" IsChecked="False"
+                                  Style="{StaticResource CheckBoxStyle}"/>
+                    </Grid>
+
+
+                    <Grid Grid.Row="6" RowSpacing="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="20"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Button Text="Sign In" WidthRequest="155" HorizontalOptions="Center" 
+                            CornerRadius="4" Style="{StaticResource BlueBtnStyle}" Clicked="SignInClicked"/>
+                        </Grid>
+                        <Label Grid.Row="1" Text="Need Help"
+                       VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="NeedHelpClicked" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Grid>
+                    <Label Grid.Row="7" Text="Diagnostics Advisor" Style="{StaticResource labelStyleHC}" FontSize="30"/>
+                    <Image Grid.Row="8" Source="ic_powered_by.png"/>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>-->
+</alert:DisplayAlertPage>

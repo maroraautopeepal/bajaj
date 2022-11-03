@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.App">
+    <Application.Resources>
+
+        <!--<ResourceDictionary Source="ThemeResources/GreenTheme.xaml" />-->
+        <Color x:Key="page_bg_color">#FFFFFF</Color>
+        <Color x:Key="theme_color">#0b54a1</Color>
+        <Color x:Key="text_color">#555</Color>
+        <Color x:Key="placeholder_color">#bbb</Color>
+        <x:Double x:Key="font_size">13</x:Double>
+        <Color x:Key="btn_text_color">#FFF</Color>
+
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="{DynamicResource theme_color}"></Setter>
+            <Setter Property="BarTextColor" Value="{DynamicResource btn_text_color}"></Setter>
+        </Style>
+
+        <Style x:Key="labelStyleHS" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="FontSize">
+                <Setter.Value>
+                    <OnIdiom x:TypeArguments ="x:Double" Phone = "13" Tablet = "13" Desktop="13"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="TextColor" Value="{StaticResource text_color}" />
+        </Style>
+
+        <Style x:Key="GDentryStyle" TargetType="Entry">
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="FontSize">
+                <Setter.Value>
+                    <OnIdiom x:TypeArguments ="x:Double" Phone = "13" Tablet = "13" Desktop="13"/>
+                </Setter.Value>
+            </Setter>
+            <!--<Setter Property="TextColor" Value="{StaticResource text_color}" />
+            <Setter Property="PlaceholderColor" Value="{StaticResource placeholder_color}" />
+            <Setter Property="BackgroundColor" Value="Transparent" />-->
+
+            <Setter Property="TextColor" Value="{StaticResource text_color}" />
+            <Setter Property="PlaceholderColor" Value="Gray" />
+            <Setter Property="BackgroundColor" Value="White" />
+        </Style>
+
+        <Style x:Key="entryStyle" TargetType="Entry">
+            <Setter Property="HorizontalTextAlignment" Value="Start" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="FontSize">
+                <Setter.Value>
+                    <OnIdiom x:TypeArguments ="x:Double" Phone = "13" Tablet = "13" Desktop="13"/>
+                </Setter.Value>
+            </Setter>
+            <!--<Setter Property="TextColor" Value="{StaticResource text_color}" />
+            <Setter Property="PlaceholderColor" Value="{StaticResource placeholder_color}" />
+            <Setter Property="BackgroundColor" Value="Transparent" />-->
+
+            <Setter Property="TextColor" Value="{StaticResource text_color}" />
+            <!--<Setter Property="PlaceholderColor" Value="Gray" />
+            <Setter Property="BackgroundColor" Value="White" />-->
+        </Style>
+
+        <Style x:Key="labelStyleHC" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="FontSize">
+                <Setter.Value>
+                    <OnIdiom x:TypeArguments ="x:Double" Phone = "13" Tablet = "13" Desktop="13"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="TextColor" Value="{StaticResource text_color}" />
+        </Style>
+
+        <Style x:Key="labelStyleHE" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="End" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="FontSize">
+                <Setter.Value>
+                    <OnIdiom x:TypeArguments ="x:Double" Phone = "13" Tablet = "13" Desktop="13"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="TextColor" Value="{StaticResource text_color}" />
+        </Style>
+
+        <Style x:Key="RedBtnStyle" TargetType="Button">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="FontSize">
+                <Setter.Value>
+                    <OnIdiom x:TypeArguments ="x:Double" Phone = "13" Tablet = "13" Desktop="13"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+            <Setter Property="BackgroundColor" Value="{DynamicResource theme_color}" />
+            <Setter Property="HeightRequest">
+                <Setter.Value>
+                    <OnIdiom x:TypeArguments ="x:Double" Phone = "45" Tablet = "55" Desktop="45"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="CornerRadius" Value="2" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+
+        <Style x:Key="BlueBtnStyle" TargetType="Button">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="FontSize">
+                <Setter.Value>
+                    <OnIdiom x:TypeArguments ="x:Double" Phone = "13" Tablet = "13" Desktop="13"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="TextColor" Value="#FFF" />
+            <Setter Property="BackgroundColor" Value="{DynamicResource theme_color}" />
+            <Setter Property="HeightRequest">
+                <Setter.Value>
+                    <OnIdiom x:TypeArguments ="x:Double" Phone = "45" Tablet = "55" Desktop="45"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="CornerRadius" Value="2" />
+        </Style>
+
+        <Style x:Key="CheckBoxStyle" TargetType="CheckBox">
+            <Setter Property="Scale">
+                <Setter.Value>
+                    <OnIdiom x:TypeArguments ="x:Double" Phone = "1.2" Tablet = "1.4" Desktop="1.2"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Color" Value="{DynamicResource theme_color}" />
+            <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        </Style>
+
+        <Style x:Key="alert_title" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="FontSize">
+                <Setter.Value>
+                    <OnIdiom x:TypeArguments ="x:Double" Phone = "17" Tablet = "20" Desktop="13"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="TextColor" Value="#fff" />
+        </Style>
+
+        <Style x:Key="alert_message" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="Margin" Value="20" />
+            <Setter Property="LineBreakMode" Value="WordWrap" />
+            <Setter Property="FontSize">
+                <Setter.Value>
+                    <OnIdiom x:TypeArguments ="x:Double" Phone = "13" Tablet = "13" Desktop="13"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="TextColor" Value="{StaticResource text_color}" />
+        </Style>
+
+        <ControlTemplate x:Key="alert_box">
+            <Grid>
+                <ContentPresenter VerticalOptions="FillAndExpand"/>
+                <Grid IsVisible="{TemplateBinding Path=Working}">
+                    <BoxView BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                 Opacity=".7"/>
+                    <Grid RowSpacing="0" HorizontalOptions="FillAndExpand" WidthRequest="250">
+                        <Grid HorizontalOptions="FillAndExpand" RowSpacing="10" BackgroundColor="White"
+                              VerticalOptions="CenterAndExpand" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="55"/>
+                            </Grid.RowDefinitions>
+                            <Grid BackgroundColor="{DynamicResource theme_color}">
+                                <Label Grid.Row="0" Text="{TemplateBinding Path=TitleText}" 
+                                       Style="{StaticResource alert_title}"/>
+                            </Grid>
+                            <ScrollView Grid.Row="1">
+                                <Label Text="{TemplateBinding Path=MessageText}" Style="{StaticResource alert_message}"/>
+                            </ScrollView>
+                            <Grid Grid.Row="2" Margin="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0" Text="Ok" Style="{StaticResource BlueBtnStyle}"
+                                        Command="{TemplateBinding Path=OkCommand}"
+                                        IsVisible="{TemplateBinding Path=CancelVisible}"/>
+                                <Button Grid.Column="1" Text="Ok" Style="{StaticResource BlueBtnStyle}"
+                                        Command="{TemplateBinding Path=CancelCommand}"
+                                        IsVisible="{TemplateBinding Path=OkVisible}"/>
+                                <Button Grid.Column="2" Text="Cancel" Style="{StaticResource BlueBtnStyle}"
+                                        Command="{TemplateBinding Path=CancelCommand}"
+                                        IsVisible="{TemplateBinding Path=CancelVisible}"/>
+                            </Grid>
+                            <Grid.Margin>
+                                <OnIdiom x:TypeArguments ="Thickness" Phone = "50" Tablet = "100,50,100,50" Desktop="250,50,250,50"/>
+                            </Grid.Margin>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <!--<Label Text="{TemplateBinding Path=AppStatus}" BackgroundColor="Green" IsVisible="{TemplateBinding Path=Working}"/>-->
+            </Grid>
+        </ControlTemplate>
+    </Application.Resources>
+</Application>

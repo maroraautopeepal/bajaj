@@ -1,0 +1,6 @@
+MainPackage=F:\Sattyajit\A_RunningProjects\A_New\FinalProject\RomoteApp\AtulAuto\AtulAuto\AtulAuto.UWP\bin\x64\Release\AtulAuto.UWP_1.0.11.0_x64.msix
+SymbolPackage=F:\Sattyajit\A_RunningProjects\A_New\FinalProject\RomoteApp\AtulAuto\AtulAuto\AtulAuto.UWP\obj\x64\Release\Symbols\AtulAuto.UWP_1.0.11.0_x64.appxsym
+ResourcePack=F:\Sattyajit\A_RunningProjects\A_New\FinalProject\RomoteApp\AtulAuto\AtulAuto\AtulAuto.UWP\bin\x64\Release\AtulAuto.UWP_1.0.11.0_scale-100.msix
+ResourcePack=F:\Sattyajit\A_RunningProjects\A_New\FinalProject\RomoteApp\AtulAuto\AtulAuto\AtulAuto.UWP\bin\x64\Release\AtulAuto.UWP_1.0.11.0_scale-125.msix
+ResourcePack=F:\Sattyajit\A_RunningProjects\A_New\FinalProject\RomoteApp\AtulAuto\AtulAuto\AtulAuto.UWP\bin\x64\Release\AtulAuto.UWP_1.0.11.0_scale-150.msix
+ResourcePack=F:\Sattyajit\A_RunningProjects\A_New\FinalProject\RomoteApp\AtulAuto\AtulAuto\AtulAuto.UWP\bin\x64\Release\AtulAuto.UWP_1.0.11.0_scale-400.msix

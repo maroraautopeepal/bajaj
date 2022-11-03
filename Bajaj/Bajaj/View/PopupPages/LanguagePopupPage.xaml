@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.PopupPages.LanguagePopupPage"
+             xmlns:local="clr-namespace:Bajaj.Controls;assembly=Bajaj"
+             Title="Language Selection">
+    <Grid BackgroundColor="White" RowSpacing="0" Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition >
+                <RowDefinition.Height>
+                    <OnIdiom x:DataType="GridLength" Tablet="55" Phone="45" Desktop="57"/>
+                </RowDefinition.Height>
+            </RowDefinition>
+            <RowDefinition Height="*"/>
+            <RowDefinition >
+                <RowDefinition.Height>
+                    <OnIdiom x:DataType="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                </RowDefinition.Height>
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Frame CornerRadius="22" Padding="15,0,5,0" BorderColor="{DynamicResource theme_color}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="40"/>
+                    </Grid.ColumnDefinitions>
+                    <local:CustomEntry x:Name="txtSearch" Grid.Column="0" Placeholder="Search"
+                                           VerticalOptions="CenterAndExpand" TextChanged="txtSearch_TextChanged"/>
+                    <Image x:Name="imgClose" Grid.Column="1" Source="ic_close.png" Margin="9" IsVisible="False">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="CloseClick" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Grid>
+            </Frame>
+        </Grid>
+        <ListView Grid.Row="1"  x:Name="Language_List" ItemsSource="{Binding LaguageList}" HasUnevenRows="true" 
+                      SeparatorVisibility="Default" VerticalScrollBarVisibility="Never" VerticalOptions="FillAndExpand"
+                      ItemTapped="modelList_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="35"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Grid.Column="0" IsChecked="{Binding is_checked}" Style="{StaticResource CheckBoxStyle}"/>
+                            <Grid Grid.Column="0">
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="check_Tapped"/>
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                            <Label Grid.Column="1" Style="{StaticResource labelStyleHS}" Text="{Binding Language}" FontAttributes="Bold" Margin="15"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Grid.Row="2" Text="Submit" x:Name="btnSubmit" Margin="0" Clicked="btnSubmit_Clicked"
+                    IsEnabled="True" Style="{StaticResource BlueBtnStyle}"/>
+    </Grid>
+</ContentPage>

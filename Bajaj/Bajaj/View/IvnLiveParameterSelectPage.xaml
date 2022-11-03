@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.IvnLiveParameterSelectPage"
+                        xmlns:alert="clr-namespace:Bajaj.View;assembly=Bajaj"
+             ControlTemplate="{StaticResource alert_box}"
+             xmlns:local="clr-namespace:Bajaj.Controls;assembly=Bajaj"
+             BackgroundColor="{StaticResource page_bg_color}"
+             Title="Parameter Select"
+                        x:Name="page">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="txt_tab" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="troub_btn" TargetType="Button">
+                <Setter Property="Text" Value="Troubleshoot" />
+                <Setter Property="TextColor" Value="{StaticResource btn_text_color}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CornerRadius" Value="25" />
+                <Setter Property="BackgroundColor" Value="{StaticResource theme_color}" />
+                <Setter Property="FontSize" Value="11" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition >
+                    <RowDefinition.Height>
+                        <OnIdiom x:DataType="GridLength" Tablet="48" Phone="48" Desktop="48"/>
+                    </RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition >
+                    <RowDefinition.Height>
+                        <OnIdiom x:DataType="GridLength" Tablet="45" Phone="45" Desktop="45"/>
+                    </RowDefinition.Height>
+                </RowDefinition>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid ColumnSpacing="6" Margin="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="45"/>
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Row="0" CornerRadius="2" Padding="2" BorderColor="{StaticResource theme_color}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+                        <local:CustomEntry x:Name="txtSearch" Grid.Column="0" Placeholder="Search"
+                                           Style="{StaticResource entryStyle}" TextChanged="txtSearch_TextChanged"/>
+                        <Image x:Name="imgClose" Grid.Column="1" Source="ic_close.png" Margin="9" IsVisible="False">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="CloseClick" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                </Frame>
+                <ImageButton Grid.Column="1" x:Name="btnSelect" Source="ic_select_all_pid.png" IsVisible="True"
+                            CornerRadius="3" Clicked="Selection_CheckedChanged"/>
+                <ImageButton Grid.Column="1" x:Name="btnUnselect" Source="ic_unselect_all_pid.png" IsVisible="False"
+                            CornerRadius="3" Clicked="Selection_CheckedChanged"/>
+            </Grid>
+            <Grid Grid.Row="1" x:Name="grd_tab" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                  BackgroundColor="{StaticResource theme_color}" ColumnSpacing="2">
+
+            </Grid>
+
+            <Grid  Grid.Row="2" Padding="10,0,10,5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition >
+                        <RowDefinition.Height>
+                            <OnIdiom x:DataType="GridLength" Tablet="55" Phone="45" Desktop="50"/>
+                        </RowDefinition.Height>
+                    </RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid x:Name="collection_view"></Grid>
+                <!--<Grid Grid.Row="0" x:Name="EmsView" IsVisible="True" RowSpacing="0">
+                    <ListView Grid.Row="0" x:Name="ems_List"  ItemsSource="{Binding EMSParameterList}" HasUnevenRows="true" 
+                           SeparatorVisibility="Default" VerticalScrollBarVisibility="Never" 
+                           VerticalOptions="FillAndExpand" SeparatorColor="#7D7C7C" Margin="10,0,10,0">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid RowSpacing="2" Margin="0,8,0,8">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition>
+                                                <ColumnDefinition.Width>
+                                                    <OnIdiom x:DataType="GridLength" Tablet="35" Phone="30" Desktop="35"/>
+                                                </ColumnDefinition.Width>
+                                            </ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Text="{Binding short_name}" Style="{StaticResource labelStyleHS}"/>
+                                        <CheckBox Grid.Column="1" Style="{StaticResource CheckBoxStyle}" 
+                                              IsChecked="{Binding Selected}" />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+
+                <Grid Grid.Row="0" x:Name="IecuView" IsVisible="False"  RowSpacing="0">
+                    <ListView x:Name="iceu_List"  ItemsSource="{Binding IecuList}" HasUnevenRows="true" 
+                           SeparatorVisibility="Default" VerticalScrollBarVisibility="Never" 
+                           VerticalOptions="FillAndExpand" SeparatorColor="#7D7C7C" Margin="10,0,10,0">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid RowSpacing="2" Margin="0,8,0,8">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition>
+                                                <ColumnDefinition.Width>
+                                                    <OnIdiom x:DataType="GridLength" Tablet="35" Phone="30" Desktop="35"/>
+                                                </ColumnDefinition.Width>
+                                            </ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Text="{Binding long_name}" Style="{StaticResource labelStyleHS}"/>
+                                        <CheckBox Grid.Column="1" Style="{StaticResource CheckBoxStyle}" IsChecked="{Binding IsSelected}"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Grid Grid.Row="2" x:Name="IecuFaultSms" IsVisible="True">
+                        <Label Text="No Parameters found" FontSize="22" FontAttributes="Bold" TextColor="#000" 
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    </Grid>
+                </Grid>
+
+
+                <Grid Grid.Row="0" x:Name="AcmView" IsVisible="False" RowSpacing="0">
+                    <ListView x:Name="acm_List"  ItemsSource="{Binding ACMList}" HasUnevenRows="true" 
+                          SeparatorVisibility="Default" VerticalScrollBarVisibility="Never" 
+                          VerticalOptions="FillAndExpand" SeparatorColor="#7D7C7C" Margin="10,0,10,0">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid RowSpacing="2" Margin="0,8,0,8">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition>
+                                                <ColumnDefinition.Width>
+                                                    <OnIdiom x:DataType="GridLength" Tablet="35" Phone="30" Desktop="35"/>
+                                                </ColumnDefinition.Width>
+                                            </ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Text="{Binding long_name}" Style="{StaticResource labelStyleHS}"/>
+                                        <CheckBox Grid.Column="1" Style="{StaticResource CheckBoxStyle}" IsChecked="{Binding IsSelected}"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+
+                <Grid Grid.Row="0" x:Name="TgwView" IsVisible="False" RowSpacing="0" HorizontalOptions="FillAndExpand">
+                    <ListView x:Name="tgw_List"  ItemsSource="{Binding TGW2List}" HasUnevenRows="true" 
+                          SeparatorVisibility="Default" VerticalScrollBarVisibility="Never" 
+                          VerticalOptions="FillAndExpand" SeparatorColor="#7D7C7C" Margin="10,0,10,0">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid RowSpacing="2" Margin="0,8,0,8">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition>
+                                                <ColumnDefinition.Width>
+                                                    <OnIdiom x:DataType="GridLength" Tablet="35" Phone="30" Desktop="35"/>
+                                                </ColumnDefinition.Width>
+                                            </ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Text="{Binding long_name}" Style="{StaticResource labelStyleHS}"/>
+                                        <CheckBox Grid.Column="1" Style="{StaticResource CheckBoxStyle}" IsChecked="{Binding IsSelected}"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>-->
+
+                <Button Grid.Row="1" Text="Continue" x:Name="btnContinue" Margin="0" Clicked="btnContinue_Clicked"
+                    IsEnabled="True" Style="{StaticResource BlueBtnStyle}"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+
+
+</alert:DisplayAlertPage>

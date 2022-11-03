@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"            
+             NavigationPage.HasBackButton="False"
+             x:Class="Bajaj.View.AppFeaturePage"
+             xmlns:alert="clr-namespace:Bajaj.View;assembly=Bajaj"
+             ControlTemplate="{StaticResource alert_box}"
+             Title="Diagnostics Features" x:Name="AppFeature">
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Grid Padding="10,5,10,5" VerticalOptions="FillAndExpand" RowSpacing="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="75"/>
+                        <RowDefinition Height="75"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="vin"
+                           FontSize="24"
+                           HorizontalOptions="CenterAndExpand"
+                           Margin="0,30,0,0"
+                           TextColor="{StaticResource theme_color}"
+                           FontAttributes="Bold"/>
+
+                    <Grid x:Name="usb" Grid.Row="1" RowSpacing="10" VerticalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="Dongle Connected Via" Style="{StaticResource labelStyleHC}"
+                               FontSize="20" VerticalTextAlignment="End" TextColor="{StaticResource theme_color}"/>
+                        <Frame Grid.Row="1" BackgroundColor="{DynamicResource theme_color}" CornerRadius="35" HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="EndAndExpand" Padding="0" HeightRequest="70" WidthRequest="70">
+                            <Image x:Name="img_connect_vai" Margin="17"/>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="ConnBT_Clicked"/>
+                            </Frame.GestureRecognizers>
+                        </Frame>
+
+                        <Label Grid.Row="2" x:Name="txt_version" Text="Dongle Version – x.y.z" Style="{StaticResource labelStyleHC}"
+                               FontSize="20" VerticalTextAlignment="Start" TextColor="{StaticResource theme_color}"/>
+                    </Grid>
+                    <Grid Grid.Row="2" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" HorizontalOptions="CenterAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <ImageButton Grid.Row="0" 
+                                             Source="ic_dtc.png"
+                                             BackgroundColor="#FFF"
+                                             Padding="10"
+                                             BorderColor="{DynamicResource theme_color}"
+                                             BorderWidth="1.5"
+                                             HorizontalOptions="Center"
+                                             Clicked="BtnFault_Clicked"/>
+                            <Label Grid.Row="1"
+                                       Text="DTC Read And Clear" 
+                                       FontSize="Small" 
+                                       Style="{StaticResource labelStyleHC}" 
+                                       HorizontalTextAlignment="Center"/>
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <ImageButton Grid.Row="0" 
+                                             Source="ic_live_parameter.png"
+                                             BackgroundColor="#FFF"
+                                             Padding="10"
+                                             BorderColor="{DynamicResource theme_color}"
+                                             BorderWidth="1.5"
+                                             HorizontalOptions="Center"
+                                             Clicked="BtnLiveParameter_Clicked"/>
+                            <Label Grid.Row="1"
+                                       Text="Live Parameters" 
+                                       FontSize="Small" 
+                                       Style="{StaticResource labelStyleHC}" 
+                                       HorizontalTextAlignment="Center"/>
+                        </Grid>
+
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <ImageButton Grid.Row="0" 
+                                             Source="ic_edit.png"
+                                             BackgroundColor="#FFF"
+                                             Padding="10"
+                                             BorderColor="{DynamicResource theme_color}"
+                                             BorderWidth="1.5"
+                                             HorizontalOptions="Center"
+                                             Clicked="BtnWriteParameter_Clicked"/>
+                            <Label Grid.Row="1"
+                                       Text="Write Parameter" 
+                                       FontSize="Small" 
+                                       Style="{StaticResource labelStyleHC}" 
+                                       HorizontalTextAlignment="Center"/>
+
+                        </Grid>
+
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid x:Name="GridExpert" Grid.Row="0" Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <ImageButton Grid.Row="0" 
+                                             Source="ic_charge.png"
+                                             BackgroundColor="#FFF"
+                                             Padding="10"
+                                             BorderColor="{DynamicResource theme_color}"
+                                             BorderWidth="1.5"
+                                             HorizontalOptions="Center"
+                                             Clicked="BtnFlahECU_Clicked"/>
+                            <Label Grid.Row="1"
+                                       Text="Flash" 
+                                       FontSize="Small" 
+                                       Style="{StaticResource labelStyleHC}" 
+                                       HorizontalTextAlignment="Center"/>
+
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <ImageButton Grid.Row="0" 
+                                             Source="ic_actuator_test.png"
+                                             BackgroundColor="#FFF"
+                                             Padding="10"
+                                             BorderColor="{DynamicResource theme_color}"
+                                             BorderWidth="1.5"
+                                             HorizontalOptions="Center"
+                                             Clicked="BtnActuatorTest_Clicked"/>
+                            <Label Grid.Row="1"
+                                       Text="Actuator Test" 
+                                       FontSize="Small" 
+                                       Style="{StaticResource labelStyleHC}" 
+                                       HorizontalTextAlignment="Center"/>
+
+                        </Grid>
+
+                        <Grid Grid.Row="0" Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <ImageButton Grid.Row="0" 
+                                             Source="ic_ss.png"
+                                             BackgroundColor="#FFF"
+                                             Padding="10"
+                                             BorderColor="{DynamicResource theme_color}"
+                                             BorderWidth="1.5"
+                                             HorizontalOptions="Center"
+                                             Clicked="BtnIorTest_Clicked"/>
+                            <Label Grid.Row="1"
+                                       Text="IOR" 
+                                       FontSize="Small" 
+                                       Style="{StaticResource labelStyleHC}" 
+                                       HorizontalTextAlignment="Center"/>
+
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+            </ScrollView>
+            
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</alert:DisplayAlertPage>

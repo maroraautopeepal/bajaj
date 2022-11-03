@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.BluetoothDevicesPage"
+             xmlns:alert="clr-namespace:Bajaj.View;assembly=SML"
+             ControlTemplate="{StaticResource alert_box}"
+             Title="Bluetooth Devices">
+    <ContentPage.Content>
+        <Grid>            
+            <ListView Grid.Row="0" x:Name="BluetoothDevidesItem" ItemsSource="{Binding BluetoothDeviceList}" 
+                      HasUnevenRows="true" SeparatorVisibility="Default" SeparatorColor="Gray" 
+                      VerticalScrollBarVisibility="Never" VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <!--<Frame HasShadow="True" CornerRadius="3" Padding="10,2,10,5" Margin="1,5,1,5">-->
+                            <Grid Margin="10" BackgroundColor="#FFF" x:Name="SelectItem">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="60"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Text="{Binding Name}" FontAttributes="Bold"
+                                           Style="{StaticResource labelStyleHS}"/>
+                                    <Label Grid.Row="1" Text="{Binding Mac_Address}"
+                                           Style="{StaticResource labelStyleHS}"/>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <ImageButton Source="ic_link.png" 
+                                                 BorderColor="{DynamicResource theme_color}"
+                                                 Clicked="Conect_Clicked" 
+                                                 BorderWidth="2"
+                                                 CornerRadius="30"
+                                                 Padding="12"
+                                                 BackgroundColor="{StaticResource page_bg_color}"/>
+                                </Grid>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--<Frame Grid.Row="1" BorderColor="{DynamicResource theme_color}" Padding="12" CornerRadius="30" HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="EndAndExpand" IsVisible="{Binding RefreshIsVisible}">
+                <ImageButton x:Name="BTNRefresh" Source="ic_refresh.png" Clicked="BTNRefresh_Clicked" HorizontalOptions="CenterAndExpand"
+                                                     BackgroundColor="{StaticResource page_bg_color}"/>
+            </Frame>
+            <Label Grid.Row="2" Text="Refresh" IsVisible="{Binding RefreshIsVisible}" Style="{StaticResource labelStyleHC}" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"/>-->
+
+            <Grid HorizontalOptions="CenterAndExpand"  VerticalOptions="EndAndExpand" HeightRequest="60" WidthRequest="60"
+                  BackgroundColor="Transparent" >
+                <Frame Grid.Row="0" CornerRadius="28" Padding="0" Margin="0" HasShadow="True">
+                    <Image Source="ref1.png"/>
+                </Frame>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="BTNRefresh_Clicked"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+            
+        </Grid>
+    </ContentPage.Content>
+</alert:DisplayAlertPage>

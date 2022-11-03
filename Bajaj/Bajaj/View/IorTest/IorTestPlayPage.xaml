@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bajaj.View.IorTest.IorTestPlayPage"
+             Title="IOR Test">
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto,50,10,55,70,60,Auto">
+            <CollectionView ItemsSource="{Binding IorTestList}" Margin="10,5,10,5" 
+                            HeightRequest="{Binding RoutineListHeight}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="3" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Frame HasShadow="True" Margin="1" Padding="5">
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <!--<Grid Grid.Column="0" RowDefinitions="Auto,Auto">
+                                        <Label Grid.Row="0" 
+                                           Text="{Binding test_status,StringFormat='{Test Status : {0}}'}" 
+                                           Style="{StaticResource labelStyleHS}"/>-->
+                                        <Label Grid.Column="0" 
+                                           Text="{Binding description}" 
+                                               FontSize="17"
+                                           Style="{StaticResource labelStyleHS}"/>
+                                    <!--</Grid>-->
+                                    <ImageButton Grid.Column="1"
+                                                 BackgroundColor="{Binding btn_background_color,StringFormat='#{0}'}"
+                                                 Source="{Binding image_source}"
+                                                 Padding="8"
+                                                 CornerRadius="20"
+                                                 HeightRequest="40"
+                                                 WidthRequest="40"
+                                                 Margin="2"
+                                                 IsEnabled="{Binding btn_activation_status}"
+                                                 IsVisible="{Binding btn_visible}"
+                                                 Clicked="TestActionClicked"/>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Grid.Row="1"
+                   Text="{Binding TxtAction}" 
+                   Style="{StaticResource labelStyleHC}"
+                   FontSize="18"
+                   FontAttributes="Bold"/>
+          
+            <Label Grid.Row="3" 
+                   Text="{Binding Timer}"
+                   Style="{StaticResource labelStyleHC}" 
+                   IsVisible="{Binding TimerVisible}"
+                   FontSize="25"/>
+           
+            <Grid Grid.Row="4" IsVisible="{Binding LayoutVisible}">
+                <Label  Text="Test Running"
+                        IsVisible="{Binding Timer_Visible}"
+                        Style="{StaticResource labelStyleHC}"
+                        FontSize="30"
+                        FontAttributes="Bold"/>
+            </Grid>
+            
+            
+            <!--<Grid Grid.Row="0" Grid.RowSpan="5" IsVisible="{Binding LayoutVisible}">
+                
+            </Grid>-->
+
+            <CollectionView Grid.Row="6" ItemsSource="{Binding MonitorList}" Margin="10,5,10,5">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="0" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid VerticalOptions="CenterAndExpand">
+                            <Frame HasShadow="True" Margin="1,3,1,3" Padding="8" VerticalOptions="Center" >
+                                <Grid ColumnDefinitions="*,Auto,Auto" VerticalOptions="Center">
+                                    <Label Grid.Column="0" 
+                                               Text="{Binding description}" 
+                                               Style="{StaticResource labelStyleHS}"
+                                                VerticalTextAlignment="Center"
+                                               VerticalOptions="CenterAndExpand"/>
+                                    <Label Grid.Column="1" 
+                                               Text="{Binding current_value}" 
+                                               Style="{StaticResource labelStyleHE}"
+                                                VerticalTextAlignment="Center"/>
+                                    <Label Grid.Column="2" 
+                                               Text="{Binding unit}" 
+                                               Style="{StaticResource labelStyleHE}"
+                                                VerticalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.Header>
+                    <StackLayout BackgroundColor="LightGray">
+                        <Label Grid.Row="1" Text="Test Monitors" Style="{StaticResource labelStyleHC}" 
+                               TextColor="#000" FontAttributes="Bold" FontSize="20" Margin="7"/>
+                    </StackLayout>
+                </CollectionView.Header>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
+    <DebugEngines>
+    </DebugEngines>
+    <BackgroundTaskDebugEngines>
+    </BackgroundTaskDebugEngines>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DeviceId>30f105c9-681e-420b-a277-7c086ead8a4e</DeviceId>
+    <UseEmulator>true</UseEmulator>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Source>F:\Sattyajit\A_RunningProjects\SML\AndroidRemote\SwarajMazdaLimited\AtulAuto\AtulAuto\AtulAuto.Android\Resources\drawable\SMLlogo.png</Source>
+    <SmallTileSource>F:\Sattyajit\A_RunningProjects\SML\AndroidRemote\SwarajMazdaLimited\AtulAuto\AtulAuto\AtulAuto.Android\Resources\drawable\SMLlogo.png</SmallTileSource>
+    <MediumTileSource>F:\Sattyajit\A_RunningProjects\SML\AndroidRemote\SwarajMazdaLimited\AtulAuto\AtulAuto\AtulAuto.Android\Resources\drawable\SMLlogo.png</MediumTileSource>
+    <WideTileSource>F:\Sattyajit\A_RunningProjects\SML\AndroidRemote\SwarajMazdaLimited\AtulAuto\AtulAuto\AtulAuto.Android\Resources\drawable\SMLlogo.png</WideTileSource>
+    <LargeTileSource>F:\Sattyajit\A_RunningProjects\SML\AndroidRemote\SwarajMazdaLimited\AtulAuto\AtulAuto\AtulAuto.Android\Resources\drawable\SMLlogo.png</LargeTileSource>
+    <AppIconSource>F:\Sattyajit\A_RunningProjects\SML\AndroidRemote\SwarajMazdaLimited\AtulAuto\AtulAuto\AtulAuto.Android\Resources\drawable\SMLlogo.png</AppIconSource>
+    <SplashScreenSource>F:\Sattyajit\A_RunningProjects\SML\AndroidRemote\SwarajMazdaLimited\AtulAuto\AtulAuto\AtulAuto.Android\Resources\drawable\SMLlogo.png</SplashScreenSource>
+    <PackageLogoSource>F:\Sattyajit\A_RunningProjects\SML\AndroidRemote\SwarajMazdaLimited\AtulAuto\AtulAuto\AtulAuto.Android\Resources\drawable\SMLlogo.png</PackageLogoSource>
+    <UapAppxPackageBuildMode>SideloadOnly</UapAppxPackageBuildMode>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>x64</AppxBuildConfigurationSelection>
+    <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
+  </PropertyGroup>
+</Project>

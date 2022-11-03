@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<popups:PopupPage  xmlns:popups="http://rotorgames.com" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bajaj.View.PopupPages.IsExpertByRemoteOnUWP">
+    <!--<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center" Padding="24">
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20" Spacing="20">
+            <Label x:Name="lblTitle" FontAttributes="Bold" TextColor="Red" Text="Test Remote"  FontSize="Medium" VerticalTextAlignment="End" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </StackLayout>-->
+    <Grid HorizontalOptions="Center" VerticalOptions="Center" Padding="10" BackgroundColor="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Source="monkeyfest"/>
+        <Button Grid.Row="1" Grid.Column="0" Text="Confirm Attendance" Clicked="ConfirmAttendanceClicked"/>
+        <Button Grid.Row="1" Grid.Column="1" Text="Cancel Attendance" Clicked="CancelAttendanceClicked"/>
+    </Grid>
+</popups:PopupPage>

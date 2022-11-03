@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.WifiDevicesPage"
+             xmlns:alert="clr-namespace:Bajaj.View;assembly=SML"
+             ControlTemplate="{StaticResource alert_box}"
+             Title="Wifi Devices">
+    <ContentPage.Content>
+        <Grid>
+            <ListView x:Name="WifiDevidesItem" ItemsSource="{Binding wifi_device}" 
+                      HasUnevenRows="true" SeparatorVisibility="Default" SeparatorColor="Gray" 
+                      VerticalScrollBarVisibility="Never" VerticalOptions="FillAndExpand"
+                      ItemSelected="WifiDevidesItem_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <!--<Frame HasShadow="True" CornerRadius="3" Padding="10,2,10,5" Margin="1,5,1,5">-->
+                            <Grid Margin="10,2,10,2" BackgroundColor="#FFF">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="65"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Text="{Binding Name}" FontAttributes="Bold"
+                                           Style="{StaticResource labelStyleHS}"/>
+                                    <Label Grid.Row="1" Text="{Binding Ip}" FontAttributes="Bold"
+                                           Style="{StaticResource labelStyleHS}"/>
+                                    <Label Grid.Row="2" Text="{Binding Mac_Address}"
+                                           Style="{StaticResource labelStyleHS}"/>
+                                </Grid>
+                                <!--<Grid Grid.Column="1">
+                                    <Frame BorderColor="{DynamicResource theme_color}" Padding="12" CornerRadius="30">-->
+                                <ImageButton Grid.Column="1" 
+                                             CornerRadius="30" 
+                                             Source="ic_link.png"
+                                             Padding="12"
+                                             Margin="3"
+                                             BorderWidth="2"
+                                             Clicked="connect_dongle_clicked"
+                                             BorderColor="{DynamicResource theme_color}" 
+                                             BackgroundColor="{StaticResource page_bg_color}"/>
+                                    <!--</Frame>-->
+                                    <!---->
+                                <!--</Grid>-->
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"
+                  BackgroundColor="Transparent" RowSpacing="10" HeightRequest="130" WidthRequest="65" >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Frame CornerRadius="45" Padding="0" Margin="0" HasShadow="True">
+                        <Image Source="ic_add.png" Margin="-8"/>
+                    </Frame>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="add_device"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Frame CornerRadius="28" Padding="0" Margin="0" HasShadow="True">
+                        <Image Source="ic_hotspot.png" Margin="-8"/>
+                    </Frame>
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="enable_hotspot"/>
+                    </Grid.GestureRecognizers>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</alert:DisplayAlertPage>

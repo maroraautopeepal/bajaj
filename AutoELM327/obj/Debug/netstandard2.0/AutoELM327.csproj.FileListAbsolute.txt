@@ -1,0 +1,13 @@
+D:\Mayur\Bajaj\AutoELM327\bin\Debug\netstandard2.0\AutoELM327.deps.json
+D:\Mayur\Bajaj\AutoELM327\bin\Debug\netstandard2.0\AutoELM327.dll
+D:\Mayur\Bajaj\AutoELM327\bin\Debug\netstandard2.0\AutoELM327.pdb
+D:\Mayur\Bajaj\AutoELM327\bin\Debug\netstandard2.0\Android.UsbSerial.dll
+D:\Mayur\Bajaj\AutoELM327\bin\Debug\netstandard2.0\Mono.Android.dll
+D:\Mayur\Bajaj\AutoELM327\obj\Debug\netstandard2.0\AutoELM327.csproj.AssemblyReference.cache
+D:\Mayur\Bajaj\AutoELM327\obj\Debug\netstandard2.0\AutoELM327.GeneratedMSBuildEditorConfig.editorconfig
+D:\Mayur\Bajaj\AutoELM327\obj\Debug\netstandard2.0\AutoELM327.AssemblyInfoInputs.cache
+D:\Mayur\Bajaj\AutoELM327\obj\Debug\netstandard2.0\AutoELM327.AssemblyInfo.cs
+D:\Mayur\Bajaj\AutoELM327\obj\Debug\netstandard2.0\AutoELM327.csproj.CoreCompileInputs.cache
+D:\Mayur\Bajaj\AutoELM327\obj\Debug\netstandard2.0\AutoELM327.csproj.CopyComplete
+D:\Mayur\Bajaj\AutoELM327\obj\Debug\netstandard2.0\AutoELM327.dll
+D:\Mayur\Bajaj\AutoELM327\obj\Debug\netstandard2.0\AutoELM327.pdb

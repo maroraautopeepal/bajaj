@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bajaj.View.DealerIdPage"
+             xmlns:local="clr-namespace:Bajaj.Controls;assembly=Bajaj"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand">
+            <Image Source="ic_logo.png"
+                   BackgroundColor="Transparent"
+                   HeightRequest="200"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="StartAndExpand"
+                   Margin="0,50,0,0"/>
+            <Frame HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"
+                   CornerRadius="10"
+                   BorderColor="{StaticResource theme_color}"
+                   Margin="10">
+                <Grid HorizontalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <local:CustomEntry 
+                        Placeholder="Enter Dealer ID"
+                        VerticalOptions="Center"
+                        HorizontalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding dealerId}"
+                    />
+                    <ImageButton
+                        Grid.Column="1"
+                        Source="ic_enter.png"
+                        HeightRequest="30"
+                        Command="{Binding DealerCodeCommand}"/>
+                </Grid>
+                
+            </Frame>
+
+            <Image Source="ic_apLogo.png"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="End"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,733 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<alert:DisplayAlertPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Bajaj.View.GdSection.TreeSurveyPage"
+             xmlns:alert="clr-namespace:Bajaj.View;assembly=Bajaj"
+             ControlTemplate="{StaticResource alert_box}"
+             xmlns:local="clr-namespace:Bajaj.Controls;assembly=Bajaj"
+              xmlns:template="clr-namespace:Bajaj.template;assembly=Bajaj">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="ic_gdimage.png" Text="Item 1" Priority="0" 
+                     Clicked="MenuItem1_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="simpleDataTemplate">
+                <ViewCell>
+                    <Grid HeightRequest="{Binding view_height}" IsVisible="{Binding page_visible}" RowSpacing="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition >
+                                <RowDefinition.Height>
+                                    <OnIdiom x:DataType="GridLength" Tablet="60" Phone="50" Desktop="60"/>
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ScrollView Grid.Row="0" >
+                            <Grid RowSpacing="20" Padding="10,10,10,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Frame HasShadow="True" CornerRadius="3" Padding="5" Margin="1"  
+                                       VerticalOptions="FillAndExpand" BackgroundColor="{Binding description_background_color}">
+                                    <Grid RowSpacing="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="1"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Text="{Binding topic}" Style="{StaticResource labelStyleHS}" 
+                                               FontAttributes="Bold" TextColor="{Binding description_text_color}"/>
+                                        <BoxView Grid.Row="1" BackgroundColor="Gray"/>
+                                        <Label Grid.Row="2" Text="{Binding description}" Style="{StaticResource labelStyleHS}" 
+                                               TextColor="{Binding description_text_color}"/>
+                                    </Grid>
+                                </Frame>
+                                <StackLayout Grid.Row="1" BindableLayout.ItemsSource="{Binding decission_list}" 
+                                     HorizontalOptions="StartAndExpand" Orientation="Vertical" Margin="10" Spacing="30">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid RowSpacing="10">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="40"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <CheckBox Grid.Row="0" Grid.Column="0" IsChecked="{Binding isCheck}" 
+                                                  Style="{StaticResource CheckBoxStyle}" />
+                                                <Grid Grid.Row="0" Grid.Column="0" ClassId="{Binding id}">
+                                                    <Grid.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="Decission_Check_Tapped"/>
+                                                    </Grid.GestureRecognizers>
+                                                </Grid>
+                                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding text_value}" 
+                                               Style="{StaticResource labelStyleHS}"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </Grid>
+                        </ScrollView>
+                        <Button x:Name="btnNext" Grid.Row="1" Text="Next" Style="{StaticResource BlueBtnStyle}" 
+                                          Clicked="btnNext_Clicked">
+                            <Button.Margin>
+                                <OnIdiom x:TypeArguments="Thickness" Tablet="160,0,160,5" Phone="100,0,100,5" Desktop="160,0,160,5"/>
+                            </Button.Margin>
+                        </Button>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="RadioDataTemplate">
+                <ViewCell>
+                    <Grid HeightRequest="{Binding view_height}" IsVisible="{Binding page_visible}" RowSpacing="2" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition >
+                                <RowDefinition.Height>
+                                    <OnIdiom x:DataType="GridLength" Tablet="60" Phone="50" Desktop="60"/>
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ScrollView Grid.Row="0" >
+                            <Grid RowSpacing="20" Padding="10,10,10,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Frame HasShadow="True" CornerRadius="3" Padding="5" Margin="1"  
+                                       VerticalOptions="FillAndExpand" BackgroundColor="{Binding description_background_color}">
+                                    <Grid RowSpacing="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="1"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Text="{Binding topic}" Style="{StaticResource labelStyleHS}" 
+                                               FontAttributes="Bold" TextColor="{Binding description_text_color}"/>
+                                        <BoxView Grid.Row="1" BackgroundColor="Gray"/>
+                                        <Label Grid.Row="2" Text="{Binding description}" Style="{StaticResource labelStyleHS}" 
+                                               TextColor="{Binding description_text_color}" />
+                                    </Grid>
+                                </Frame>
+                                <StackLayout Grid.Row="1" BindableLayout.ItemsSource="{Binding decission_list,Mode=TwoWay}" 
+                                     HorizontalOptions="StartAndExpand" Orientation="Vertical" Margin="10" Spacing="30">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid RowSpacing="10">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="40"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <CheckBox Grid.Row="0" Grid.Column="0" IsChecked="{Binding isCheck}" 
+                                                  Style="{StaticResource CheckBoxStyle}" />
+                                                <Grid Grid.Row="0" Grid.Column="0" ClassId="{Binding id}">
+                                                    <Grid.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="Decission_Check_Tapped"/>
+                                                    </Grid.GestureRecognizers>
+                                                </Grid>
+                                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding text_value}" 
+                                               Style="{StaticResource labelStyleHS}"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </Grid>
+                        </ScrollView>
+                        <Button x:Name="btnNext" Grid.Row="1" Text="Next" Style="{StaticResource BlueBtnStyle}" 
+                                          Clicked="btnNext_Clicked">
+                            <Button.Margin>
+                                <OnIdiom x:TypeArguments="Thickness" Tablet="160,0,160,5" Phone="100,0,100,5" Desktop="160,0,160,5"/>
+                            </Button.Margin>
+                        </Button>
+                    </Grid>
+                </ViewCell>
+
+            </DataTemplate>
+            <DataTemplate x:Key="GroupDataTemplate">
+                <ViewCell>
+                    <Grid HeightRequest="{Binding view_height}" IsVisible="{Binding page_visible}"
+                          RowSpacing="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition>
+                                <RowDefinition.Height>
+                                    <OnIdiom x:DataType="GridLength" Tablet="60" Phone="50" Desktop="60"/>
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ScrollView Grid.Row="0">
+                            <Grid RowSpacing="20" Padding="10,10,10,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Frame HasShadow="True" CornerRadius="3" Padding="5" Margin="1"  
+                                       VerticalOptions="FillAndExpand" BackgroundColor="{Binding description_background_color}">
+                                    <Grid RowSpacing="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="1"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Text="{Binding topic}" Style="{StaticResource labelStyleHS}" 
+                                               FontAttributes="Bold" TextColor="{Binding description_text_color}"/>
+                                        <BoxView Grid.Row="1" BackgroundColor="Gray"/>
+                                        <Label Grid.Row="2" Text="{Binding description}" Style="{StaticResource labelStyleHS}" 
+                                               TextColor="{Binding description_text_color}"/>
+                                    </Grid>
+                                </Frame>
+                                <StackLayout Grid.Row="1" BindableLayout.ItemsSource="{Binding group_list}"
+                                         Orientation="Vertical"  Spacing="20" >
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid RowSpacing="2">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition >
+                                                        <RowDefinition.Height>
+                                                            <OnIdiom x:DataType="GridLength" Tablet="35" Phone="28" Desktop="35"/>
+                                                        </RowDefinition.Height>
+                                                    </RowDefinition>
+                                                    <RowDefinition >
+                                                        <RowDefinition.Height>
+                                                            <OnIdiom x:DataType="GridLength" Tablet="45" Phone="42" Desktop="45"/>
+                                                        </RowDefinition.Height>
+                                                    </RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Label Grid.Row="0" Text="{Binding entry_description}" Style="{StaticResource labelStyleHS}" FontAttributes="Bold"/>
+                                                <Grid Grid.Row="1" ColumnSpacing="40">
+                                                    <Grid.ColumnSpacing>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="10" Tablet="40" Desktop="40"></OnIdiom>
+                                                    </Grid.ColumnSpacing>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition>
+                                                            <ColumnDefinition.Width>
+                                                                <OnIdiom x:DataType="GridLength" Tablet="40*" Phone="45*" Desktop="40*"/>
+                                                            </ColumnDefinition.Width>
+                                                        </ColumnDefinition>
+                                                        <ColumnDefinition>
+                                                            <ColumnDefinition.Width>
+                                                                <OnIdiom x:DataType="GridLength" Tablet="10*" Phone="0*" Desktop="10*"/>
+                                                            </ColumnDefinition.Width>
+                                                        </ColumnDefinition>
+                                                        <ColumnDefinition>
+                                                            <ColumnDefinition.Width>
+                                                                <OnIdiom x:DataType="GridLength" Tablet="50*" Phone="55*" Desktop="50*"/>
+                                                            </ColumnDefinition.Width>
+                                                        </ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid BackgroundColor="{Binding status_color}" >
+                                                        <local:CustomEntry Text="{Binding current_limit}" 
+                                                                           Margin="2" 
+                                                                           Placeholder="{Binding unit}" 
+                                                                           Style="{StaticResource GDentryStyle}"/>
+                                                    </Grid>
+                                                    <Grid Grid.Column="2" ColumnSpacing="15" IsVisible="{Binding upper_lower_value_visible}">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition />
+                                                            <ColumnDefinition />
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid Grid.Column="0">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition />
+                                                                <RowDefinition />
+                                                            </Grid.RowDefinitions>
+                                                            <Label Grid.Row="0" Text="Max Value" Style="{StaticResource labelStyleHS}">
+                                                                <Label.FontSize>
+                                                                    <OnIdiom x:TypeArguments="x:Double" Phone="13" Tablet="15" Desktop="13"></OnIdiom>
+                                                                </Label.FontSize>
+                                                            </Label>
+                                                            <Label Grid.Row="1" Text="{Binding upper_limit}" Style="{StaticResource labelStyleHS}">
+                                                                <Label.FontSize>
+                                                                    <OnIdiom x:TypeArguments="x:Double" Phone="13" Tablet="15" Desktop="13"></OnIdiom>
+                                                                </Label.FontSize>
+                                                            </Label>
+                                                        </Grid>
+
+                                                        <Grid Grid.Column="1">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition />
+                                                                <RowDefinition />
+                                                            </Grid.RowDefinitions>
+                                                            <Label Grid.Row="0" Text="Min Value" Style="{StaticResource labelStyleHS}">
+                                                                <Label.FontSize>
+                                                                    <OnIdiom x:TypeArguments="x:Double" Phone="13" Tablet="15" Desktop="13"></OnIdiom>
+                                                                </Label.FontSize>
+                                                            </Label>
+                                                            <Label Grid.Row="1" Text="{Binding lower_limit}" Style="{StaticResource labelStyleHS}">
+                                                                <Label.FontSize>
+                                                                    <OnIdiom x:TypeArguments="x:Double" Phone="13" Tablet="15" Desktop="13"></OnIdiom>
+                                                                </Label.FontSize>
+                                                            </Label>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+
+                                            </Grid>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </Grid>
+                        </ScrollView>
+                        <Button x:Name="btnGroupNext" Grid.Row="1" Text="Next" Style="{StaticResource BlueBtnStyle}" 
+                                          Clicked="btnGroupNext_Clicked">
+                            <Button.Margin>
+                                <OnIdiom x:TypeArguments="Thickness" Tablet="160,0,160,5" Phone="100,0,100,5" Desktop="160,0,160,5"/>
+                            </Button.Margin>
+                        </Button>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="LastDataTemplate">
+                <ViewCell>
+                    <Grid HeightRequest="{Binding view_height}" IsVisible="{Binding page_visible}"
+                          RowSpacing="2" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition >
+                                <RowDefinition.Height>
+                                    <OnIdiom x:DataType="GridLength" Tablet="60" Phone="50" Desktop="60" />
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ScrollView Grid.Row="0" >
+                            <Grid RowSpacing="20" Padding="10,10,10,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Frame HasShadow="True" CornerRadius="3" Padding="5" Margin="1"  
+                                       VerticalOptions="FillAndExpand" BackgroundColor="{Binding description_background_color}">
+                                    <Grid RowSpacing="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="1"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Text="{Binding topic}" Style="{StaticResource labelStyleHS}" 
+                                               FontAttributes="Bold" TextColor="{Binding description_text_color}"/>
+                                        <BoxView Grid.Row="1" BackgroundColor="Gray"/>
+                                        <Label Grid.Row="2" Text="{Binding description}" Style="{StaticResource labelStyleHS}" 
+                                               TextColor="{Binding description_text_color}"/>
+                                    </Grid>
+                                </Frame>
+
+                                <StackLayout Grid.Row="1" BindableLayout.ItemsSource="{Binding last_question_list}" 
+                                     HorizontalOptions="StartAndExpand" Orientation="Vertical" Margin="10" Spacing="30">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid RowSpacing="10">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="40"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <CheckBox Grid.Row="0" Grid.Column="0" IsChecked="{Binding isCheck}" 
+                                                  Style="{StaticResource CheckBoxStyle}"/>
+                                                <Grid Grid.Row="0" Grid.Column="0" ClassId="{Binding id}">
+                                                    <Grid.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="Check_Tapped"/>
+                                                    </Grid.GestureRecognizers>
+                                                </Grid>
+                                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding describe}" 
+                                               Style="{StaticResource labelStyleHS}" />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </Grid>
+                        </ScrollView>
+                        <Button x:Name="btnNext" Grid.Row="1" Text="Next" Style="{StaticResource BlueBtnStyle}" 
+                                          Clicked="btnLastPageNext_Clicked">
+                            <Button.Margin>
+                                <OnIdiom x:TypeArguments="Thickness" Tablet="160,0,160,5" Phone="100,0,100,5" Desktop="160,0,160,5" />
+                            </Button.Margin>
+                        </Button>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+            <template:GdTemplate x:Key="DataTemplateSelector" 
+                                 SimpleDate="{StaticResource simpleDataTemplate}"
+                                 GroupData="{StaticResource GroupDataTemplate}"
+                                 RadioData="{StaticResource RadioDataTemplate}"
+                                 LastData="{StaticResource LastDataTemplate}"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <!--<RowDefinition Height="*"/>-->
+            </Grid.RowDefinitions>
+            <ListView x:Name="GdList" Grid.Row="0" ItemsSource="{Binding Treelist, Mode=TwoWay}" HasUnevenRows="true" SeparatorVisibility="None" 
+                      VerticalScrollBarVisibility="Always" VerticalOptions="FillAndExpand" 
+                      ItemTemplate="{DynamicResource DataTemplateSelector}"/>
+        </Grid>
+    </ContentPage.Content>
+    
+    
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Icon="ic_gdimage.png" Text="Item 1" Priority="0" 
+                     Clicked="MenuItem1_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="simpleDataTemplate">
+                <ViewCell>
+                    <Grid HeightRequest="{Binding view_height}" IsVisible="{Binding page_visible}" RowSpacing="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition >
+                                <RowDefinition.Height>
+                                    <OnIdiom x:DataType="GridLength" Tablet="60" Phone="50" />
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ScrollView Grid.Row="0" >
+                            <Grid RowSpacing="20" Padding="10,10,10,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Frame HasShadow="True" CornerRadius="3" Padding="5" Margin="1"  
+                                       VerticalOptions="FillAndExpand" BackgroundColor="{Binding description_background_color}">
+                                    <Grid RowSpacing="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="1"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Text="{Binding topic}" Style="{StaticResource labelStyleHS}" 
+                                               FontAttributes="Bold" TextColor="{Binding description_text_color}"/>
+                                        <BoxView Grid.Row="1" BackgroundColor="Gray"/>
+                                        <Label Grid.Row="2" Text="{Binding description}" Style="{StaticResource labelStyleHS}" 
+                                               TextColor="{Binding description_text_color}"/>
+                                    </Grid>
+                                </Frame>
+                                <StackLayout Grid.Row="1" BindableLayout.ItemsSource="{Binding decission_list}" 
+                                     HorizontalOptions="StartAndExpand" Orientation="Vertical" Margin="10" Spacing="30">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid RowSpacing="10">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="40"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <CheckBox Grid.Row="0" Grid.Column="0" IsChecked="{Binding isCheck}" 
+                                                  Style="{StaticResource CheckBoxStyle}" />
+                                                <Grid Grid.Row="0" Grid.Column="0" ClassId="{Binding id}">
+                                                    <Grid.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="Decission_Check_Tapped"/>
+                                                    </Grid.GestureRecognizers>
+                                                </Grid>
+                                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding text_value}" 
+                                               Style="{StaticResource labelStyleHS}" />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </Grid>
+                        </ScrollView>
+
+                        <Button x:Name="btnNext" Grid.Row="1" Text="Next" Style="{StaticResource BlueBtnStyle}" 
+                                          Clicked="btnNext_Clicked">
+                            <Button.Margin>
+                                <OnIdiom x:TypeArguments="Thickness" Tablet="160,0,160,5" Phone="100,0,100,5" />
+                            </Button.Margin>
+                        </Button>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="RadioDataTemplate">
+                <ViewCell>
+                    <Grid HeightRequest="{Binding view_height}" IsVisible="{Binding page_visible}" RowSpacing="2" 
+                          >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition >
+                                <RowDefinition.Height>
+                                    <OnIdiom x:DataType="GridLength" Tablet="60" Phone="50" />
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ScrollView Grid.Row="0" >
+                            <Grid RowSpacing="20" Padding="10,10,10,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Frame HasShadow="True" CornerRadius="3" Padding="5" Margin="1"  
+                                       VerticalOptions="FillAndExpand" BackgroundColor="{Binding description_background_color}">
+                                    <Grid RowSpacing="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="1"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Text="{Binding topic}" Style="{StaticResource labelStyleHS}" 
+                                               FontAttributes="Bold" TextColor="{Binding description_text_color}"/>
+                                        <BoxView Grid.Row="1" BackgroundColor="Gray"/>
+                                        <Label Grid.Row="2" Text="{Binding description}" Style="{StaticResource labelStyleHS}" 
+                                               TextColor="{Binding description_text_color}"/>
+                                    </Grid>
+                                </Frame>
+                                <StackLayout Grid.Row="1" BindableLayout.ItemsSource="{Binding decission_list}" 
+                                     HorizontalOptions="StartAndExpand" Orientation="Vertical" Margin="10" Spacing="30">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid RowSpacing="10">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="40"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <CheckBox Grid.Row="0" Grid.Column="0" IsChecked="{Binding isCheck}" 
+                                                  Style="{StaticResource CheckBoxStyle}" />
+                                                <Grid Grid.Row="0" Grid.Column="0" ClassId="{Binding id}">
+                                                    <Grid.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="Decission_Check_Tapped"/>
+                                                    </Grid.GestureRecognizers>
+                                                </Grid>
+                                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding text_value}" 
+                                               Style="{StaticResource labelStyleHS}" />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </Grid>
+                        </ScrollView>
+                        <Button x:Name="btnNext" Grid.Row="1" Text="Next" Style="{StaticResource BlueBtnStyle}" 
+                                          Clicked="btnNext_Clicked">
+                            <Button.Margin>
+                                <OnIdiom x:TypeArguments="Thickness" Tablet="160,0,160,5" Phone="100,0,100,5" />
+                            </Button.Margin>
+                        </Button>
+                    </Grid>
+                </ViewCell>
+
+            </DataTemplate>
+            <DataTemplate x:Key="GroupDataTemplate">
+                <ViewCell>
+
+                    <Grid HeightRequest="{Binding view_height}" IsVisible="{Binding page_visible}"
+                          RowSpacing="2" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition>
+                                <RowDefinition.Height>
+                                    <OnIdiom x:DataType="GridLength" Tablet="60" Phone="50" />
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ScrollView Grid.Row="0">
+                            <Grid RowSpacing="20" Padding="10,10,10,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Frame HasShadow="True" CornerRadius="3" Padding="5" Margin="1"  
+                                       VerticalOptions="FillAndExpand" BackgroundColor="{Binding description_background_color}">
+                                    <Grid RowSpacing="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="1"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Text="{Binding topic}" Style="{StaticResource labelStyleHS}" 
+                                               FontAttributes="Bold" TextColor="{Binding description_text_color}"/>
+                                        <BoxView Grid.Row="1" BackgroundColor="Gray"/>
+                                        <Label Grid.Row="2" Text="{Binding description}" Style="{StaticResource labelStyleHS}" 
+                                               TextColor="{Binding description_text_color}"/>
+                                    </Grid>
+                                </Frame>
+                                <StackLayout Grid.Row="1" BindableLayout.ItemsSource="{Binding group_list}"
+                                         Orientation="Vertical"  Spacing="20" >
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid RowSpacing="2">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition >
+                                                        <RowDefinition.Height>
+                                                            <OnIdiom x:DataType="GridLength" Tablet="35" Phone="28" />
+                                                        </RowDefinition.Height>
+                                                    </RowDefinition>
+                                                    <RowDefinition >
+                                                        <RowDefinition.Height>
+                                                            <OnIdiom x:DataType="GridLength" Tablet="45" Phone="42" />
+                                                        </RowDefinition.Height>
+                                                    </RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Label Grid.Row="0" Text="{Binding entry_description}" Style="{StaticResource labelStyleHS}" FontAttributes="Bold"/>
+                                                <Grid Grid.Row="1" ColumnSpacing="40">
+                                                    <Grid.ColumnSpacing>
+                                                        <OnIdiom x:TypeArguments="x:Double" Phone="10" Tablet="40"></OnIdiom>
+                                                    </Grid.ColumnSpacing>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition>
+                                                            <ColumnDefinition.Width>
+                                                                <OnIdiom x:DataType="GridLength" Tablet="40*" Phone="45*" />
+                                                            </ColumnDefinition.Width>
+                                                        </ColumnDefinition>
+                                                        <ColumnDefinition>
+                                                            <ColumnDefinition.Width>
+                                                                <OnIdiom x:DataType="GridLength" Tablet="10*" Phone="0*" />
+                                                            </ColumnDefinition.Width>
+                                                        </ColumnDefinition>
+                                                        <ColumnDefinition>
+                                                            <ColumnDefinition.Width>
+                                                                <OnIdiom x:DataType="GridLength" Tablet="50*" Phone="55*" />
+                                                            </ColumnDefinition.Width>
+                                                        </ColumnDefinition>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid BackgroundColor="{Binding status_color}" >
+                                                        <local:CustomEntry x:Name="Current" Text="{Binding current_limit}" TextChanged="Current_TextChanged"
+                                                                            Margin="2" Keyboard="Numeric" 
+                                                                            Placeholder="{Binding unit}" 
+                                                                            Style="{StaticResource GDentryStyle}"/>
+                                                    </Grid>
+                                                    <Grid Grid.Column="2" ColumnSpacing="15" IsVisible="{Binding upper_lower_value_visible}">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition />
+                                                            <ColumnDefinition />
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid Grid.Column="0">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition />
+                                                                <RowDefinition />
+                                                            </Grid.RowDefinitions>
+                                                            <Label Grid.Row="0" Text="Max Value" Style="{StaticResource labelStyleHS}">
+                                                                <Label.FontSize>
+                                                                    <OnIdiom x:TypeArguments="x:Double" Phone="13" Tablet="15"></OnIdiom>
+                                                                </Label.FontSize>
+                                                            </Label>
+                                                            <Label Grid.Row="1" Text="{Binding upper_limit}" Style="{StaticResource labelStyleHS}">
+                                                                <Label.FontSize>
+                                                                    <OnIdiom x:TypeArguments="x:Double" Phone="13" Tablet="15"></OnIdiom>
+                                                                </Label.FontSize>
+                                                            </Label>
+                                                        </Grid>
+
+                                                        <Grid Grid.Column="1">
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition />
+                                                                <RowDefinition />
+                                                            </Grid.RowDefinitions>
+                                                            <Label Grid.Row="0" Text="Min Value" Style="{StaticResource labelStyleHS}">
+                                                                <Label.FontSize>
+                                                                    <OnIdiom x:TypeArguments="x:Double" Phone="13" Tablet="15"></OnIdiom>
+                                                                </Label.FontSize>
+                                                            </Label>
+                                                            <Label Grid.Row="1" Text="{Binding lower_limit}" Style="{StaticResource labelStyleHS}">
+                                                                <Label.FontSize>
+                                                                    <OnIdiom x:TypeArguments="x:Double" Phone="13" Tablet="15"></OnIdiom>
+                                                                </Label.FontSize>
+                                                            </Label>
+                                                        </Grid>
+                                                    </Grid>
+                                                </Grid>
+
+                                            </Grid>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </Grid>
+                        </ScrollView>
+                        <Button x:Name="btnGroupNext" Grid.Row="1" Text="Next" Style="{StaticResource BlueBtnStyle}" 
+                                          Clicked="btnGroupNext_Clicked">
+                            <Button.Margin>
+                                <OnIdiom x:TypeArguments="Thickness" Tablet="160,0,160,5" Phone="100,0,100,5" />
+                            </Button.Margin>
+                        </Button>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="LastDataTemplate">
+                <ViewCell>
+                    <Grid HeightRequest="{Binding view_height}" IsVisible="{Binding page_visible}"
+                          RowSpacing="2" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition >
+                                <RowDefinition.Height>
+                                    <OnIdiom x:DataType="GridLength" Tablet="60" Phone="50" />
+                                </RowDefinition.Height>
+                            </RowDefinition>
+                        </Grid.RowDefinitions>
+                        <ScrollView Grid.Row="0" >
+                            <Grid RowSpacing="20" Padding="10,10,10,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Frame HasShadow="True" CornerRadius="3" Padding="5" Margin="1"  
+                                       VerticalOptions="FillAndExpand" BackgroundColor="{Binding description_background_color}">
+                                    <Grid RowSpacing="5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="1"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Label Grid.Row="0" Text="{Binding topic}" Style="{StaticResource labelStyleHS}" 
+                                               FontAttributes="Bold" TextColor="{Binding description_text_color}"/>
+                                        <BoxView Grid.Row="1" BackgroundColor="Gray"/>
+                                        <Label Grid.Row="2" Text="{Binding description}" Style="{StaticResource labelStyleHS}" 
+                                               TextColor="{Binding description_text_color}"/>
+                                    </Grid>
+                                </Frame>
+
+                                <StackLayout Grid.Row="1" BindableLayout.ItemsSource="{Binding last_question_list}" 
+                                     HorizontalOptions="StartAndExpand" Orientation="Vertical" Margin="10" Spacing="30">
+                                    <BindableLayout.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid RowSpacing="10">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="40"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <CheckBox Grid.Row="0" Grid.Column="0" IsChecked="{Binding isCheck}" 
+                                                  Style="{StaticResource CheckBoxStyle}"/>
+                                                <Grid Grid.Row="0" Grid.Column="0" ClassId="{Binding id}">
+                                                    <Grid.GestureRecognizers>
+                                                        <TapGestureRecognizer Tapped="Check_Tapped"/>
+                                                    </Grid.GestureRecognizers>
+                                                </Grid>
+                                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding describe}" 
+                                               Style="{StaticResource labelStyleHS}" />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </BindableLayout.ItemTemplate>
+                                </StackLayout>
+                            </Grid>
+                        </ScrollView>
+                        <Button x:Name="btnNext" Grid.Row="1" Text="Next" Style="{StaticResource BlueBtnStyle}" 
+                                          Clicked="btnLastPageNext_Clicked">
+                            <Button.Margin>
+                                <OnIdiom x:TypeArguments="Thickness" Tablet="160,0,160,5" Phone="100,0,100,5" />
+                            </Button.Margin>
+                        </Button>
+                    </Grid>
+                </ViewCell>
+
+            </DataTemplate>
+            <template:GdTemplate x:Key="DataTemplateSelector" 
+                                 SimpleDate="{StaticResource simpleDataTemplate}"
+                                 GroupData="{StaticResource GroupDataTemplate}"
+                                 RadioData="{StaticResource RadioDataTemplate}"
+                                 LastData="{StaticResource LastDataTemplate}"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        
+            <Grid Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    --><!--<RowDefinition Height="*"/>--><!--
+                </Grid.RowDefinitions>
+                <ListView x:Name="GdList" Grid.Row="0" ItemsSource="{Binding Treelist, Mode=OneWay}" HasUnevenRows="true" SeparatorVisibility="None" 
+                      VerticalScrollBarVisibility="Always" VerticalOptions="FillAndExpand" 
+                      ItemTemplate="{StaticResource DataTemplateSelector}"  CachingStrategy="RetainElement"/>
+            </Grid>
+       
+    </ContentPage.Content>-->
+</alert:DisplayAlertPage>
