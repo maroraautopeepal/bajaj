@@ -80,6 +80,7 @@ namespace Bajaj.View.ViewModel
 
                             if (resp != null)
                             {
+                                StaticControllerData.controllers = new List<Controller>();
                                 if (resp.error != 0)
                                 {
                                     await page.DisplayAlert("Alert", resp.message, "Ok");
@@ -87,34 +88,46 @@ namespace Bajaj.View.ViewModel
                                 }
                                 else
                                 {
-                                    //var udsUrl = resp.data.controllers.FirstOrDefault().uds_fault_list;
-                                    var udsUrl = "http://159.65.152.179/media/media/KTM_BS6_DTC.xml";
-                                    var dtcList = services.read_xml_file(udsUrl).Result;
-
-                                    if (dtcList != null)
+                                    foreach (var ecu in resp.data.controllers)
                                     {
-                                        XmlSerializer deserializer = new XmlSerializer(typeof(Diagnostics_Trouble_Codes));
-                                        object obj = deserializer.Deserialize(dtcList);
-                                        Diagnostics_Trouble_Codes XmlData = (Diagnostics_Trouble_Codes)obj;
+                                        //var udsUrl = ecu.uds_fault_list;
+                                        var udsUrl = "http://159.65.152.179/media/media/KTM_BS6_DTC.xml";
+                                        var dtcList = services.read_xml_file(udsUrl).Result;
+
+                                        Diagnostics_Trouble_Codes dtcXmlData = new Diagnostics_Trouble_Codes();
+                                        UDS_Diag_Measurements pidXmlData = new UDS_Diag_Measurements();
+                                        if (dtcList != null)
+                                        {
+                                            XmlSerializer deserializer = new XmlSerializer(typeof(Diagnostics_Trouble_Codes));
+                                            object obj = deserializer.Deserialize(dtcList);
+                                            dtcXmlData = (Diagnostics_Trouble_Codes)obj;
+
+                                        }
+
+                                        //var didUrl = ecu.uds_did_list;
+                                        var didUrl = "http://159.65.152.179/media/media/DidWithoutRoutine.xml";
+                                        var pidList = services.read_xml_file(didUrl).Result;
+
+                                        if (pidList != null)
+                                        {
+                                            XmlSerializer deserializer1 = new XmlSerializer(typeof(UDS_Diag_Measurements));
+                                            object obj = deserializer1.Deserialize(pidList);
+                                            pidXmlData = (UDS_Diag_Measurements)obj;
+                                        }
+
+                                        var hexUrl = ecu.hexfiles.FirstOrDefault().app_hex;
+                                        var hexFile = services.read_xml_file(hexUrl).Result;
+
+                                        //GetJson getJson = new GetJson();
+                                        //await getJson.ConvertToJson(hexFile);
+
+                                        pidXmlData.Basic_ECU_Information.protocolInfo = GetProtocol(pidXmlData.Basic_ECU_Information);
+
+                                        ecu.diagnostic_Trouble_Codes = dtcXmlData;
+                                        ecu.uds_Diag_Measurements = pidXmlData;
+
+                                        StaticControllerData.controllers.Add(ecu); 
                                     }
-
-                                    //var didUrl = resp.data.controllers.FirstOrDefault().uds_did_list;
-                                    var didUrl = "http://159.65.152.179/media/media/DidWithoutRoutine.xml";
-                                    var pidList = services.read_xml_file(didUrl).Result;
-
-                                    if (pidList != null)
-                                    {
-                                        XmlSerializer deserializer1 = new XmlSerializer(typeof(UDS_Diag_Measurements));
-                                        object obj = deserializer1.Deserialize(pidList);
-                                        UDS_Diag_Measurements XmlData = (UDS_Diag_Measurements)obj;
-                                    }
-
-
-                                    var hexUrl = resp.data.controllers.FirstOrDefault().hexfiles.FirstOrDefault().app_hex;
-                                    var hexFile = services.read_xml_file(hexUrl).Result;
-
-                                    //GetJson getJson = new GetJson();
-                                    //await getJson.ConvertToJson(hexFile);
 
                                     await page.Navigation.PushAsync(new AppFeaturePage());
                                 }
@@ -138,5 +151,82 @@ namespace Bajaj.View.ViewModel
         {
 
         });
+
+        public ProtocolInfo GetProtocol(Basic_ECU_Information info)
+        {
+            try
+            {
+                string protocol = "ISO15765_";
+
+                switch (info.BaudRate)
+                {
+                    case "500":
+                        protocol += "500KB_";
+                        break;
+                    case "250":
+                        protocol += "250KB_";
+                        break;
+                }
+
+                info.TX_ID = info.TX_ID.Substring(2);
+                info.RX_ID = info.RX_ID.Substring(2);
+
+                if (info.TX_ID.Length <= 4)
+                {
+                    info.TX_ID = info.TX_ID.PadLeft(4, '0');
+                    info.RX_ID = info.RX_ID.PadLeft(4, '0');
+                    protocol += "11BIT_CAN";
+                }
+                else
+                {
+                    info.TX_ID = info.TX_ID.PadLeft(8, '0');
+                    info.RX_ID = info.RX_ID.PadLeft(8, '0');
+                    protocol += "29BIT_CAN";
+                }
+                    
+
+                var protocolVal = (int)((ProtocolDetail)Enum.Parse(typeof(ProtocolDetail), protocol));
+
+                ProtocolInfo protocolInfo = new ProtocolInfo();
+                protocolInfo.protocol = protocol;
+                protocolInfo.value = protocolVal.ToString("X2");
+
+                return protocolInfo;
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        private enum ProtocolDetail
+        {
+            ISO15765_250KB_11BIT_CAN = 00,
+            ISO15765_250Kb_29BIT_CAN = 01,
+            ISO15765_500KB_11BIT_CAN = 02,
+            ISO15765_500KB_29BIT_CAN = 03,
+            ISO15765_1MB_11BIT_CAN = 04,
+            ISO15765_1MB_29BIT_CAN = 05,
+            I250KB_11BIT_CAN = 06,
+            I250Kb_29BIT_CAN = 07,
+            I500KB_11BIT_CAN = 08,
+            I500KB_29BIT_CAN = 09,
+            I1MB_11BIT_CAN = 0x0A,
+            I1MB_29BIT_CAN = 0x0B,
+            OE_IVN_250KBPS_11BIT_CAN = 0x0C,
+            OE_IVN_250KBPS_29BIT_CAN = 0x0D,
+            OE_IVN_500KBPS_11BIT_CAN = 0x0E,
+            OE_IVN_500KBPS_29BIT_CAN = 0x0F,
+
+            OE_IVN_1MBPS_11BIT_CAN = 0x10,
+            OE_IVN_1MBPS_29BIT_CAN = 0x11,
+            CANOPEN_125KBPS_11BIT_CAN = 0x12,
+            CANOPEN_500KBPS_11BIT_CAN = 0x13,
+            XMODEM_125KBPS_11BIT_CAN = 0x18,
+            XMODEM_500KBPS_11BIT_CAN = 0x1a,
+            XMODEM_500KBPS_29BIT_CAN = 0x1b,
+            XMODEM_125KBPS_29BIT_CAN = 0x19
+        }
     }
 }

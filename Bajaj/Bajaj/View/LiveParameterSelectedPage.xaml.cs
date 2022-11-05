@@ -51,258 +51,54 @@ namespace Bajaj.View
             {
             }
         }
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
-            App.controlEventManager.OnRecievedData += ControlEventManager_OnRecievedData;
-            App.controlEventManager.OnRecieved += ControlEventManager_OnRecieved;
-            Task.Run(async () =>
+            using (UserDialogs.Instance.Loading("Loading...", null, null, true, MaskType.Black))
             {
-                await Task.Delay(100);
-                using (UserDialogs.Instance.Loading("Loading...", null, null, true, MaskType.Black))
-                {
-                    await GetPidsValue();
-                }
-            });
+                await Task.Delay(50);
+                await GetPidsValue();
+            }
         }
         protected async override void OnDisappearing()
         {
-            if (CurrentUserEvent.Instance.IsExpert)
-            {
-                App.controlEventManager.SendRequestControlEvents(new ElementEventHandler()
-                {
-                    ElementName = "GoBack",
-                    ElementValue = "GoBack",
-                    ToUserId = CurrentUserEvent.Instance.ToUserId,
-                    IsExpert = CurrentUserEvent.Instance.IsExpert
-                });
-            }
-            App.controlEventManager.OnRecievedData -= ControlEventManager_OnRecievedData;
-            App.controlEventManager.OnRecieved -= ControlEventManager_OnRecieved;
-
             StartTime = false;
             RecordingStart = false;
         }
-
-
-        string[] PairedData = new string[2];
-        private async void ControlEventManager_OnRecievedData(object sender, EventArgs e)
-        {
-            #region Check Internet Connection
-            if (CurrentUserEvent.Instance.IsRemote && CurrentUserEvent.Instance.IsExpert)
-            {
-                //await Task.Delay(100);
-                bool InsternetActive = true;
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    string data = (string)sender; //sender as string;
-                    if (!string.IsNullOrEmpty(data))
-                    {
-                        if (data.Contains("PidValue*#"))
-                        {
-                            PairedData = data.Split('#');
-                            read_pid_android = JsonConvert.DeserializeObject<ObservableCollection<ReadPidPresponseModel>>(PairedData[1]); ;
-                            SetPidValue();
-                            DependencyService.Get<ILodingPageService>().HideLoadingPage();
-                        }
-                        else if (data.Contains("SnapshotStart*#"))
-                        {
-                            PlayPauseItem.BackgroundColor = Color.Gray;
-                            SnapshotItem.BackgroundColor = Color.FromHex("#3e4095");
-                            RecordingItem.BackgroundColor = Color.Gray;
-
-                            PlayPauseItem.IsEnabled = false;
-                            SnapshotItem.IsEnabled = true;
-                            RecordingItem.IsEnabled = false;
-
-                            Snapshot = true;
-
-                            value = string.Empty;
-                            code = string.Empty;
-                        }
-                        else if (data.Contains("SnapShotData*#"))
-                        {
-                            PairedData = data.Split('#');
-                            Values = JsonConvert.DeserializeObject<List<snapshot_record>>(PairedData[1]);
-                        }
-                        else if (data.Contains("SnapShotSaved"))
-                        {
-                            var RecordingSaved = new Popup.DisplayAlertPage("SUCCESS", "Snapshot Saved Successfully", "OK");
-                            await PopupNavigation.Instance.PushAsync(RecordingSaved);
-                            PlayPauseItem.BackgroundColor = Color.FromHex("#3e4095");
-                            SnapshotItem.BackgroundColor = Color.FromHex("#3e4095");
-                            RecordingItem.BackgroundColor = Color.FromHex("#3e4095");
-
-                            PlayPauseItem.IsEnabled = true;
-                            SnapshotItem.IsEnabled = true;
-                            RecordingItem.IsEnabled = true;
-
-                            Snapshot = false;
-                        }
-                        else if (data.Contains("SnapShotFailled"))
-                        {
-                            var RecordingSaved = new Popup.DisplayAlertPage("ERROR", "Snapshot Not Saved Successfully", "OK");
-                            await PopupNavigation.Instance.PushAsync(RecordingSaved);
-                            PlayPauseItem.BackgroundColor = Color.FromHex("#3e4095");
-                            SnapshotItem.BackgroundColor = Color.FromHex("#3e4095");
-                            RecordingItem.BackgroundColor = Color.FromHex("#3e4095");
-
-                            PlayPauseItem.IsEnabled = true;
-                            SnapshotItem.IsEnabled = true;
-                            RecordingItem.IsEnabled = true;
-
-                            Snapshot = false;
-                        }
-                        else if (data.Contains("InternetIssue"))
-                        {
-                            Snapshot = false;
-                        }
-                        else if (data.Contains("RecordingStartFalse*#"))
-                        {
-                            PlayPauseItem.BackgroundColor = Color.Gray;
-                            SnapshotItem.BackgroundColor = Color.Gray;
-                            RecordingItem.BackgroundColor = Color.FromHex("#EE204D");
-
-                            PlayPauseItem.IsEnabled = false;
-                            SnapshotItem.IsEnabled = false;
-                            RecordingItem.IsEnabled = true;
-
-                            RecordingStart = true;
-                            RecordingItem.Source = "ic_recording.png";
-                        }
-                        else if (data.Contains("RecordingStartTrue*#"))
-                        {
-                            PlayPauseItem.BackgroundColor = Color.FromHex("#3e4095");
-                            SnapshotItem.BackgroundColor = Color.FromHex("#3e4095");
-                            RecordingItem.BackgroundColor = Color.FromHex("#3e4095");
-
-                            PlayPauseItem.IsEnabled = true;
-                            SnapshotItem.IsEnabled = true;
-                            RecordingItem.IsEnabled = true;
-
-                            RecordingStart = false;
-                        }
-                        else if (data.Contains("InitializeList*#"))
-                        {
-                            LiveRecord = new List<PIDLiveRecord>(); // 1
-                            Live = new List<PidLive>(); // 2
-                            YAxisPoint = new List<YAxisPointName>(); // 3
-
-                            //j = 0;
-                            NavigationPage.SetHasBackButton(this, false);
-                        }
-                        else if (data.Contains("SetHasBackButtonTrue*#"))
-                        {
-                            NavigationPage.SetHasBackButton(this, true);
-                        }
-                        else if (data.Contains("ShowLoader*#"))
-                        {
-                            NavigationPage.SetHasBackButton(this, true);
-                        }
-                        else if (data.Contains("HideLoader*#"))
-                        {
-                            NavigationPage.SetHasBackButton(this, true);
-                        }
-                        else if (data.Contains("SendTimer*#"))
-                        {
-                            PairedData = data.Split('#');
-                            LabRecordingTimer.Text = PairedData[1];
-                        }
-                        else if (data.Contains("ResetRecordingTimer*#"))
-                        {
-                            PairedData = data.Split('#');
-                            LabRecordingTimer.Text = PairedData[1];
-                        }
-                        else if (data.Contains("RecodingSaved"))
-                        {
-                            var RecordingSaved = new Popup.DisplayAlertPage("SUCCESS", "Recording Saved Successfully", "OK");
-                            await PopupNavigation.Instance.PushAsync(RecordingSaved);
-                        }
-                        else if (data.Contains("RecordingFailled"))
-                        {
-                            var RecordingSaved = new Popup.DisplayAlertPage("ERROR", "Recording Not Saved Successfully", "OK");
-                            await PopupNavigation.Instance.PushAsync(RecordingSaved);
-                        }
-                    }
-                    InsternetActive = false;
-                });
-            }
-            #endregion
-        }
-
-
-        public string ReceiveValue = string.Empty;
-        private async void ControlEventManager_OnRecieved(object sender, EventArgs e)
-        {
-            var elementEventHandler = (sender as ElementEventHandler);
-            this.ReceiveValue = elementEventHandler.ElementValue;
-            if (!CurrentUserEvent.Instance.IsExpert && ReceiveValue.Contains("PidPlayPauseClicked"))
-            {
-                PidPlayPauseClicked();
-            }
-            else if (!CurrentUserEvent.Instance.IsExpert && ReceiveValue.Contains("PidListScrolled"))
-            {
-                collectionView.ScrollTo(Convert.ToInt32(elementEventHandler.ElementName), 0, ScrollToPosition.Start);
-            }
-            else if (!CurrentUserEvent.Instance.IsExpert && ReceiveValue.Contains("PidRecordingClicked"))
-            {
-                PidRecordingClicked();
-            }
-            else if (!CurrentUserEvent.Instance.IsExpert && ReceiveValue.Contains("PidSnapshotClicked"))
-            {
-                PidSnapshotClicked();
-            }
-            App.controlEventManager.RecieveCallControlEvents(this, elementEventHandler, CurrentUserEvent.Instance.OwnerUserId);
-        }
-
 
         public async Task GetPidsValue()
         {
             try
             {
-                if (!CurrentUserEvent.Instance.IsExpert)
+                switch (Device.RuntimePlatform)
                 {
-                    switch (Device.RuntimePlatform)
-                    {
-                        case Device.iOS:
-                            //top = 20;
-                            break;
-                        case Device.Android:
-                            if (App.ConnectedVia == "USB")
-                            {
-                                read_pid_android = await DependencyService.Get<Interfaces.IConnectionUSB>().ReadPid(viewModel.SelectedParameterList);
-                            }
-                            else if (App.ConnectedVia == "BT")
-                            {
-                                read_pid_android = await DependencyService.Get<Interfaces.IBth>().ReadPid(viewModel.SelectedParameterList);
-                            }
-                            else if (App.ConnectedVia == "WIFI")
-                            {
-                                read_pid_android = await DependencyService.Get<Interfaces.IConnectionWifi>().ReadPid(viewModel.SelectedParameterList);
-                            }
-                            else
-                            {
-                                read_pid_android = await DependencyService.Get<Interfaces.IConnectionRP>().ReadPid(viewModel.SelectedParameterList);
-                                //ReadPid_RP1210();
-                            }
-                            break;
-                        default:
-                            //top = 0;
-                            break;
-                    }
-                    SetPidValue();
-                    if (!CurrentUserEvent.Instance.IsExpert)
-                    {
-                        App.controlEventManager.SendRequestData("PidValue*#" + JsonConvert.SerializeObject(read_pid_android));
-                    }
+                    case Device.iOS:
+                        //top = 20;
+                        break;
+                    case Device.Android:
+                        if (App.ConnectedVia == "USB")
+                        {
+                            read_pid_android = await DependencyService.Get<Interfaces.IConnectionUSB>().ReadPid(viewModel.SelectedParameterList);
+                        }
+                        else if (App.ConnectedVia == "BT")
+                        {
+                            read_pid_android = await DependencyService.Get<Interfaces.IBth>().ReadPid(viewModel.SelectedParameterList);
+                        }
+                        else if (App.ConnectedVia == "WIFI")
+                        {
+                            read_pid_android = await DependencyService.Get<Interfaces.IConnectionWifi>().ReadPid(viewModel.SelectedParameterList);
+                        }
+                        else
+                        {
+                            read_pid_android = await DependencyService.Get<Interfaces.IConnectionRP>().ReadPid(viewModel.SelectedParameterList);
+                            //ReadPid_RP1210();
+                        }
+                        break;
+                    default:
+                        //top = 0;
+                        break;
                 }
-                else
-                {
-                    DependencyService.Get<ILodingPageService>().HideLoadingPage();
-                    DependencyService.Get<ILodingPageService>().InitLoadingPage(new LoadingIndicatorPage());
-                    DependencyService.Get<ILodingPageService>().ShowLoadingPage();
-                    await Task.Delay(200);
-                }
+                SetPidValue();
             }
             catch (Exception ex)
             {
@@ -343,30 +139,7 @@ namespace Bajaj.View
         public bool RecordingStart = false;
         public Stopwatch stopwatch;
         bool ReadCompleted = true;
-        private void PidPlayPauseClicked(object sender, EventArgs e)
-        {
-            try
-            {
-
-                if (CurrentUserEvent.Instance.IsExpert)
-                {
-                    App.controlEventManager.SendRequestControlEvents(new ElementEventHandler()
-                    {
-                        ElementName = $"PidPlayPauseFrame",
-                        ElementValue = "PidPlayPauseClicked",
-                        ToUserId = CurrentUserEvent.Instance.ToUserId,
-                        IsExpert = CurrentUserEvent.Instance.IsExpert
-                    });
-                }
-                PidPlayPauseClicked();
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
-
-        private async void PidPlayPauseClicked()
+        private async void PidPlayPauseClicked(object sender, EventArgs e)
         {
             try
             {
@@ -387,10 +160,7 @@ namespace Bajaj.View
                     read_pid_android = new ObservableCollection<ReadPidPresponseModel>();
                     while (StartTime)
                     {
-                        await Task.Run(async () =>
-                        {
-                            await GetPidsValue();
-                        });
+                        await GetPidsValue();
                     }
                     NavigationPage.SetHasBackButton(this, true);
                     PlayPauseItem.Source = "play.png";
@@ -410,35 +180,12 @@ namespace Bajaj.View
             }
         }
 
-        private void PidRecordingClicked(object sender, EventArgs e)
+        private async void PidRecordingClicked(object sender, EventArgs e)
         {
             try
             {
-                if (CurrentUserEvent.Instance.IsExpert)
-                {
-                    App.controlEventManager.SendRequestControlEvents(new ElementEventHandler()
-                    {
-                        ElementName = $"PidRecordingFrame",
-                        ElementValue = "PidRecordingClicked",
-                        ToUserId = CurrentUserEvent.Instance.ToUserId,
-                        IsExpert = CurrentUserEvent.Instance.IsExpert
-                    });
-                }
-                PidRecordingClicked();
-            }
-            catch (Exception ex)
-            {
-            }
-        }
-
-        private async void PidRecordingClicked()
-        {
-            try
-            {
-
                 string code = string.Empty;
                 StartTime = false;
-                //await Task.Delay(200);
 
                 var isReachable = await CrossConnectivity.Current.IsRemoteReachable("https://www.google.com/");
                 if (isReachable)
@@ -463,20 +210,13 @@ namespace Bajaj.View
                             Device.StartTimer(TimeSpan.FromSeconds(1), () =>
                             {
                                 LabRecordingTimer.Text = stopwatch.Elapsed.Minutes.ToString("00") + " : " + stopwatch.Elapsed.Seconds.ToString("00");
-                                if (!CurrentUserEvent.Instance.IsExpert)
-                                {
-                                    App.controlEventManager.SendRequestData("SendTimer*#" + LabRecordingTimer.Text);
-                                }
+                                
                                 return RecordingStart;
                             });
                         });
 
                         RecordingItem.Source = "ic_recording.png";
                         recording();
-                        if (!CurrentUserEvent.Instance.IsExpert)
-                        {
-                            App.controlEventManager.SendRequestData("RecordingStartFalse*#");
-                        }
                     }
                     else
                     {
@@ -489,17 +229,12 @@ namespace Bajaj.View
                         RecordingItem.IsEnabled = true;
 
                         RecordingStart = false;
-                        if (!CurrentUserEvent.Instance.IsExpert)
-                        {
-                            App.controlEventManager.SendRequestData("RecordingStartTrue*#");
-                        }
                     }
 
 
                 }
                 else
                 {
-                    //show_alert("Please check Internet Connection", "Internet Connection Problem", false, true);
                     var RecordingSaved = new Popup.DisplayAlertPage("Please check Internet Connection", "Internet Connection Problem", "OK");
                     await PopupNavigation.Instance.PushAsync(RecordingSaved);
                     //Snapshot = true;
@@ -510,7 +245,9 @@ namespace Bajaj.View
             {
 
             }
+
         }
+
 
         public async void recording()
         {
@@ -682,29 +419,7 @@ namespace Bajaj.View
         }
 
         public bool Snapshot = false;
-        private void PidSnapshotClicked(object sender, EventArgs e)
-        {
-            try
-            {
-                if (CurrentUserEvent.Instance.IsExpert)
-                {
-                    App.controlEventManager.SendRequestControlEvents(new ElementEventHandler()
-                    {
-                        ElementName = $"PidSnapshotFrame",
-                        ElementValue = "PidSnapshotClicked",
-                        ToUserId = CurrentUserEvent.Instance.ToUserId,
-                        IsExpert = CurrentUserEvent.Instance.IsExpert
-                    });
-                }
-                PidSnapshotClicked();
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
-
-        private async void PidSnapshotClicked()
+        private async void PidSnapshotClicked(object sender, EventArgs e)
         {
             try
             {
@@ -826,22 +541,8 @@ namespace Bajaj.View
             {
 
             }
-        }
 
-        private void PidListScrolled(object sender, ItemsViewScrolledEventArgs e)
-        {
-            if (CurrentUserEvent.Instance.IsExpert)
-            {
-                App.controlEventManager.SendRequestControlEvents(new ElementEventHandler()
-                {
-                    ElementName = Convert.ToString(e.FirstVisibleItemIndex),
-                    ElementValue = "PidListScrolled",
-                    ToUserId = CurrentUserEvent.Instance.ToUserId,
-                    IsExpert = CurrentUserEvent.Instance.IsExpert
-                });
-            }
         }
-
 
         public void show_alert(string title, string message, bool btnCancel, bool btnOk)
         {
@@ -862,61 +563,5 @@ namespace Bajaj.View
             return false;
         }
 
-        //private async Task ObservableCollection<ReadPidPresponseModel> ReadPid_RP1210()
-        //{
-        //    try
-        //    {
-        //        object result = new object();
-        //        functionClass = new FunctionClass();
-        //        ObservableCollection<ReadParameterPID> list = new ObservableCollection<ReadParameterPID>();
-        //        foreach (var item in viewModel.SelectedParameterList)
-        //        {
-        //            var MessageValueList = new List<SelectedParameterMessage>();
-        //            if (item.messages != null)
-        //            {
-        //                foreach (var MessageItem in item.messages)
-        //                {
-        //                    MessageValueList.Add(new SelectedParameterMessage { code = MessageItem.code, message = MessageItem.message });
-        //                }
-        //            }
-
-        //            list.Add(
-        //                new ReadParameterPID
-        //                {
-        //                    datatype = item.message_type,
-        //                    IsBitcoded = item.bitcoded,
-        //                    noofBits = item.end_bit_position.GetValueOrDefault() - item.start_bit_position.GetValueOrDefault() + 1,
-        //                    noOfBytes = item.length,
-        //                    offset = item.offset,
-        //                    pid = item.code,
-        //                    resolution = item.resolution,
-        //                    startBit = Convert.ToInt32(item.start_bit_position),
-        //                    startByte = item.byte_position,
-        //                    //totalBytes= item.totalBytes,
-        //                    totalLen = item.code.Length / 2,
-        //                    pidNumber = item.id,
-        //                    pidName = item.short_name,
-        //                    messages = MessageValueList
-
-        //                });
-        //        }
-        //        var respo = await Task.Run(async () =>
-        //        {
-
-        //            //result = await functionClass.ReadParameters(list.Count, list);
-        //            //result = await dSDiagnostic.ReadParameters(pidList.Count, list);
-        //            var res = JsonConvert.SerializeObject(result);
-        //            var res_list = JsonConvert.DeserializeObject<ObservableCollection<ReadPidPresponseModel>>(res);
-        //            return res_list;
-        //            //status = Response.ECUResponseStatus;
-        //        });
-
-        //        return respo;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return null;
-        //    }
-        //}
     }
 }

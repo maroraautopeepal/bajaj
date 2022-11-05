@@ -622,8 +622,6 @@ namespace Bajaj.Droid.Dependencies
             {
                 string firmware_version = string.Empty;
 
-                //ProtocolValue = Convert.ToInt32(StaticData.ecu_info.FirstOrDefault().protocol.autopeepal, 16);
-
                 /////////////////////////////////////////////////////////////////////
                 ProtocolValue = 02;
                 tx_header_temp = "07e0";
@@ -636,12 +634,6 @@ namespace Bajaj.Droid.Dependencies
                 dSDiagnostic = new UDSDiagnostic(dongleCommWin);
 
                 var securityAccess = await dongleCommWin.SecurityAccess();
-                var setProtocol = await dongleCommWin.Dongle_SetProtocol(ProtocolValue);
-                var setHeader = await dongleCommWin.CAN_SetTxHeader(tx_header_temp);
-                var setHeaderMask = await dongleCommWin.CAN_SetRxHeaderMask(rx_header_temp);
-                var setPadding = await dongleCommWin.CAN_StartPadding("00");
-                //var setp2max = await dongleComm.CAN_SetP2Max("2710");
-
                 var firmwareVersion = await dongleCommWin.Dongle_GetFimrwareVersion();
                 var firmwareResult = (byte[])firmwareVersion;
                 firmware_version = firmwareResult[3].ToString("D2") + "." + firmwareResult[4].ToString("D2") + "." + firmwareResult[5].ToString("D2");

@@ -110,12 +110,6 @@ D:\Mayur\Bajaj\Bajaj\Bajaj\obj\Debug\netstandard2.0\View\IORTestPage.xaml.g.cs
 D:\Mayur\Bajaj\Bajaj\Bajaj\obj\Debug\netstandard2.0\View\IorTest\IorTestPage.xaml.g.cs
 D:\Mayur\Bajaj\Bajaj\Bajaj\obj\Debug\netstandard2.0\View\IorTest\IorTestPlayPage.xaml.g.cs
 D:\Mayur\Bajaj\Bajaj\Bajaj\obj\Debug\netstandard2.0\View\IorTest\PreConditionPage.xaml.g.cs
-D:\Mayur\Bajaj\Bajaj\Bajaj\obj\Debug\netstandard2.0\View\IvnDtcList.xaml.g.cs
-D:\Mayur\Bajaj\Bajaj\Bajaj\obj\Debug\netstandard2.0\View\IvnDtcListPage.xaml.g.cs
-D:\Mayur\Bajaj\Bajaj\Bajaj\obj\Debug\netstandard2.0\View\IvnLiveParameterSelectedPage.xaml.g.cs
-D:\Mayur\Bajaj\Bajaj\Bajaj\obj\Debug\netstandard2.0\View\IvnLiveParameterSelectPage.xaml.g.cs
-D:\Mayur\Bajaj\Bajaj\Bajaj\obj\Debug\netstandard2.0\View\IvnPidSelectedPage.xaml.g.cs
-D:\Mayur\Bajaj\Bajaj\Bajaj\obj\Debug\netstandard2.0\View\IvnPidSelectPage.xaml.g.cs
 D:\Mayur\Bajaj\Bajaj\Bajaj\obj\Debug\netstandard2.0\View\JobCardPage.xaml.g.cs
 D:\Mayur\Bajaj\Bajaj\Bajaj\obj\Debug\netstandard2.0\View\LiveParameterSelectedPage.xaml.g.cs
 D:\Mayur\Bajaj\Bajaj\Bajaj\obj\Debug\netstandard2.0\View\LiveParameterSelectPage.xaml.g.cs

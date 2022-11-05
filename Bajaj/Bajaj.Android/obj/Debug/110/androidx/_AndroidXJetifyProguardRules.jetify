@@ -1,7 +1,7 @@
-C:\Users\mayur\.nuget\packages\xamarin.googleplayservices.basement\117.2.1\proguard\MonoAndroid90\proguard.txt;D:\Mayur\Bajaj\Bajaj\Bajaj.Android\obj\Debug\110\androidx\proguard\c6f4702e-ac1e-4d1f-98dd-d2cf63fff317.txt
-C:\Users\mayur\.nuget\packages\xamarin.googleplayservices.base\117.2.1\proguard\MonoAndroid90\proguard.txt;D:\Mayur\Bajaj\Bajaj\Bajaj.Android\obj\Debug\110\androidx\proguard\bed156ab-af4d-4a91-b6a9-6d7573224d9a.txt
-C:\Users\mayur\.nuget\packages\xamarin.firebase.components\116.0.0\proguard\MonoAndroid90\proguard.txt;D:\Mayur\Bajaj\Bajaj\Bajaj.Android\obj\Debug\110\androidx\proguard\2c95b434-8a44-4000-8270-b092b428a0d5.txt
-C:\Users\mayur\.nuget\packages\xamarin.firebase.common\119.3.0\proguard\MonoAndroid90\proguard.txt;D:\Mayur\Bajaj\Bajaj\Bajaj.Android\obj\Debug\110\androidx\proguard\7a4ee9e0-524c-4e11-8370-c8c2d7d3d4fc.txt
-C:\Users\mayur\.nuget\packages\xamarin.firebase.encoders.json\116.1.0\proguard\MonoAndroid90\proguard.txt;D:\Mayur\Bajaj\Bajaj\Bajaj.Android\obj\Debug\110\androidx\proguard\ea4b4c86-a712-4852-8b82-8e34d1c12d32.txt
-C:\Users\mayur\.nuget\packages\xamarin.firebase.messaging\120.1.7\proguard\MonoAndroid90\proguard.txt;D:\Mayur\Bajaj\Bajaj\Bajaj.Android\obj\Debug\110\androidx\proguard\b8504550-ebd6-46ce-8b9f-583888539914.txt
-C:\Users\mayur\.nuget\packages\xamarin.forms\5.0.0.2012\buildTransitive\MonoAndroid10\proguard.cfg;D:\Mayur\Bajaj\Bajaj\Bajaj.Android\obj\Debug\110\androidx\proguard\57aeb059-ab25-445e-9746-3027359cdba1.cfg
+C:\Users\mayur\.nuget\packages\xamarin.googleplayservices.basement\117.2.1\proguard\MonoAndroid90\proguard.txt;D:\Mayur\Bajaj\Bajaj\Bajaj.Android\obj\Debug\110\androidx\proguard\0cab525e-2a24-4338-b9f2-59da20cb34cc.txt
+C:\Users\mayur\.nuget\packages\xamarin.googleplayservices.base\117.2.1\proguard\MonoAndroid90\proguard.txt;D:\Mayur\Bajaj\Bajaj\Bajaj.Android\obj\Debug\110\androidx\proguard\b91e330c-8182-4ac8-8ab4-2af086a0ed83.txt
+C:\Users\mayur\.nuget\packages\xamarin.firebase.components\116.0.0\proguard\MonoAndroid90\proguard.txt;D:\Mayur\Bajaj\Bajaj\Bajaj.Android\obj\Debug\110\androidx\proguard\f46d288c-2c69-4d10-bf75-a7a53cf7d727.txt
+C:\Users\mayur\.nuget\packages\xamarin.firebase.common\119.3.0\proguard\MonoAndroid90\proguard.txt;D:\Mayur\Bajaj\Bajaj\Bajaj.Android\obj\Debug\110\androidx\proguard\9397cb3a-bb5e-40bf-9101-1b2965f11e57.txt
+C:\Users\mayur\.nuget\packages\xamarin.firebase.encoders.json\116.1.0\proguard\MonoAndroid90\proguard.txt;D:\Mayur\Bajaj\Bajaj\Bajaj.Android\obj\Debug\110\androidx\proguard\b94cbf28-f990-44fd-9361-b60d24146d6e.txt
+C:\Users\mayur\.nuget\packages\xamarin.firebase.messaging\120.1.7\proguard\MonoAndroid90\proguard.txt;D:\Mayur\Bajaj\Bajaj\Bajaj.Android\obj\Debug\110\androidx\proguard\c1edee70-3da9-4d78-8962-c9c91afc0f8e.txt
+C:\Users\mayur\.nuget\packages\xamarin.forms\5.0.0.2012\buildTransitive\MonoAndroid10\proguard.cfg;D:\Mayur\Bajaj\Bajaj\Bajaj.Android\obj\Debug\110\androidx\proguard\17a7e5f5-f9ee-4c13-b455-2f8942cc0ea7.cfg

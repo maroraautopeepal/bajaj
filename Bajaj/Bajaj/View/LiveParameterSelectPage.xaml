@@ -86,8 +86,7 @@
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
-            <CollectionView x:Name="collectionView" Grid.Row="2" ItemsSource="{Binding pid_list,Mode=TwoWay}" Margin="10,5,10,5"
-                            Scrolled="PidListScrolled">
+            <CollectionView x:Name="collectionView" Grid.Row="2" ItemsSource="{Binding pid_list,Mode=TwoWay}" Margin="10,5,10,5">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical" ItemSpacing="15" />
                 </CollectionView.ItemsLayout>

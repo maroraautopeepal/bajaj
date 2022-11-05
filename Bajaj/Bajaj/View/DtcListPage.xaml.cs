@@ -63,13 +63,16 @@ namespace Bajaj.View
                 await Task.Delay(100);
                 try
                 {
-                    //foreach (var ecu in StaticData.ecu_info)
-                    //{
+                    foreach (var ecu in StaticControllerData.controllers)
+                    {
                         viewModel.is_running = true;
                         count++;
-                    //int dtc_dataset = ecu.dtc_dataset_id;
-                    //var dtc_li = await services.get_dtc(App.JwtToken, ecu.dtc_dataset_id);
-                    var dtc_li = StaticControllerData.controllers.FirstOrDefault().diagnostic_Trouble_Codes.DTC_Identifier;
+
+                        var protocol = ecu.uds_Diag_Measurements.Basic_ECU_Information.Protocol;
+
+                        string dtcIndex = protocol == "UDS" ? "UDS_2BYTE12_DTC" : "KWP_2BYTE_DTC";
+
+                        var dtc_li = ecu.diagnostic_Trouble_Codes.DTC_Identifier;
                         if (dtc_li == null)
                         {
                             await UserDialogs.Instance.AlertAsync("DTC not found from server", "Failed", "Ok");
@@ -78,29 +81,29 @@ namespace Bajaj.View
                         }
 
                         viewModel.dtc_server_list = new List<DtcCode>();
-                    dtc_li.ForEach(x =>
-                    {
-                        viewModel.dtc_server_list.Add(new DtcCode
+                        dtc_li.ForEach(x =>
                         {
-                            id = int.Parse(x.HEXCODE),
-                            code = x.DTC_Code,
-                            description = x.FaultName
+                            viewModel.dtc_server_list.Add(new DtcCode
+                            {
+                                id = (int)new System.ComponentModel.Int32Converter().ConvertFromString(x.HEXCODE),
+                                code = x.DTC_Code,
+                                description = x.FaultName
+                            });
                         });
-                    });    
 
 
                         dtcEcusModel = new DtcEcusModel();
-                        dtcEcusModel.ecu_name = StaticControllerData.controllers.FirstOrDefault().name;
+                        dtcEcusModel.ecu_name = ecu.name;
                         dtcEcusModel.opacity = count == 1 ? 1 : .5;
-                        
+
 
                         if (App.ConnectedVia == "USB")
                         {
-                            viewModel.read_dtc = await DependencyService.Get<Interfaces.IConnectionUSB>().ReadDtc("UDS");
+                            viewModel.read_dtc = await DependencyService.Get<Interfaces.IConnectionUSB>().ReadDtc(dtcIndex);
                         }
                         else if (App.ConnectedVia == "BT")
                         {
-                            viewModel.read_dtc = await DependencyService.Get<Interfaces.IBth>().ReadDtc("UDS");
+                            viewModel.read_dtc = await DependencyService.Get<Interfaces.IBth>().ReadDtc(dtcIndex);
                         }
 
                         if (viewModel.read_dtc != null)
@@ -193,7 +196,7 @@ namespace Bajaj.View
 
 
                         var isReachable = await CrossConnectivity.Current.IsRemoteReachable("https://www.google.com/");
-                    //}
+                    }
 
                     viewModel.is_running = false;
                     viewModel.dtc_list = new ObservableCollection<DtcCode>(viewModel.ecus_list.FirstOrDefault().dtc_list);
@@ -233,20 +236,24 @@ namespace Bajaj.View
                     try
                     {
                         string alertString = string.Empty;
-                        foreach (var item in StaticData.ecu_info)
+                        foreach (var item in StaticControllerData.controllers)
                         {
+                            var protocolVal = item.uds_Diag_Measurements.Basic_ECU_Information.protocolInfo.value;
+                            string txHeader = item.uds_Diag_Measurements.Basic_ECU_Information.TX_ID.ToString();
+                            string rxHeader = item.uds_Diag_Measurements.Basic_ECU_Information.RX_ID.ToString();
                             if (App.ConnectedVia == "USB")
                             {
-                                DependencyService.Get<Interfaces.IConnectionUSB>().SetDongleProperties(item.protocol.autopeepal, item.tx_header, item.rx_header);
+                                DependencyService.Get<Interfaces.IConnectionUSB>().SetDongleProperties(protocolVal, txHeader, rxHeader);
                             }
                             else if (App.ConnectedVia == "BT")
                             {
-                                await DependencyService.Get<Interfaces.IBth>().SetDongleProperties(item.protocol.autopeepal, item.tx_header, item.rx_header);
+                                await DependencyService.Get<Interfaces.IBth>().SetDongleProperties(protocolVal, txHeader, rxHeader);
                             }
 
-                            Debug.WriteLine($"Clearing DTC for {item.ecu_name}");
+                            Debug.WriteLine($"Clearing DTC for {item.uds_Diag_Measurements.Basic_ECU_Information.Header}");
 
-                            clear_dtc_index = item.clear_dtc_index;
+                            clear_dtc_index = item.uds_Diag_Measurements.Basic_ECU_Information.Protocol == "UDS" ?
+                                              "UDS_4BYTES" : "KWP";
                             if (App.ConnectedVia == "USB")
                             {
                                 Clear_dtc_android = await DependencyService.Get<Interfaces.IConnectionUSB>().ClearDtc(clear_dtc_index);
@@ -255,28 +262,20 @@ namespace Bajaj.View
                             {
                                 Clear_dtc_android = await DependencyService.Get<Interfaces.IBth>().ClearDtc(clear_dtc_index);
                             }
-                            else if (App.ConnectedVia == "WIFI")
-                            {
-                                Clear_dtc_android = await DependencyService.Get<Interfaces.IConnectionWifi>().ClearDtc(clear_dtc_index);
-                            }
-                            else
-                            {
-                                Clear_dtc_android = await DependencyService.Get<Interfaces.IConnectionRP>().ClearDtc(clear_dtc_index);
-                            }
 
                             if (Clear_dtc_android != null)
                             {
                                 if (Clear_dtc_android.Contains("NOERROR"))
                                 {
-                                    alertString = alertString + $"\nDtc cleared for {item.ecu_name}";
+                                    alertString = alertString + $"\nDtc cleared for {item.uds_Diag_Measurements.Basic_ECU_Information.Header}";
                                 }
                                 else
                                 {
-                                    alertString = alertString + $"\nDtc not cleared for {item.ecu_name} : {Clear_dtc_android}";
+                                    alertString = alertString + $"\nDtc not cleared for {item.uds_Diag_Measurements.Basic_ECU_Information.Header} : {Clear_dtc_android}";
                                 }
                             }
                             else
-                                alertString = alertString + $"\nCannot clear Dtc for {item.ecu_name}";
+                                alertString = alertString + $"\nCannot clear Dtc for {item.uds_Diag_Measurements.Basic_ECU_Information.Header}";
                         }
                         var errorpage = new Popup.DisplayAlertPage("Alert", alertString, "OK");
                         await PopupNavigation.Instance.PushAsync(errorpage);

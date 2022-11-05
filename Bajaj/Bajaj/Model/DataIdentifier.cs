@@ -59,6 +59,7 @@ namespace Bajaj.Model
 		public string Security_Constant_L5 { get; set; }
 		[XmlElement(ElementName = "Protocol")]
 		public string Protocol { get; set; }
+		public ProtocolInfo protocolInfo;
 	}
 
 
@@ -87,5 +88,11 @@ namespace Bajaj.Model
 		[XmlElement(ElementName = "IO_Name")]
 		public string IO_Name { get; set; }
 	}
+
+	public class ProtocolInfo
+    {
+		public string protocol { get; set; }
+		public string value { get; set; }
+    }
 
 }
