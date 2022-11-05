@@ -17,7 +17,7 @@
             </Grid.RowDefinitions>
 
             <CollectionView Grid.Row="0" x:Name="collectionView"
-                            ItemsSource="{Binding SelectedParameterList}" Scrolled="PidListScrolled">
+                            ItemsSource="{Binding SelectedParameterList}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical" ItemSpacing="15" />
                 </CollectionView.ItemsLayout>

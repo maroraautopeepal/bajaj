@@ -32,6 +32,7 @@ namespace Bajaj.Model
         public string uds_did_list { get; set; }
         public string uds_fault_list { get; set; }
         public Diagnostics_Trouble_Codes diagnostic_Trouble_Codes { get; set; }
+        public UDS_Diag_Measurements uds_Diag_Measurements { get; set; }
     }
 
     public class Hexfile

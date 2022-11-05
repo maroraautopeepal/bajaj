@@ -110,10 +110,7 @@ namespace Bajaj.View
         {
             try
             {
-                Device.BeginInvokeOnMainThread(async () =>
-                {
-                    await Navigation.PushAsync(new LiveParameterSelectPage());
-                });
+                await Navigation.PushAsync(new LiveParameterSelectPage());
             }
             catch (Exception ex)
             {
